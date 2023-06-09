@@ -26,7 +26,7 @@ export default function NowPlaying() {
                 ></img>
                 <p className="ml-5 whitespace-nowrap dark:text-slate-400">
                   <span className="text-xs font-medium text-neutral-700">
-                    PLAYING ON ACHINTYA'S SPOTIFY
+                    PLAYING ON ACHINTYA{"'"}S SPOTIFY
                   </span>
                   <br />
                   <span className="font-bold dark:text-slate-300">

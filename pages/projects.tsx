@@ -41,6 +41,13 @@ export default function Projects() {
       stack: ["React", "Firebase"],
     },
     {
+      name: "Zsh Guide",
+      url: "https://zshguide.vercel.app/",
+      desc: "This project is a cleaner mirror of Peter Stephenson's Zsh Guide. So far, I've single-handedly ported & redesigned the Official Zsh Guide.",
+      color: "#f2bd00",
+      stack: ["Next.JS", "TypeScript", "Contentlayer", "MDX", "TailwindCSS"],
+    },
+    {
       name: "Wordle Clone",
       url: "https://github.com/achntj/wordle/",
       desc: "A (not nearly as interactive) clone of the popular game Wordle. Written in python.",

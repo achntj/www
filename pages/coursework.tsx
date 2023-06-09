@@ -5,7 +5,10 @@ export default function Uses() {
     <Container title="Uses" description="My development setup.">
       <div>
         <h1 className="text-4xl font-bold">Coursework</h1>
-        <p>A list of courses I{"'"}m currently taking.</p>
+        <p>
+          A list of courses I{"'"}m currently taking (and have taken in the
+          past).
+        </p>
         <h3 className="my-5 text-2xl font-bold">Fall 22</h3>
         <ul className="pl-5 list-disc space-y-2">
           <li>CSE 110: Principles of Programming</li>

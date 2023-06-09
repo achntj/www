@@ -32,7 +32,7 @@ export default function Home() {
           >
             Tech Mahindra
           </a>
-          , and a Data Science Intern at Walmart Labs.
+          .
         </p>
         <p>
           He is currently a sophomore pursuing a Bachelor of Science in Computer
@@ -44,8 +44,8 @@ export default function Home() {
             <span>Résumé</span>{" "}
           </a>
           <p className="hidden xs:block">&bull;</p>{" "}
-          <Link className="block hover:underline" href="/contact">
-            <span>Contact</span>{" "}
+          <Link className="block hover:underline" href="/coursework">
+            <span>Coursework</span>{" "}
           </Link>
         </section>
         <div className="border border-dashed border-neutral-400" />
