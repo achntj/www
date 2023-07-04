@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 // Noto_Serif_Georgian is also nice
 import HeadContainer from "./HeadContainer";
 import Nav from "./Nav";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Poppins({ weight: "400", subsets: ["latin"] });
 export default function Container({ children, ...pageProps }) {
   return (
     <>
@@ -12,7 +12,7 @@ export default function Container({ children, ...pageProps }) {
         description={pageProps.description}
         image={pageProps.image}
       />
-      <div className={`${inter.className}`}>
+      <div className={`${font.className}`}>
         <div className="mb-10">
           <Nav />
         </div>

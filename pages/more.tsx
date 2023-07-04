@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import ListLink from "@/components/ListLink";
+import NowPlaying from "@/components/now-playing";
 import NextJSLogo from "@/components/svg/NextJSLogo";
 import TailwindLogo from "@/components/svg/TailwindLogo";
 import VimLogo from "@/components/svg/VimLogo";
@@ -51,12 +52,27 @@ export default function More() {
               <TailwindLogo />
             </a>
           </div>
+          <ListLink
+            text="Dotfiles"
+            href="https://github.com/achntj/dotfiles/"
+          />
+          (website colors were inspired by this color scheme -{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="text-emerald-600"
+            href="https://github.com/owickstrom/vim-colors-paramount"
+          >
+            vim colors paramount
+          </a>
+          )
         </section>
         <section>
-          <h3 className="text-2xl font-bold text-neutral-700">
-            Monthly Top 10
-          </h3>
-          <p className="text-neutral-600">pulled live from Spotify</p>
+          <h3 className="text-2xl font-bold text-neutral-700">Music</h3>
+          <NowPlaying />
+          <p className="text-neutral-600 mt-8 mb-5">
+            My monthly top 10, pulled live from Spotify
+          </p>
           <Tracks />
         </section>
       </div>

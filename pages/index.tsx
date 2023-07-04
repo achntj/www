@@ -1,16 +1,27 @@
 import Container from "@/components/Container";
 import NowPlaying from "@/components/now-playing";
+import SocialLink from "@/components/SocialLink";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <Container>
-      <div className={`leading-8 mt-0 space-y-2 sm:space-y-4`}>
+      <div className={`text-xl leading-10 mt-0 space-y-2 sm:space-y-4`}>
         <p>
-          Achintya Jha is a <strong>Tempe, Arizona</strong> based Software
-          Engineer interested in creating impactful software and beautiful
-          web-apps.
+          Achintya Jha is a Software Engineer interested in creating impactful{" "}
+          <Link href="/projects">software</Link> and beautiful web experiences.
+          He is a sophomore at{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://asu.edu/"
+            className="whitespace-nowrap text-zinc-500"
+          >
+            Arizona State University
+          </a>{" "}
+          pursuing a Bachelor of Science in Computer Science.
         </p>
         <p>
           He's currently an intern at{" "}
@@ -18,78 +29,32 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
             href="https://nucleussoftware.com/"
-            className="whitespace-nowrap underline underline-offset-4 text-amber-800"
+            className="whitespace-nowrap text-zinc-500"
           >
             Nucleus Software
           </a>{" "}
-          working on financial software & chatbots. Previously, he was a Machine
-          Learning Intern at{" "}
+          working on financial infrastructure & applications. Previously, he was
+          a Machine Learning Intern at{" "}
           <a
             target="_blank"
             rel="noreferrer"
             href="https://www.techmahindra.com/en-in/innovation/makers-lab/"
-            className="whitespace-nowrap underline underline-offset-4 text-sky-800"
+            className="whitespace-nowrap text-zinc-500"
           >
             Tech Mahindra
           </a>
           .
         </p>
-        <p>
-          He is currently a sophomore pursuing a Bachelor of Science in Computer
-          Science at{" "}
-          <span className="text-red-600">Arizona State University</span>.
-        </p>
-        <section className="xs:flex xs:space-x-2 sm:">
-          <a className=" hover:underline" href="/resume.pdf">
-            <span>Résumé</span>{" "}
-          </a>
-          <p className="hidden xs:block">&bull;</p>{" "}
-          <Link className="block hover:underline" href="/coursework">
-            <span>Coursework</span>{" "}
-          </Link>
-        </section>
-        <div className="border border-dashed border-neutral-400" />
+        <Link href="/contact" className="flex items-center group space-x-2">
+          <h2>Get In Touch</h2>
+          <ArrowRightIcon className="group-hover:translate-x-4 transition h-6 w-6" />{" "}
+        </Link>
+
         <section className="sm:flex justify-between">
           <ul className="text-md">
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer external"
-                className=" hover:underline"
-                href="https://github.com/achntj"
-              >
-                <span>GitHub:</span>{" "}
-                <span className="opacity-70 group-hover:underline">
-                  @achntj
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer external"
-                className=" hover:underline"
-                href="https://linkedin.com/in/achntj"
-              >
-                <span>LinkedIn:</span>{" "}
-                <span className="opacity-70 group-hover:underline">
-                  @achntj
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer external"
-                className=" hover:underline"
-                href="https://twitter.com/achntj"
-              >
-                <span>Twitter:</span>{" "}
-                <span className="opacity-70 group-hover:underline">
-                  @achntj
-                </span>
-              </a>
-            </li>
+            <SocialLink site="GitHub" href="https://github.com/achntj" />
+            <SocialLink site="LinkedIn" href="https://linkedin.com/in/achntj" />
+            <SocialLink site="Twitter" href="https://twitter.com/achntj" />
           </ul>
           <ul className="flex items-center">
             <li>
@@ -105,7 +70,6 @@ export default function Home() {
             </li>
           </ul>
         </section>
-        <NowPlaying />
       </div>
     </Container>
   );

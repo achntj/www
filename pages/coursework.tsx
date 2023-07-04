@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 
 export default function Uses() {
   return (
-    <Container title="Uses" description="My development setup.">
+    <Container title="Coursework" description="Courses I'm currently taking.">
       <div>
         <h1 className="text-4xl font-bold">Coursework</h1>
         <p>

@@ -18,7 +18,7 @@ export default function Document() {
         />
       </Head>
       <body
-        className={`my-10 p-4 text-base bg-[#F5E6D4] text-[#2C231B] max-w-2xl mx-auto`}
+        className={`my-10 p-4 text-base bg-neutral-100 text-zinc-800 max-w-2xl mx-auto`}
       >
         <Main />
         <NextScript />
