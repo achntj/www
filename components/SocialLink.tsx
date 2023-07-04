@@ -1,6 +1,5 @@
 export default function SocialLink({
   site,
-  text,
   href,
 }: {
   site: string;
