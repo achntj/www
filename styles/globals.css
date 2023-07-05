@@ -2,8 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+h1,
+h2,
+h3 {
+  @apply font-bold text-neutral-700 dark:text-neutral-300;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
 @media (max-width: 430px) {
   .nav {
     width: calc(100% - 70px);
   }
+}
+
+/*Scrollbars*/
+body {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  overflow: -moz-scrollbars-none; /* old mozilla */
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+label {
+  @apply font-bold text-base underline underline-offset-4;
+}
+
+/* Chrome Autocomplete input bg fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
 }

@@ -19,7 +19,7 @@ export default function Tracks() {
           >
             <div
               key={track.title}
-              className="mt-5 rounded items-center p-4 flex space-x-4 text-base font-normal hover:bg-neutral-50 border-none"
+              className="mt-5 rounded items-center p-4 flex space-x-4 text-base font-normal hover:bg-neutral-50 dark:hover:bg-neutral-900 border-none"
             >
               <p className="text-sm underline underline-offset-4">
                 {index + 1}

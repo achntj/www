@@ -2,7 +2,7 @@ export default function TailwindLogo() {
   return (
     <svg
       viewBox="0 0 54 31"
-      className="text-slate-900 dark:text-white h-12 w-auto"
+      className="h-8 text-slate-900 dark:text-white xs:h-12 w-auto"
     >
       <path
         fillRule="evenodd"

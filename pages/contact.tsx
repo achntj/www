@@ -54,24 +54,19 @@ export default function Contact() {
           draggable={false}
           pauseOnHover
         />
-        <form autoComplete="off" className="" onSubmit={submitForm}>
-          <h1 className="text-3xl xs:text-4xl font-bold">Send Me an Email</h1>
+        <form autoComplete="off" className="font-body" onSubmit={submitForm}>
+          <h3 className="mb-0">Send Me an Email</h3>
           <a
             href="mailto:achntj@gmail.com"
-            className="flex items-baseline group space-x-4 !text-black 
-            dark:!text-white italic text-xl sm:text-2xl !underline 
-            underline-offset-4"
+            className="flex items-baseline group space-x-4 !text-black dark:!text-white italic text-xl sm:text-3xl font-title !underline underline-offset-4"
           >
             <span>achntj@gmail.com</span>
             <span>
-              <ArrowUpRightIcon
-                className="h-4 w-4 group-hover:-translate-y-2 
-              group-hover:translate-x-2 transition duration-100 ease-in-out"
-              />
+              <ArrowUpRightIcon className="h-4 w-4 group-hover:-translate-y-2 group-hover:translate-x-2 transition duration-100 ease-in-out" />
             </span>
           </a>
           <h3 className="my-2">OR</h3>
-          <h1 className="text-xl xs:text-2xl font-bold">Send a message!</h1>
+          <h1 className="text-3xl xs:text-4xl">Send a message!</h1>
           <label htmlFor="name">Full Name</label>
           <input
             type="text"
@@ -116,12 +111,11 @@ export default function Contact() {
             className="w-full outline-none h-auto resize-none bg-transparent"
           ></textarea>
           <button
-            className="bg-neutral-200 font-title dark:bg-neutral-700 
-            text-neutral-900 dark:text-neutral-100 p-2 rounded-lg font-bold"
+            className="bg-neutral-200 font-title dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 p-2 rounded-lg font-bold"
             type="submit"
             disabled={disable}
           >
-            Send
+            Submit
           </button>
         </form>
       </div>

@@ -2,7 +2,7 @@ export default function NextJSLogo() {
   return (
     <svg
       aria-label="Next.js logomark"
-      className="h-16 w-16"
+      className="h-10 w-10 xs:h-16 xs:w-16"
       viewBox="0 0 180 180"
     >
       <mask

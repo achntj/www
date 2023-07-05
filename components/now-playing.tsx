@@ -24,16 +24,18 @@ export default function NowPlaying() {
                   alt=""
                   key={data.title}
                 ></img>
-                <p className="ml-5 whitespace-nowrap dark:text-slate-400">
-                  <span className="text-xs font-medium text-neutral-700">
+                <p className="ml-5 whitespace-nowrap">
+                  <span className="text-xs font-medium text-neutral-700 dark:text-neutral-500">
                     PLAYING ON ACHINTYA{"'"}S SPOTIFY
                   </span>
                   <br />
-                  <span className="font-bold dark:text-slate-300">
+                  <span className="font-bold dark:text-neutral-300">
                     {data.title}
                   </span>
                   <br />
-                  <span className="text-neutral-600">{data.artist}</span>
+                  <span className="text-neutral-600 dark:text-neutral-400">
+                    {data.artist}
+                  </span>
                 </p>
               </a>
             </>
@@ -47,7 +49,7 @@ export default function NowPlaying() {
                   ></path>
                 </svg>
                 <p className="ml-2.5 dark:text-neutral-400">
-                  Not Listening <span>(Spotify)</span>
+                  Not Listening to anything
                 </p>
               </div>
             </>

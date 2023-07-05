@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html className="dark" lang="en">
       <Head>
         <link
           rel="preload"
@@ -18,7 +18,7 @@ export default function Document() {
         />
       </Head>
       <body
-        className={`mt-10 mb-24 p-4 text-base bg-neutral-100 text-zinc-800 max-w-2xl mx-auto`}
+        className={`mt-10 mb-24 p-4 text-base bg-white dark:bg-[#101010] antialiased text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto`}
       >
         <Main />
         <NextScript />

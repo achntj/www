@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import NowPlaying from "@/components/now-playing";
-import SocialLink from "@/components/SocialLink";
+import CustomLink from "@/components/CustomLink";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +17,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
             href="https://asu.edu/"
-            className="whitespace-nowrap text-zinc-500"
+            className="whitespace-nowrap text-neutral-500 dark:text-neutral-300"
           >
             Arizona State University
           </a>{" "}
@@ -29,7 +29,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
             href="https://nucleussoftware.com/"
-            className="whitespace-nowrap text-zinc-500"
+            className="whitespace-nowrap text-neutral-500 dark:text-neutral-300"
           >
             Nucleus Software
           </a>{" "}
@@ -39,7 +39,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
             href="https://www.techmahindra.com/en-in/innovation/makers-lab/"
-            className="whitespace-nowrap text-zinc-500"
+            className="whitespace-nowrap text-neutral-500 dark:text-neutral-300"
           >
             Tech Mahindra
           </a>
@@ -52,14 +52,26 @@ export default function Home() {
 
         <section className="sm:flex justify-between">
           <ul className="text-md">
-            <SocialLink site="GitHub" href="https://github.com/achntj" />
-            <SocialLink site="LinkedIn" href="https://linkedin.com/in/achntj" />
-            <SocialLink site="Twitter" href="https://twitter.com/achntj" />
+            <li>
+              <CustomLink ext={true} href="https://github.com/achntj">
+                GitHub
+              </CustomLink>
+            </li>
+            <li>
+              <CustomLink ext={true} href="https://linkedin.com/in/achntj">
+                LinkedIn
+              </CustomLink>
+            </li>
+            <li>
+              <CustomLink ext={true} href="https://twitter.com/achntj">
+                Twitter
+              </CustomLink>
+            </li>
           </ul>
           <ul className="flex items-center">
             <li>
               <a
-                className="bg-amber-200 sm:p-2 hover:underline"
+                className="bg-amber-200 dark:bg-neutral-800 sm:p-2 hover:underline"
                 href="mailto:achntj@gmail.com"
               >
                 <span>Email</span>{" "}

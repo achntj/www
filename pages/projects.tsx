@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Open_Sans } from "next/font/google";
 import Container from "@/components/Container";
+import { motion } from "framer-motion";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export default function Projects() {
@@ -8,28 +9,28 @@ export default function Projects() {
     {
       name: "SentiMate",
       url: "https://sentimate.org",
-      desc: "A Natural Language Processing and Machine Learning model that is capable of using text for detecting depression.",
+      desc: "A Natural Language Processing and Machine Learning model that is capable of using text for detecting depression. (Now Archived)",
       color: "#7b61ff",
       stack: ["Flask", "SciKit Learn", "Pandas", "SCSS", "Jekyll"],
     },
     {
-      name: "Dynote",
-      url: "https://dynote.vercel.app/",
-      desc: "A No-Code Notes app that allows you to take notes in the browser rather than the code-editor.",
+      name: "Pandora's Box",
+      url: "https://pandora.achntj.com",
+      desc: "A web data store for all your thoughts, pending tasks, and ideas.",
       color: "#f24822",
       stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
     },
     {
       name: "PetiteURL",
       url: "https://go.achntj.com/",
-      desc: "Free to use URL Shortener that lets you choose your slug over random letters.",
-      color: "#3486eb",
+      desc: "Free to use URL Shortener with custom slugs.",
+      color: "#00b5ce",
       stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
     },
     {
-      name: "Pandora's Box",
-      url: "https://pandora.achntj.com",
-      desc: "A web data store for all your thoughts, pending tasks, and ideas.",
+      name: "DOTC Website",
+      url: "https://dikshaoracle.com",
+      desc: "Official Website for an oracle & SQL training company. Includes a native content-editing dashboard.",
       color: "#a868fc",
       stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
     },
@@ -48,6 +49,13 @@ export default function Projects() {
       stack: ["Next.JS", "TypeScript", "Contentlayer", "MDX", "TailwindCSS"],
     },
     {
+      name: "Dynote",
+      url: "https://dynote.vercel.app/",
+      desc: "A No-Code noting-taking app in your browser.",
+      color: "#3486eb",
+      stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
+    },
+    {
       name: "Wordle Clone",
       url: "https://github.com/achntj/wordle/",
       desc: "A (not nearly as interactive) clone of the popular game Wordle. Written in python.",
@@ -60,13 +68,6 @@ export default function Projects() {
       desc: `[National Winner - NASA Space Apps 2020]\nThis website features self-authored unique stories, from our team, that provide a historical as well as mythological perspective to Climate.`,
       color: "#f97f0f",
       stack: ["Hugo", "Golang", "HTML", "SCSS"],
-    },
-    {
-      name: "DOTC Website",
-      url: "https://dikshaoracle.com",
-      desc: "Official Website for an oracle & SQL training company. Includes a native content-editing dashboard.",
-      color: "#00b5ce",
-      stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
     },
     {
       name: "Auto SNAKE",
@@ -83,18 +84,22 @@ export default function Projects() {
         {projects.map(
           (project) =>
             project.url && (
-              <div>
+              <div key={project.name}>
                 <a target="_blank" rel="noreferrer" href={project.url}>
                   {/* tailwind custom bg class does not work when used with template literals. Workaround - Use html style for the moment*/}
-                  <div
-                    className="flex flex-col justify-between p-5 my-2 rounded-[40px] mb-8 group dark:!bg-[#101010]"
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="flex flex-col justify-between p-5 my-2 rounded-[40px] mb-8 group dark:!bg-neutral-900"
                     style={{ backgroundColor: `${project.color}` }}
                   >
                     <h3 className={`text-white text-xl ${openSans.className}`}>
                       {project.name}
                       <div className="sm:hidden inline-block">
                         <svg
-                          className="text-white dark:text-slate-400 ml-2"
+                          className="text-white dark:text-neutral-400 ml-2"
                           width="20"
                           height="20"
                           viewBox="0 0 28 16"
@@ -106,7 +111,7 @@ export default function Projects() {
                       </div>
                     </h3>
                     {/* <p className="text-rose-500">{project.stack}</p> */}
-                    <p className="text-neutral-100 font-normal whitespace-pre-line dark:text-gray-400">
+                    <p className="text-neutral-100 font-normal whitespace-pre-line dark:text-neutral-400">
                       {project.desc}
                     </p>
                     <div
@@ -146,7 +151,7 @@ export default function Projects() {
                         </svg>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </a>
               </div>
             )

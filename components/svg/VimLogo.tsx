@@ -2,7 +2,7 @@ export default function VimLogo() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-20 w-20"
+      className="h-12 w-12 xs:h-20 xs:w-20"
       viewBox="-79.14375 -132.0835 685.9125 792.501"
     >
       <g stroke="#000">
