@@ -16,8 +16,8 @@ export default function Nav() {
   return (
     <>
       <nav
-        className="nav fixed border left-1/2 -translate-x-1/2 dark:border-zinc-900
-        bottom-8 z-50 shadow-lg backdrop-blur-xl bg-white dark:bg-neutral-800
+        className="nav fixed border left-1/2 -translate-x-1/2 dark:border-neutral-800
+        bottom-8 z-50 shadow-lg backdrop-blur-xl bg-white dark:bg-neutral-900 dark:drop-shadow-2xl
         rounded-full p-2 "
       >
         <div className="overflow-scroll space-x-4 flex justify-start items-center">
