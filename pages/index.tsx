@@ -46,7 +46,7 @@ export default function Home() {
           .
         </p>
         <Link href="/contact" className="flex items-center group space-x-2">
-          <h2>Get In Touch</h2>
+          <p>Get In Touch</p>
           <ArrowRightIcon className="group-hover:translate-x-4 transition h-6 w-6" />{" "}
         </Link>
 
