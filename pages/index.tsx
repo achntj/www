@@ -10,7 +10,10 @@ export default function Home() {
     <Container>
       <div className={`text-xl leading-10 mt-0 space-y-2 sm:space-y-4`}>
         <p>
-          Achintya Jha is a Software Engineer interested in creating impactful{" "}
+          <h1 className="inline-block font-normal text-neutral-800 dark:text-neutral-400">
+            Achintya Jha
+          </h1>{" "}
+          is a Software Engineer interested in creating impactful{" "}
           <Link href="/projects">software</Link> and beautiful web experiences.
           He is a sophomore at{" "}
           <a

@@ -7,17 +7,21 @@ export default function HeadContainer({ ...pageProps }) {
 
   const description = pageProps.description
     ? pageProps.description
-    : "Achintya Jha is an incoming freshman at Arizona State University, studying Computer Science and Mathematics.";
+    : "Achintya Jha is a sophomore at Arizona State University, studying Computer Science and Mathematics.";
 
   const image = pageProps.image
     ? `https://achintyajha.com/images/posts/${pageProps.image}`
-    : "https://achintyajha.com/images/banner.png";
+    : "https://achintyajha.com/banner.png";
 
   return (
     <Head>
       {/* <!-- HTML Meta Tags --> */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      {/* icons */}
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="apple-touch-icon" href="/favicon.ico" />
 
       {/* <!-- Facebook Meta Tags --> */}
       <meta property="og:url" content="https://achintyajha.com/" />
