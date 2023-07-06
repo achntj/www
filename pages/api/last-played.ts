@@ -18,7 +18,7 @@ export default async function handler(
     lastPlayedStatus = false;
   }
 
-  const title = song.items[0].track.album.name;
+  const title = song.items[0].track.name;
   const artist = song.items[0].track.artists
     .map((_artist) => _artist.name)
     .join(", ");
