@@ -56,7 +56,7 @@ export default function NowPlaying() {
                 >
                   <img
                     className="w-16 h-16 rounded"
-                    src={nowPlaying.albumImageUrl}
+                    src={lastPlayed.albumImageUrl}
                     alt=""
                     key={lastPlayed.title}
                   ></img>
