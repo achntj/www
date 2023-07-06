@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
 import { getNowPlaying } from "../../lib/spotify";
 
 export default async function handler(
@@ -25,8 +25,8 @@ export default async function handler(
   const songUrl = song.item.external_urls.spotify;
 
   res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=60, stale-while-revalidate=30'
+    "Cache-Control",
+    "public, s-maxage=60, stale-while-revalidate=30"
   );
 
   return res.status(200).json({
@@ -37,4 +37,5 @@ export default async function handler(
     songUrl,
     title,
   });
-};
+}
+

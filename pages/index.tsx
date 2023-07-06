@@ -9,23 +9,21 @@ export default function Home() {
   return (
     <Container>
       <div className={`text-xl leading-10 mt-0 space-y-2 sm:space-y-4`}>
-        <p>
-          <h1 className="inline-block font-normal text-neutral-800 dark:text-neutral-400">
-            Achintya Jha
-          </h1>{" "}
-          is a Software Engineer interested in creating impactful{" "}
-          <Link href="/projects">software</Link> and beautiful web experiences.
-          He is a sophomore at{" "}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://asu.edu/"
-            className="whitespace-nowrap text-neutral-500 dark:text-neutral-300"
-          >
-            Arizona State University
-          </a>{" "}
-          pursuing a Bachelor of Science in Computer Science.
-        </p>
+        <h1 className="inline-block font-normal text-neutral-800 dark:text-neutral-400">
+          Achintya Jha
+        </h1>{" "}
+        is a Software Engineer interested in creating impactful{" "}
+        <Link href="/projects">software</Link> and beautiful web experiences. He
+        is a sophomore at{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://asu.edu/"
+          className="whitespace-nowrap text-neutral-500 dark:text-neutral-300"
+        >
+          Arizona State University
+        </a>{" "}
+        pursuing a Bachelor of Science in Computer Science.
         <p>
           He's currently an intern at{" "}
           <a
@@ -52,7 +50,6 @@ export default function Home() {
           <p>Get In Touch</p>
           <ArrowRightIcon className="group-hover:translate-x-4 transition h-6 w-6" />{" "}
         </Link>
-
         <section className="sm:flex justify-between">
           <ul className="text-md">
             <li>

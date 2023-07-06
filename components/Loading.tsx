@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className="overflow-scroll pt-5">
+    <div className="overflow-scroll pt-5 h-[84px] flex items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

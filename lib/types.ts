@@ -14,6 +14,14 @@ export type NowPlayingSong = {
   title: string;
 };
 
+export type LastPlayedSong = {
+  albumImageUrl: string;
+  artist: string;
+  songUrl: string;
+  title: string;
+};
+
 export type TopTracks = {
   tracks: Song[];
 };
+
