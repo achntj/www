@@ -1,4 +1,3 @@
-import DropdownNav from "./DropdownNav";
 import {
   ArchiveBoxIcon,
   CameraIcon,
