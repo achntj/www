@@ -75,7 +75,7 @@ export default function NowPlaying() {
                   </p>
                 </a>
               ) : (
-                <div className="flex items-center text-sm">
+                <div className="flex h-16 items-center text-sm">
                   <svg width="1.5em" height="1.5em" viewBox="0 0 168 168">
                     <path
                       fill="#1ED760"
