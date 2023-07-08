@@ -3,16 +3,23 @@ import { Poppins } from "next/font/google";
 import HeadContainer from "./HeadContainer";
 import Nav from "./Nav";
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 const font = Poppins({ weight: "400", subsets: ["latin"] });
-export default function Container({ children, ...pageProps }) {
+export default function Container({
+  title,
+  description,
+  image,
+  children,
+}: {
+  title?: string;
+  description?: string;
+  image?: string;
+  children: ReactNode;
+}) {
   return (
     <>
-      <HeadContainer
-        title={pageProps.title}
-        description={pageProps.description}
-        image={pageProps.image}
-      />
+      <HeadContainer title={title} description={description} image={image} />
 
       <motion.div
         initial={{ opacity: 0 }}

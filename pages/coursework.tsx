@@ -4,7 +4,7 @@ export default function Uses() {
   return (
     <Container title="Coursework" description="Courses I'm currently taking.">
       <div>
-        <h1 className="text-4xl font-bold">Coursework</h1>
+        <h1>Coursework</h1>
         <p>
           A list of courses I{"'"}m currently taking (and have taken in the
           past).

@@ -12,7 +12,7 @@ export default function More() {
     <Container>
       <div className="space-y-8">
         <section>
-          <h1 className="text-4xl font-bold">More</h1>
+          <h1>More</h1>
           <p>random stuff about me</p>
         </section>
         <section>
@@ -23,10 +23,7 @@ export default function More() {
             many phases. Over all these iterations, my design has been
             influenced by the many beautiful open-sourced web projects on
             Github. I started programming when I was 15 and{" "}
-            <CustomLink
-              ext={true}
-              href="https://github.com/achntj/DigiWars.py-Edition/"
-            >
+            <CustomLink href="https://github.com/achntj/DigiWars.py-Edition/">
               DigiWars
             </CustomLink>{" "}
             was my first big project. I like it more than my recent projects :){" "}
@@ -45,35 +42,28 @@ export default function More() {
           <p>my favorite parts of the internet</p>
           <ul className="pl-5 list-disc space-y-2 mt-4">
             <li>
-              <CustomLink
-                ext={true}
-                href="https://en.wikipedia.org/wiki/If_a_tree_falls_in_a_forest"
-              >
+              <CustomLink href="https://en.wikipedia.org/wiki/If_a_tree_falls_in_a_forest">
                 If a tree falls in a forest
               </CustomLink>
             </li>
             <li>
-              <CustomLink ext={true} href="https://www.my90stv.com/">
-                My 90s TV
-              </CustomLink>
+              <CustomLink href="https://www.my90stv.com/">My 90s TV</CustomLink>
             </li>
             <li>
-              <CustomLink ext={true} href="https://news.ycombinator.com/news">
+              <CustomLink href="https://news.ycombinator.com/news">
                 Hacker News (YCombinator)
               </CustomLink>
             </li>
             <li>
-              <CustomLink ext={true} href="https://www.my90stv.com/">
+              <CustomLink href="https://www.my90stv.com/">
                 103 Bits of Advice I Wish I Had Known
               </CustomLink>
             </li>
             <li>
-              <CustomLink ext={true} href="https://www.typewolf.com/">
-                Typewolf
-              </CustomLink>
+              <CustomLink href="https://www.typewolf.com/">Typewolf</CustomLink>
             </li>
             <li>
-              <CustomLink ext={true} href="https://www.aldaily.com/">
+              <CustomLink href="https://www.aldaily.com/">
                 Arts & Letters Daily
               </CustomLink>
             </li>
@@ -95,7 +85,7 @@ export default function More() {
           </div>
           <p>
             Here are my{" "}
-            <CustomLink ext={true} href="https://github.com/achntj/dotfiles/">
+            <CustomLink href="https://github.com/achntj/dotfiles/">
               Dotfiles
             </CustomLink>
             .

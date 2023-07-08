@@ -66,7 +66,7 @@ export default function Contact() {
             </span>
           </a>
           <h3 className="my-2">OR</h3>
-          <h1 className="text-3xl xs:text-4xl">Send a message!</h1>
+          <h2 className="mb-2">Send a message!</h2>
           <label htmlFor="name">Full Name</label>
           <input
             type="text"

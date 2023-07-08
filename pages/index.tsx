@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Container>
       <div className={`text-xl leading-10 mt-0 space-y-2 sm:space-y-4`}>
-        <h1 className="inline-block font-normal text-neutral-800 dark:text-neutral-400">
+        <h1 className="text-xl inline-block font-normal text-neutral-800 dark:text-neutral-400">
           Achintya Jha
         </h1>{" "}
         is a Software Engineer interested in creating impactful{" "}
@@ -53,19 +53,15 @@ export default function Home() {
         <section className="sm:flex justify-between">
           <ul className="text-md">
             <li>
-              <CustomLink ext={true} href="https://github.com/achntj">
-                GitHub
-              </CustomLink>
+              <CustomLink href="https://github.com/achntj">GitHub</CustomLink>
             </li>
             <li>
-              <CustomLink ext={true} href="https://linkedin.com/in/achntj">
+              <CustomLink href="https://linkedin.com/in/achntj">
                 LinkedIn
               </CustomLink>
             </li>
             <li>
-              <CustomLink ext={true} href="https://twitter.com/achntj">
-                Twitter
-              </CustomLink>
+              <CustomLink href="https://twitter.com/achntj">Twitter</CustomLink>
             </li>
           </ul>
           <ul className="flex items-center">

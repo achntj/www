@@ -8,8 +8,24 @@ h3 {
   @apply font-bold text-neutral-700 dark:text-neutral-300;
 }
 
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
 h3 {
   @apply text-2xl;
+}
+
+* {
+  @apply dark:border-neutral-700;
+}
+
+blockquote {
+  @apply my-4 pl-4 border-l-4 opacity-75;
 }
 
 @media (max-width: 430px) {
@@ -31,7 +47,7 @@ body {
 }
 
 label {
-  @apply font-bold text-base underline underline-offset-4;
+  @apply font-bold text-base;
 }
 
 /* Chrome Autocomplete input bg fix */

@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { Open_Sans } from "next/font/google";
 import Container from "@/components/Container";
 import { motion } from "framer-motion";
-const openSans = Open_Sans({ subsets: ["latin"] });
 
 export default function Projects() {
   const projects = [
@@ -79,7 +77,7 @@ export default function Projects() {
   ];
   return (
     <Container>
-      <h1 className="text-4xl font-bold mb-10">Projects</h1>
+      <h1 className="mb-10">Projects</h1>
       <div>
         {projects.map(
           (project) =>
@@ -95,7 +93,7 @@ export default function Projects() {
                     className="flex flex-col justify-between p-5 my-2 rounded-[40px] mb-8 group dark:!bg-neutral-900"
                     style={{ backgroundColor: `${project.color}` }}
                   >
-                    <h3 className={`text-white text-xl ${openSans.className}`}>
+                    <h3 className={"text-white"}>
                       {project.name}
                       <div className="sm:hidden inline-block">
                         <svg
