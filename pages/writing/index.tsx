@@ -9,14 +9,14 @@ export default function Index({ posts }) {
   return (
     <Container>
       <h1 className="mb-2">Writing</h1>
-      <p>Essays about topics I care about.</p>
+      <p>Essays on topics I care about.</p>
       <ul className="my-5 last:border-b">
         {posts.map((post) => (
           <Link
             key={post.filePath}
             href={`/writing/${post.filePath.replace(/\.mdx?$/, "")}`}
           >
-            <li className="py-2 border-t flex justify-between">
+            <li className="space-x-2 py-2 border-t flex justify-between">
               <span>{post.frontmatter.title}</span>
               <span>{post.frontmatter.date}</span>
             </li>

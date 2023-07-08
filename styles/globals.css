@@ -24,8 +24,24 @@ h3 {
   @apply dark:border-neutral-700;
 }
 
+.article ul {
+  @apply pl-5 list-disc space-y-2 mt-4;
+}
+
 blockquote {
   @apply my-4 pl-4 border-l-4 opacity-75;
+}
+
+code {
+  @apply bg-neutral-200 dark:bg-neutral-800 border rounded px-1;
+}
+
+code::before {
+  content: "`";
+}
+
+code::after {
+  content: "`";
 }
 
 @media (max-width: 430px) {

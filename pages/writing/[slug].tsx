@@ -49,12 +49,14 @@ export default function PostPage({ source, frontMatter }) {
           </span>
         )}
         <h1 className="my-5">{frontMatter.title}</h1>
-        {frontMatter.description && (
-          <blockquote>{frontMatter.description}</blockquote>
-        )}
       </div>
-      <main className="space-y-4 leading-relaxed">
+      <main className="article space-y-4 leading-relaxed">
         <MDXRemote {...source} components={components} />
+        <hr />
+        <p>
+          Written with{" "}
+          <CustomLink href="https://mavie.vercel.app/">Mavié</CustomLink>
+        </p>
       </main>
     </Container>
   );
