@@ -3,7 +3,8 @@ import { Poppins } from "next/font/google";
 import HeadContainer from "./HeadContainer";
 import Nav from "./Nav";
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
 const font = Poppins({ weight: "400", subsets: ["latin"] });
 export default function Container({
@@ -17,22 +18,19 @@ export default function Container({
   image?: string;
   children: ReactNode;
 }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <HeadContainer title={title} description={description} image={image} />
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className={`${font.className}`}
-      >
-        <div className="mb-10">
-          <Nav />
+      <div className={`${font.className}`}>
+        <div className="p-5 md:hidden">
+          <Bars3Icon onClick={() => setOpen(true)} className="h-6 w-6" />
         </div>
-        {children}
-      </motion.div>
+        <Nav open={open} setOpen={setOpen} />
+        <div className="p-4 md:mt-20">{children}</div>
+      </div>
     </>
   );
 }
