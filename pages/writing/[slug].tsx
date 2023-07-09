@@ -52,12 +52,16 @@ export default function PostPage({ source, frontMatter }) {
       </div>
       <main className="article space-y-4 leading-relaxed">
         <MDXRemote {...source} components={components} />
-        <hr />
-        <p>
-          Written with{" "}
-          <CustomLink href="https://mavie.vercel.app/">Mavié</CustomLink>
-        </p>
       </main>
+      <div className="flex items-center space-x-4 my-5">
+        <span className="border-t flex-1"></span>
+        <span>§</span>
+        <span className="border-t flex-1"></span>
+      </div>
+      <p>
+        Written with{" "}
+        <CustomLink href="https://mavie.vercel.app/">Mavié</CustomLink>
+      </p>
     </Container>
   );
 }
