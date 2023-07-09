@@ -8,11 +8,6 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
-      {
-        source: "/posts/:path*",
-        destination: "/writing/:path*",
-        permanent: true,
-      },
     ];
   },
 };
