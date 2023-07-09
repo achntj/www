@@ -70,7 +70,7 @@ export default function Projects() {
     {
       name: "Auto SNAKE",
       url: "https://www.youtube.com/watch?v=wyFxc-_l1jQ",
-      desc: "A reinforcement learning model that uses Deep Q-Learning to learn to play ‘Snake’.",
+      desc: "A reinforcement learning model that uses Deep Q-Learning to learn to play “Snake”.",
       color: "#ee46d3",
       stack: ["Python", "Pytorch", "PyGame"],
     },

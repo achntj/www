@@ -70,6 +70,9 @@ export default function More() {
               <CustomLink href="https://www.aldaily.com/">
                 Arts & Letters Daily
               </CustomLink>
+              <CustomLink href="http://www.unnecessaryquotes.com/">
+                Unnecessary Quotes
+              </CustomLink>
             </li>
           </ul>
         </section>
