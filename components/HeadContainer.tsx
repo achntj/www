@@ -10,7 +10,7 @@ export default function HeadContainer({ ...pageProps }) {
     : "Achintya Jha is a sophomore at Arizona State University, studying Computer Science and Mathematics.";
 
   const image = pageProps.image
-    ? `https://achintyajha.com/posts/${pageProps.image}`
+    ? `https://achintyajha.com/_images/${pageProps.image}`
     : "https://achintyajha.com/banner.png";
 
   return (

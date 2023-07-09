@@ -38,7 +38,7 @@ export default function PostPage({ source, frontMatter }) {
       <div className="">
         <Image
           className="rounded-md"
-          src={`/posts/${frontMatter.cover}`}
+          src={`/_images/${frontMatter.cover}`}
           height={256}
           width={256}
           alt={frontMatter.title}
