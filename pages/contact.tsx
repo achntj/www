@@ -25,7 +25,7 @@ export default function Contact() {
       });
       if (res.status === 201) {
         toast.dismiss(id);
-        toast("🎉 I'll get in touch soon!", { type: "success" });
+        toast("🎉 I’ll get in touch soon!", { type: "success" });
         setName("");
         setEmail("");
         setMessage("");

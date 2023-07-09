@@ -32,7 +32,7 @@ export default function NowPlaying() {
                 ></img>
                 <p className="ml-5 whitespace-nowrap">
                   <span className="text-xs font-medium text-neutral-700 dark:text-neutral-500">
-                    NOW PLAYING ON ACHINTYA{"'"}S SPOTIFY
+                    NOW PLAYING ON ACHINTYA’S SPOTIFY
                   </span>
                   <br />
                   <span className="font-bold dark:text-neutral-300">
@@ -62,7 +62,7 @@ export default function NowPlaying() {
                   ></img>
                   <p className="ml-5 whitespace-nowrap">
                     <span className="text-xs font-medium text-neutral-700 dark:text-neutral-500">
-                      LAST PLAYED ON ACHINTYA{"'"}S SPOTIFY
+                      LAST PLAYED ON ACHINTYA’S SPOTIFY
                     </span>
                     <br />
                     <span className="font-bold dark:text-neutral-300">

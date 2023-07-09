@@ -12,7 +12,7 @@ export default function Projects() {
       stack: ["Flask", "SciKit Learn", "Pandas", "SCSS", "Jekyll"],
     },
     {
-      name: "Pandora's Box",
+      name: "Pandora’s Box",
       url: "https://pandora.achntj.com",
       desc: "A web data store for all your thoughts, pending tasks, and ideas.",
       color: "#f24822",
@@ -42,7 +42,7 @@ export default function Projects() {
     {
       name: "Zsh Guide",
       url: "https://zshguide.vercel.app/",
-      desc: "This project is a cleaner mirror of Peter Stephenson's Zsh Guide. So far, I've single-handedly ported & redesigned the Official Zsh Guide.",
+      desc: "This project is a cleaner mirror of Peter Stephenson’s Zsh Guide. So far, I’ve single-handedly ported & redesigned the Official Zsh Guide.",
       color: "#f2bd00",
       stack: ["Next.JS", "TypeScript", "Contentlayer", "MDX", "TailwindCSS"],
     },
@@ -70,7 +70,7 @@ export default function Projects() {
     {
       name: "Auto SNAKE",
       url: "https://www.youtube.com/watch?v=wyFxc-_l1jQ",
-      desc: "A reinforcement learning model that uses Deep Q-Learning to learn to play 'Snake'.",
+      desc: "A reinforcement learning model that uses Deep Q-Learning to learn to play ‘Snake’.",
       color: "#ee46d3",
       stack: ["Python", "Pytorch", "PyGame"],
     },

@@ -19,17 +19,17 @@ export default function More() {
           <h3>About Me</h3>
           <p>
             {" "}
-            I{"'"}m currently working on developing banking software at a
-            fintech company. My latest personal project is{" "}
+            I’m currently working on developing banking software at a fintech
+            company. My latest personal project is{" "}
             <CustomLink href="https://pandora.achntj.com/">
-              Pandora{"'"}s Box
+              Pandora’s Box
             </CustomLink>{" "}
             which is a place to write all your thoughts, accessible from
             anywhere. Apart from that, I do have a ton of other projects which
             you can find on <CustomLink href="/projects">/Projects</CustomLink>.
             I started programming when I was 15, and this website has been a
             part of my online identity since 2021, adapting and evolving through
-            various phases. Throughout its transformations, I've drawn
+            various phases. Throughout its transformations, I’ve drawn
             inspiration from various open-source web projects found on GitHub.{" "}
           </p>
         </section>

@@ -2,12 +2,11 @@ import Container from "@/components/Container";
 
 export default function Uses() {
   return (
-    <Container title="Coursework" description="Courses I'm currently taking.">
+    <Container title="Coursework" description="Courses I’m currently taking.">
       <div>
         <h1>Coursework</h1>
         <p>
-          A list of courses I{"'"}m currently taking (and have taken in the
-          past).
+          A list of courses I’m currently taking (and have taken in the past).
         </p>
         <h3 className="my-5 text-2xl font-bold">Spring 23</h3>
         <ul className="pl-5 list-disc space-y-2">
