@@ -19,14 +19,18 @@ export default function More() {
           <h3>About Me</h3>
           <p>
             {" "}
-            This website has been my online rep since 2021 and has been through
-            many phases. Over all these iterations, my design has been
-            influenced by the many beautiful open-sourced web projects on
-            Github. I started programming when I was 15 and{" "}
-            <CustomLink href="https://github.com/achntj/DigiWars.py-Edition/">
-              DigiWars
+            I{"'"}m currently working on developing banking software at a
+            fintech company. My latest personal project is{" "}
+            <CustomLink href="https://pandora.achntj.com/">
+              Pandora{"'"}s Box
             </CustomLink>{" "}
-            was my first big project. I like it more than my recent projects :){" "}
+            which is a place to write all your thoughts, accessible from
+            anywhere. Apart from that, I do have a ton of other projects which
+            you can find on <CustomLink href="/projects">/Projects</CustomLink>.
+            I started programming when I was 15, and this website has been a
+            part of my online identity since 2021, adapting and evolving through
+            various phases. Throughout its transformations, I've drawn
+            inspiration from various open-source web projects found on GitHub.{" "}
           </p>
         </section>
         <section>
