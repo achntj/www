@@ -20,7 +20,7 @@ export default function Nav({
             } md:hidden nav transition-transform overflow-x-hidden z-10 fixed bottom-0 top-0 sm:pt-10 px-5 w-full h-full overflow-scroll md:bg-transparent md:dark:bg-transparent bg-neutral-100 dark:bg-[#101010]`}
           >
             <div className="sticky top-0 py-5 md:hidden">
-              <XMarkIcon onClick={() => setOpen(false)} className="h-6 w-6" />
+              <XMarkIcon onClick={() => setOpen(false)} className="h-8 w-8" />
             </div>
             <div
               onClick={() => setOpen(false)}

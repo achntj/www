@@ -28,10 +28,6 @@ h3 {
   @apply pl-5 list-disc space-y-2 mt-4;
 }
 
-.nav svg {
-  @apply h-6 w-6;
-}
-
 blockquote {
   @apply my-4 pl-4 border-l-4 opacity-75;
 }

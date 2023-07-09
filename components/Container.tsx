@@ -26,7 +26,7 @@ export default function Container({
 
       <div className={`${font.className}`}>
         <div className="p-5 md:hidden">
-          <Bars3Icon onClick={() => setOpen(true)} className="h-6 w-6" />
+          <Bars3Icon onClick={() => setOpen(true)} className="h-8 w-8" />
         </div>
         <Nav open={open} setOpen={setOpen} />
         <div className="p-4 md:mt-20">{children}</div>
