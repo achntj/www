@@ -23,7 +23,7 @@ export default function Nav({
             dark:bg-[#101010]`}
         >
           <div>
-            <div className="sticky top-0 py-5 lg:hidden">
+            <div className="sticky top-0 pb-5 lg:hidden">
               <XMarkIcon onClick={() => setOpen(false)} className="h-8 w-8" />
             </div>
             <div
