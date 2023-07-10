@@ -9,6 +9,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/home",
+        destination: "/",
+        permanent: true,
+      },
+      {
         source: "/posts/:path*",
         destination: "/writing/:path*",
         permanent: true,

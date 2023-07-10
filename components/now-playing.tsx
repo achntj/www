@@ -93,5 +93,9 @@ export default function NowPlaying() {
       </>
     );
   }
-  return <Loading />;
+  return (
+    <div className="overflow-scroll pt-5 h-[84px] flex items-center">
+      <Loading />
+    </div>
+  );
 }

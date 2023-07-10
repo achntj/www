@@ -18,7 +18,7 @@ export default function ThemeSwitcher() {
         data-tooltip-content={`Switch to ${
           theme === "dark" ? "light" : "dark"
         } mode`}
-        data-tooltip-place="top"
+        data-tooltip-place="right"
         aria-label="Toggle Dark Mode"
         type="button"
         className="hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-full p-2"
@@ -38,7 +38,7 @@ export default function ThemeSwitcher() {
       </button>
       <Tooltip
         noArrow
-        className="!bg-white dark:!bg-neutral-900 hidden sm:block !p-1 !text-xs !text-neutral-800 dark:!text-neutral-200 border dark:border-neutral-900 -translate-x-4 -translate-y-2"
+        className="!bg-white dark:!bg-neutral-900 hidden sm:block !p-1 !text-xs !text-neutral-800 dark:!text-neutral-200 border dark:border-neutral-900"
         id="theme"
       />
     </>

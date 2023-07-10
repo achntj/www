@@ -1,17 +1,25 @@
-const { Client } = require("@notionhq/client");
+import { Client } from "@notionhq/client";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 });
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method !== "POST") {
     return res
       .status(405)
       .json({ message: `${req.method} requests are not allowed` });
   }
   try {
-    const { name, email, purpose, message } = JSON.parse(req.body);
+    const {
+      name,
+      email,
+      message,
+    }: { name: string; email: string; message: string } = JSON.parse(req.body);
     await notion.pages.create({
       parent: {
         database_id: process.env.NOTION_DATABASE_ID,

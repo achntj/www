@@ -30,7 +30,7 @@ export default function NavItems() {
           <CameraIcon className="h-6 w-6" />
         </NavLink>
           */}
-      <NavLink href="/Achintya_Resume.pdf" text="Resume">
+      <NavLink href="/Achintya_Resume.pdf" text="Résumé">
         <DocumentTextIcon className="h-6 w-6" />
       </NavLink>
       <NavLink href="/more" text="More">
@@ -43,9 +43,6 @@ export default function NavItems() {
       <NavLink href="/coursework" text="Coursework">
         <BookOpenIcon className="h-6 w-6" />
       </NavLink>
-      <div className="hidden md:block">
-        <ThemeSwitcher />
-      </div>
     </>
   );
 }

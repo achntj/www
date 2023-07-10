@@ -25,11 +25,12 @@ export default function Container({
       <HeadContainer title={title} description={description} image={image} />
 
       <div className={`${font.className}`}>
-        <div className="p-5 md:hidden">
+        <div className="p-5 lg:hidden">
           <Bars3Icon onClick={() => setOpen(true)} className="h-8 w-8" />
         </div>
         <Nav open={open} setOpen={setOpen} />
-        <div className="p-4 md:mt-20">{children}</div>
+        {/* Use ml-64 instead of mx-auto for a left aligned look */}
+        <div className="p-4 max-w-2xl mx-auto lg:mt-20">{children}</div>
       </div>
     </>
   );

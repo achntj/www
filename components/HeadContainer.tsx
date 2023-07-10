@@ -19,9 +19,9 @@ export default function HeadContainer({ ...pageProps }) {
       <title>{title}</title>
       <meta name="description" content={description} />
       {/* icons */}
-      <link rel="shortcut icon" href="/favicon.ico" />
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      <link rel="apple-touch-icon" href="/favicon.ico" />
+      <link rel="shortcut icon" href="/favicon.png" />
+      <link rel="icon" href="/favicon.png" sizes="any" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
       {/* <!-- Facebook Meta Tags --> */}
       <meta property="og:url" content="https://achintyajha.com/" />

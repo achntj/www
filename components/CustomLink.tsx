@@ -3,11 +3,9 @@ import { ReactNode } from "react";
 export default function CustomLink({
   children,
   href,
-  ext,
 }: {
   children: ReactNode;
   href: string;
-  ext?: boolean;
 }) {
   return (
     <>
