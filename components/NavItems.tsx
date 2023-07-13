@@ -33,8 +33,8 @@ export default function NavItems() {
       <NavLink href="/more" text="More">
         <ArchiveBoxIcon className="h-6 w-6" />
       </NavLink>
-      <NavLink href="/coursework" text="Coursework">
-        <BookOpenIcon className="h-6 w-6" />
+      <NavLink href="/contact" text="Contact">
+        <PaperAirplaneIcon className="h-6 w-6" />
       </NavLink>
     </>
   );
