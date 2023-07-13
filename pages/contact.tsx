@@ -54,8 +54,8 @@ export default function Contact() {
           draggable={false}
           pauseOnHover
         />
-        <form autoComplete="off" className="font-body" onSubmit={submitForm}>
-          <h3 className="mb-0">Send Me an Email</h3>
+        <form autoComplete="off" onSubmit={submitForm}>
+          <h3 className="mb-0">Email</h3>
           <a
             href="mailto:achntj@gmail.com"
             className="flex items-baseline group space-x-4 !text-black dark:!text-white italic text-xl sm:text-3xl font-title !underline underline-offset-4"
@@ -65,8 +65,18 @@ export default function Contact() {
               <ArrowUpRightIcon className="h-4 w-4 group-hover:-translate-y-2 group-hover:translate-x-2 transition duration-100 ease-in-out" />
             </span>
           </a>
-          <h3 className="my-2">OR</h3>
-          <h2 className="mb-2">Send a message!</h2>
+          <h3 className="mt-5">Résumé</h3>
+          <a
+            href="/Achintya_Resume.pdf"
+            className="flex items-baseline group space-x-4 !text-black dark:!text-white italic text-xl sm:text-3xl font-title !underline underline-offset-4"
+          >
+            <span>Open PDF</span>
+            <span>
+              <ArrowUpRightIcon className="h-4 w-4 group-hover:-translate-y-2 group-hover:translate-x-2 transition duration-100 ease-in-out" />
+            </span>
+          </a>
+          <h3 className="my-5">OR</h3>
+          <h2 className="mb-2">Send a message</h2>
           <label htmlFor="name">Full Name</label>
           <input
             type="text"

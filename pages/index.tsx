@@ -37,7 +37,8 @@ export default function Home() {
           >
             Tech Mahindra
           </a>{" "}
-          . Here’s my <CustomLink href="/Achintya_Resume">Résumé</CustomLink>
+          . Here’s my{" "}
+          <CustomLink href="/Achintya_Resume.pdf">Résumé</CustomLink>
         </p>
         <p>
           I am a sophomore at{" "}

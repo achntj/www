@@ -68,7 +68,7 @@ body {
 }
 
 label {
-  @apply font-bold text-base;
+  @apply text-base;
 }
 
 /* Chrome Autocomplete input bg fix */
