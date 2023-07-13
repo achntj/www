@@ -10,7 +10,7 @@ import { postFilePaths, POSTS_PATH } from "@/utils/mdxUtils";
 import Image from "next/image";
 import remarkGfm from "remark-gfm";
 import { useState } from "react";
-import { CheckIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Loading from "@/components/Loading";
 
 const components = {
@@ -20,6 +20,7 @@ const components = {
 export default function PostPage({ source, frontMatter }) {
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [disable, setDisable] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -35,10 +36,10 @@ export default function PostPage({ source, frontMatter }) {
     });
     if (res.status === 201) {
       setSuccess(true);
-      console.log("submitted");
-      setLoading(true);
+      setSubmitted(true);
     } else {
-      console.log("not submitted");
+      setSuccess(false);
+      setSubmitted(true);
     }
   };
   return (
@@ -80,7 +81,7 @@ export default function PostPage({ source, frontMatter }) {
         <span className="border-t flex-1"></span>
       </div>
       <div>
-        {!success ? (
+        {!submitted ? (
           <>
             {" "}
             <p>If you enjoyed reading this, subscribe to my newsletter!</p>
@@ -108,10 +109,23 @@ export default function PostPage({ source, frontMatter }) {
             </form>
           </>
         ) : (
-          <div className="rounded p-4 border-2 flex items-center space-x-5 border-emerald-400 dark:border-emerald-500 bg-emerald-100 dark:bg-emerald-200 text-emerald-600">
-            <CheckIcon className="h-6 w-6" />
-            <p>Thanks for subscribing!</p>
-          </div>
+          <>
+            {success ? (
+              <>
+                <div className="rounded p-4 border-2 flex items-center space-x-5 border-emerald-400 dark:border-emerald-500 bg-emerald-100 dark:bg-emerald-200 text-emerald-600">
+                  <CheckIcon className="h-6 w-6" />
+                  <p>Thanks for subscribing!</p>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="rounded p-4 border-2 flex items-center space-x-5 border-red-400 dark:border-red-500 bg-red-100 dark:bg-red-200 text-red-600">
+                  <XMarkIcon className="h-6 w-6" />
+                  <p>Something went wrong</p>
+                </div>
+              </>
+            )}
+          </>
         )}
       </div>
     </Container>
