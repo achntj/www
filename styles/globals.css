@@ -43,6 +43,9 @@ blockquote {
   @apply my-4 pl-4 border-l-4 opacity-75;
 }
 
+/* Easier to use :not(pre) > code */
+/* but it's less compatible */
+
 code {
   @apply bg-neutral-200 dark:bg-neutral-800 border rounded px-1;
 }
@@ -53,6 +56,26 @@ code::before {
 
 code::after {
   content: "`";
+}
+
+pre {
+  @apply p-2 rounded overflow-scroll;
+}
+
+pre code {
+  @apply border-0 rounded-none px-0 bg-transparent dark:bg-transparent;
+}
+
+pre > code {
+  display: grid;
+}
+
+pre code::before {
+  content: "";
+}
+
+pre code::after {
+  content: "";
 }
 
 /*Scrollbars*/

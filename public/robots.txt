@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://achintyajha.com/sitemap.xml

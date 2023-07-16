@@ -12,9 +12,11 @@ import remarkGfm from "remark-gfm";
 import { useState } from "react";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Loading from "@/components/Loading";
+import rehypePrettyCode from "rehype-pretty-code";
 
 const components = {
   a: CustomLink,
+  Image,
 };
 
 export default function PostPage({ source, frontMatter }) {
@@ -54,13 +56,15 @@ export default function PostPage({ source, frontMatter }) {
         </h3>
       </header>
       <div className="">
-        <Image
-          className="rounded-md"
-          src={`/_images/${frontMatter.cover}`}
-          height={256}
-          width={256}
-          alt={frontMatter.title}
-        />
+        {frontMatter.cover && (
+          <Image
+            className="rounded-md"
+            src={`/_images/${frontMatter.cover}`}
+            height={256}
+            width={256}
+            alt={frontMatter.title}
+          />
+        )}
         {frontMatter.coverSrc && (
           <span className="opacity-75 text-xs">
             Source: {frontMatter.coverSrc}
@@ -140,8 +144,15 @@ export const getStaticProps = async ({ params }) => {
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [remarkGfm],
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [
+        [
+          rehypePrettyCode,
+          {
+            theme: "one-dark-pro",
+          },
+        ],
+      ],
     },
     scope: data,
   });
