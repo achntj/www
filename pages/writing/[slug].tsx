@@ -98,7 +98,7 @@ export default function PostPage({ source, frontMatter }) {
                 type="email"
                 name="email"
                 required
-                className="border border-slate-100 rounded w-60 outline-none bg-transparent p-2"
+                className="border border-slate-200 rounded w-60 outline-none bg-transparent p-2"
                 pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
                 placeholder="Your email"
                 value={email}
