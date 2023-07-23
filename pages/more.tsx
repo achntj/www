@@ -67,13 +67,18 @@ export default function More() {
               <CustomLink href="https://www.typewolf.com/">Typewolf</CustomLink>
             </li>
             <li>
-              <CustomLink href="https://www.aldaily.com/">
-                Arts & Letters Daily
+              <CustomLink href="http://www.unnecessaryquotes.com/">
+                Unnecessary Quotes
               </CustomLink>
             </li>
             <li>
-              <CustomLink href="http://www.unnecessaryquotes.com/">
-                Unnecessary Quotes
+              <CustomLink href="https://onethingwell.org/">
+                One Thing Well
+              </CustomLink>
+            </li>
+            <li>
+              <CustomLink href="https://sabrinas.space/">
+                Sabrina’s Space
               </CustomLink>
             </li>
           </ul>
