@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function More() {
   return (
     <Container>
-      <div className="space-y-8">
+      <div className="space-y-8 leading-loose">
         <section>
           <h1>More</h1>
           <p>random stuff about me</p>

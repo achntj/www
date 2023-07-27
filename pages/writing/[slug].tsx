@@ -72,7 +72,7 @@ export default function PostPage({ source, frontMatter }) {
         )}
         <h1 className="my-5">{frontMatter.title}</h1>
       </div>
-      <main className="article space-y-4 leading-relaxed">
+      <main className="article space-y-4 leading-loose">
         <MDXRemote {...source} components={components} />
       </main>
       <p className="my-5 text-xs">
