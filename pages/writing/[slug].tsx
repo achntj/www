@@ -60,8 +60,8 @@ export default function PostPage({ source, frontMatter }) {
           <Image
             className="rounded-md"
             src={`/_images/${frontMatter.cover}`}
-            height={256}
-            width={256}
+            height={frontMatter.height}
+            width={frontMatter.width}
             alt={frontMatter.title}
           />
         )}
