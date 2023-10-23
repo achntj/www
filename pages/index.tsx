@@ -18,7 +18,7 @@ export default function Home() {
         a Software Engineer with a passion for creating impactful software and
         crafting beautiful web experiences.{" "}
         <p>
-          I am currently interning at{" "}
+          Recently, I was an intern at{" "}
           <a
             target="_blank"
             rel="noreferrer"
@@ -27,7 +27,7 @@ export default function Home() {
           >
             Nucleus Software
           </a>{" "}
-          , where I am working on financial infrastructure and applications.
+          , where I was working on financial infrastructure and applications.
           Previously, I was a Machine Learning Intern at{" "}
           <a
             target="_blank"
@@ -38,7 +38,7 @@ export default function Home() {
             Tech Mahindra
           </a>{" "}
           . Here’s my{" "}
-          <CustomLink href="/Achintya_Resume.pdf">Résumé</CustomLink>.
+          <CustomLink href="/Achintya_Jha_Resume.pdf">Résumé</CustomLink>.
         </p>
         <p>
           I am a sophomore at{" "}
