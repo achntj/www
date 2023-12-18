@@ -48,6 +48,7 @@ export default function Projects() {
     },
     {
       name: "Dynote",
+      hidden: true,
       url: "https://dynote.vercel.app/",
       desc: "A No-Code noting-taking app in your browser.",
       color: "#3486eb",
@@ -81,7 +82,8 @@ export default function Projects() {
       <div>
         {projects.map(
           (project) =>
-            project.url && (
+            project.url &&
+            !project.hidden && (
               <div key={project.name}>
                 <a target="_blank" rel="noreferrer" href={project.url}>
                   {/* tailwind custom bg class does not work when used with template literals. Workaround - Use html style for the moment*/}
