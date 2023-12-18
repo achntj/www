@@ -18,7 +18,9 @@ export default function Index({ posts }) {
           >
             <li className="space-x-2 py-2 border-t flex justify-between">
               <span>{post.frontmatter.title}</span>
-              <span>{post.frontmatter.date}</span>
+              <span className="hidden sm:inline-block">
+                {post.frontmatter.date}
+              </span>
             </li>
           </Link>
         ))}
