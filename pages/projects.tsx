@@ -19,10 +19,17 @@ export default function Projects() {
       stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
     },
     {
+      name: "Patrick Bateman Card Generator",
+      url: "https://bateman.achntj.com",
+      desc: "A business card generator in the style of Patrick Bateman (American Psycho)",
+      color: "#00b5ce",
+      stack: ["Next.JS", "TypeScript", "TailwindCSS"],
+    },
+    {
       name: "PetiteURL",
       url: "https://go.achntj.com/",
       desc: "Free to use URL Shortener with custom slugs.",
-      color: "#00b5ce",
+      color: "#985261",
       stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
     },
     {
