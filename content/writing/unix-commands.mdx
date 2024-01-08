@@ -43,3 +43,9 @@ diff -arq folder1 folder2 --exclude=node_modules
 ```bash
 echo "node_modules/" >> .gitignore && git rm -r --cached node_modules ; git status
 ```
+
+- Recursively find and delete files with "text" in their names:
+
+```bash
+find -type f -name '*text*' -delete
+```
