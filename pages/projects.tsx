@@ -41,7 +41,7 @@ export default function Projects() {
     },
     {
       name: "StuClan",
-      url: "https://talk.sentimate.org",
+      url: "https://community.sentimate.org",
       desc: "A micro-blogging web-app primarily designed for helping out students solve problems related to mental health and educational-stress.",
       color: "#18a0fb",
       stack: ["React", "Firebase"],
