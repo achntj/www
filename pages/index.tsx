@@ -1,7 +1,11 @@
 import Container from "@/components/Container";
 import NowPlaying from "@/components/now-playing";
 import CustomLink from "@/components/CustomLink";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowRightIcon,
+  DocumentTextIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,14 +13,28 @@ export default function Home() {
   return (
     <Container>
       <div className={`text-xl leading-10 mt-0 space-y-2 sm:space-y-4`}>
-        Hi! I am{" "}
-        <h1 className="text-xl inline-block font-normal text-neutral-800 dark:text-neutral-400">
-          Achintya
-          {/* SEO lol */}
-          <span className="hidden">Jha</span>,
-        </h1>{" "}
-        a Software Engineer with a passion for creating impactful software and
-        crafting beautiful web experiences.{" "}
+        <div className="leading-tight">
+          <h1 className="">Achintya Jha</h1>{" "}
+          <div className="text-neutral-700 dark:text-neutral-400 space-y-3 my-2">
+            <p className="flex items-center space-x-2">
+              <ArrowRightIcon className="h-4 w-4" />
+              <span>Software Developer, Data Analyst, Designer</span>
+            </p>
+            <p className="flex items-center space-x-2">
+              <ArrowRightIcon className="h-4 w-4" />
+              <span>CS + Econ @ ASU</span>
+            </p>
+            <p className="flex items-center space-x-2">
+              <ArrowRightIcon className="h-4 w-4" />
+              <a
+                className="underline underline-offset-4 decoration-dotted"
+                href="/Achintya_Jha_Resume.pdf"
+              >
+                View Résumé
+              </a>
+            </p>
+          </div>
+        </div>
         <p>
           Recently, I was an intern at{" "}
           <a
@@ -37,8 +55,7 @@ export default function Home() {
           >
             Tech Mahindra
           </a>{" "}
-          . Here’s my{" "}
-          <CustomLink href="/Achintya_Jha_Resume.pdf">Résumé</CustomLink>.
+          .
         </p>
         <p>
           I am a sophomore at{" "}
@@ -50,8 +67,13 @@ export default function Home() {
           >
             Arizona State University
           </a>
-          , pursuing a Bachelor of Science degree in Computer Science. Here’s my{" "}
+          , pursuing a Bachelor of Science degree in Computer Science and
+          Economics. Here’s my{" "}
           <CustomLink href="/coursework">coursework</CustomLink>.
+        </p>
+        <p>
+          My passion lies in harnessing technology to optimize financial
+          processes and drive innovation in the financial sector.
         </p>
         <Link href="/contact" className="flex items-center group space-x-2">
           <p>Get In Touch</p>

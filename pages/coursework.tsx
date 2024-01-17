@@ -11,11 +11,12 @@ export default function Uses() {
         <h3 className="my-5 text-2xl font-bold">Spring 24</h3>
         <ul className="pl-5 list-disc space-y-2">
           <li>CSE 310: Data Structures and Algorithms</li>
-          <li>CSE 301: Computing Ethics</li>
-          <li>CSE 230: Computer Org/Assemb Lang Prog</li>
+          <li>STP 420: Introductory Applied Statistic</li>
+          <li>CSE 230: Computer Org/Assembly Language Programming</li>
           <li>IEE 380: Prob & Stats Engr Prob Solving</li>
           <li>BIO 130: Intro to Environmental Science</li>
-          <li>EXW 101: Found of Health & Fitness Sci</li>
+          <li>ASB 210: Human Sexuality: Anthropological Perspectives</li>
+          <li>GPH 381: Geography of Natural Resources</li>
         </ul>
         <h3 className="my-5 text-2xl font-bold">Fall 23</h3>
         <ul className="pl-5 list-disc space-y-2">
