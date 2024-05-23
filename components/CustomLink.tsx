@@ -17,7 +17,7 @@ export default function CustomLink({
         <Link
           target="_blank"
           rel="noreferrer"
-          className="text-emerald-600 hover:text-emerald-800"
+          className="text-cyan-600 hover:text-cyan-800"
           href={href}
         >
           {children}
