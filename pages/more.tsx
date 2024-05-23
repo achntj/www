@@ -5,7 +5,6 @@ import NextJSLogo from "@/components/svg/NextJSLogo";
 import TailwindLogo from "@/components/svg/TailwindLogo";
 import VimLogo from "@/components/svg/VimLogo";
 import Tracks from "@/components/top-tracks";
-import Link from "next/link";
 
 export default function More() {
   return (
@@ -27,10 +26,10 @@ export default function More() {
             which is a place to write all your thoughts, accessible from
             anywhere. Apart from that, I do have a ton of other projects which
             you can find on <CustomLink href="/projects">/Projects</CustomLink>.
-            I started programming when I was 15, and this website has been a
-            part of my online identity since 2021, adapting and evolving through
-            various phases. Throughout its transformations, I’ve drawn
-            inspiration from various open-source web projects found on GitHub.{" "}
+          </p>
+          <p>
+            I also write movie reviews sometimes, you can find them{" "}
+            <CustomLink href="https://movies.achntj.com">here</CustomLink>.
           </p>
         </section>
         <section>
