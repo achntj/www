@@ -31,8 +31,8 @@ export default function Home() {
         </div>
         <p>
           Currently, I am a Machine Learning and Biotech intern at Epigeneres
-          Biotech, where I was working with Genetic Data and using technology
-          for Cancer Research applications. Previously, I was a Machine Learning
+          Biotech, where I am working with Genetic Data and using technology for
+          Cancer Research applications. Previously, I was a Machine Learning
           Intern at{" "}
           <a
             target="_blank"
