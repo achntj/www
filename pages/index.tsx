@@ -30,17 +30,10 @@ export default function Home() {
           </div>
         </div>
         <p>
-          Recently, I was an intern at{" "}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://nucleussoftware.com/"
-            className="whitespace-nowrap text-neutral-500 dark:text-neutral-300"
-          >
-            Nucleus Software
-          </a>{" "}
-          , where I was working on financial infrastructure and applications.
-          Previously, I was a Machine Learning Intern at{" "}
+          Currently, I am a Machine Learning and Biotech intern at Epigeneres
+          Biotech, where I was working with Genetic Data and using technology
+          for Cancer Research applications. Previously, I was a Machine Learning
+          Intern at{" "}
           <a
             target="_blank"
             rel="noreferrer"
@@ -52,7 +45,7 @@ export default function Home() {
           .
         </p>
         <p>
-          I am a sophomore at{" "}
+          I am an incoming junior at{" "}
           <a
             target="_blank"
             rel="noreferrer"

@@ -18,8 +18,8 @@ export default function More() {
           <h3>About Me</h3>
           <p>
             {" "}
-            I’m currently working on developing banking software at a fintech
-            company. My latest personal project is{" "}
+            I’m currently working on developing ML and data processing pipelines
+            at a Biotech company. My latest personal project is{" "}
             <CustomLink href="https://pandora.achntj.com/">
               Pandora’s Box
             </CustomLink>{" "}
