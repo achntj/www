@@ -13,10 +13,12 @@ export default function Uses() {
           <li>CSE 310: Data Structures and Algorithms</li>
           <li>STP 420: Introductory Applied Statistic</li>
           <li>CSE 230: Computer Org/Assembly Language Programming</li>
-          <li>IEE 380: Prob & Stats Engr Prob Solving</li>
+          <li>IEE 380: Prob {"&"} Stats Engr Prob Solving</li>
           <li>BIO 130: Intro to Environmental Science</li>
           <li>ASB 210: Human Sexuality: Anthropological Perspectives</li>
           <li>GPH 381: Geography of Natural Resources</li>
+          <li>ECN 211: Macroeconomic Principles</li>
+          <li>ECN 212: Microeconomic Principles</li>
         </ul>
         <h3 className="my-5 text-2xl font-bold">Fall 23</h3>
         <ul className="pl-5 list-disc space-y-2">
