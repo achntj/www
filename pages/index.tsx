@@ -1,12 +1,6 @@
 import Container from "@/components/Container";
-import NowPlaying from "@/components/now-playing";
 import CustomLink from "@/components/CustomLink";
-import {
-  ArrowRightIcon,
-  DocumentTextIcon,
-  MapPinIcon,
-} from "@heroicons/react/24/outline";
-import Image from "next/image";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 export default function Home() {
