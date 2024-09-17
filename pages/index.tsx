@@ -45,7 +45,7 @@ export default function Home() {
           .
         </p>
         <p>
-          I am an incoming junior at{" "}
+          I am a junior at{" "}
           <a
             target="_blank"
             rel="noreferrer"
