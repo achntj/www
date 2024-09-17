@@ -11,7 +11,7 @@ export default function Uses() {
 
         <h3 className="my-5 text-2xl font-bold">Fall 24</h3>
         <ul className="pl-5 list-disc space-y-2">
-          <li>CSE 360: Intro to Software Engineering</li>
+          <li>CSE 360: Introduction to Software Engineering</li>
           <li>CSE 365: Information Assurance</li>
           <li>CSE 355: Introduction to Theoretical Computer Science</li>
           <li>CSE 301: Computing Ethics</li>
