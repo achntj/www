@@ -12,7 +12,7 @@ export default function Projects() {
       slug: "portfolio-optimizer",
     },
     {
-      name: "Depression Detection with Machine Learning",
+      name: "Depression Detection Model",
       url: "https://sentimate.org",
       desc: "A Natural Language Processing and Machine Learning model that is capable of using text for detecting depression.",
       color: "#1bc47d",
