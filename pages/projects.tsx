@@ -1,16 +1,32 @@
-import Link from "next/link";
 import Container from "@/components/Container";
 import { motion } from "framer-motion";
 
 export default function Projects() {
   const projects = [
     {
-      name: "SentiMate",
-      url: "https://sentimate.org",
-      desc: "A Natural Language Processing and Machine Learning model that is capable of using text for detecting depression. (Now Archived)",
+      name: "Portfolio Optimizer & Risk Assessment",
+      url: "https://optimize-portfolio.streamlit.app",
+      desc: "A web application that optimizes investment portfolios using Markowitz Portfolio Theory, the Black-Litterman Model, and Monte Carlo simulations, featuring real-time visualizations and risk assessments.",
       color: "#7b61ff",
-      stack: ["Flask", "SciKit Learn", "Pandas", "SCSS", "Jekyll"],
+      stack: ["Python", "Matplotlib", "Pandas"],
+      slug: "portfolio-optimizer",
     },
+    {
+      name: "Depression Detection with Machine Learning",
+      url: "https://sentimate.org",
+      desc: "A Natural Language Processing and Machine Learning model that is capable of using text for detecting depression.",
+      color: "#1bc47d",
+      stack: ["Flask", "SciKit Learn", "Pandas", "SCSS", "Jekyll"],
+      slug: "sentimate",
+    },
+    {
+      name: "Auction",
+      url: "https://github.com/achntj/auctions",
+      desc: "An innovative auction web application that leverages real-time bidding analytics ",
+      color: "#18a0fb",
+      stack: ["Next.js", "PostgreSQL", "JavaScript", "HTML", "CSS"],
+    },
+
     {
       name: "Pandora’s Box",
       url: "https://pandora.achntj.com",
