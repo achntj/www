@@ -9,6 +9,16 @@ export default function Uses() {
           A list of courses I’m currently taking (and have taken in the past).
         </p>
 
+        <h3 className="my-5 text-2xl font-bold">Spring 25</h3>
+        <ul className="pl-5 list-disc space-y-2">
+          <li>CSE 330: Operating Systems</li>
+          <li>CSE 340: Principles of Programming Language</li>
+          <li>CSE 445: Distributed Software Developmt</li>
+          <li>ECN 313: Intermediate Macroeconomic Theory</li>
+          <li>ECN 494: Financial Economics: A High-level Introduction</li>
+          <li>MAT 494: Computational Methods for Image Processing</li>
+          <li>MAT 343: Applied Linear Algebra</li>
+        </ul>
         <h3 className="my-5 text-2xl font-bold">Fall 24</h3>
         <ul className="pl-5 list-disc space-y-2">
           <li>CSE 360: Introduction to Software Engineering</li>
