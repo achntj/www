@@ -5,10 +5,11 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <Container>
+    <Container title="Home">
       <div className={`text-xl leading-10 mt-0 space-y-2 sm:space-y-4`}>
         <div className="leading-tight">
-          <h1 className="">Achintya Jha</h1>{" "}
+          <h1 className="">Achintya Jha{" "} 
+          </h1>{" "}
           <div className="text-neutral-700 dark:text-neutral-400 space-y-3 my-2">
             <p className="flex items-center space-x-2">
               <ArrowRightIcon className="h-4 w-4" />

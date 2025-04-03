@@ -1,34 +1,20 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
 
-export default function NavLink({
-  href,
-  children,
-  text,
-}: {
-  href: string;
-  children: ReactNode;
-  text?: string;
-}) {
+export default function NavLink({ children, href, name }) {
   const router = useRouter();
   const isActive = router.asPath === href;
-
   return (
-    <>
-      <Link
+    <Link passHref href={href}>
+      <div
+        title={name}
         className={`${
-          isActive ? "font-bold text-black dark:text-neutral-200" : ""
-        }
-        lg:w-fit
-        `}
-        href={href}
+          isActive ? "underline underline-offset-4" : ""
+        } navLink flex items-center space-x-4 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-lg p-2`}
       >
-        <div className="flex items-center space-x-4 cursor-pointer rounded-lg p-2 lg:space-x-0">
-          <div className="lg:hidden">{children}</div>
-          <span className="">{text}</span>
-        </div>
-      </Link>
-    </>
+        {children}
+        <p className="block">{name}</p>
+      </div>
+    </Link>
   );
 }

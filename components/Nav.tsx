@@ -1,10 +1,9 @@
 import ThemeSwitcher from "./ThemeSwitcher";
-import { Dispatch, SetStateAction } from "react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 import NavItems from "./NavItems";
-import NavLink from "./NavLink";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Dispatch, SetStateAction } from "react";
 
-export default function Nav({
+function Nav({
   open,
   setOpen,
 }: {
@@ -12,33 +11,26 @@ export default function Nav({
   setOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
-    <>
-      <div>
-        <nav
-          className={`${
-            open ? "" : "lg:translate-x-0 -translate-x-full"
-          } nav justify-between flex flex-col transition-transform overflow-x-hidden z-10 fixed 
-            bottom-0 top-0 p-5 w-full lg:w-fit h-full overflow-scroll 
-            lg:bg-transparent lg:dark:bg-transparent bg-neutral-100 
-            dark:bg-[#101010]`}
-        >
-          <div>
-            <div className="sticky top-0 pb-5 lg:hidden">
-              <XMarkIcon onClick={() => setOpen(false)} className="h-8 w-8" />
-            </div>
-            <div
-              onClick={() => setOpen(false)}
-              className="transition-none space-y-6 flex flex-col lg:text-2xl 
-              text-3xl text-gray-700 dark:text-neutral-400 antialiased lg:pt-20"
-            >
-              <NavItems />
-            </div>
-          </div>
-          <div className="">
-            <ThemeSwitcher />
-          </div>
-        </nav>
+    <div
+      className={`${
+        open ? "" : "sm:translate-x-0 -translate-x-full"
+      } transition-transform justify-around overflow-x-hidden space-x-0 z-10 absolute bottom-0 top-0 flex flex-col sm:pt-10 px-5 w-64 h-full overflow-scroll bg-white sm:bg-transparent sm:dark:bg-transparent dark:bg-black`}
+    >
+      <div className="sticky top-0 py-5 sm:hidden bg-white dark:bg-black">
+        <XMarkIcon onClick={() => setOpen(false)} className="h-6 w-6" />
       </div>
-    </>
+      <div
+        onClick={() => setOpen(false)}
+        className="transition-none space-x-0 flex flex-col text-sm text-gray-700 dark:text-neutral-400 antialiased"
+      >
+        <NavItems />
+      </div>
+
+      <div className="flex sm:items-center sm:justify-center my-5">
+        <ThemeSwitcher />
+      </div>
+    </div>
   );
 }
+
+export default Nav;
