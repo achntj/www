@@ -67,38 +67,6 @@ export default function Home() {
           <p>Get In Touch</p>
           <ArrowRightIcon className="group-hover:translate-x-4 transition h-6 w-6" />{" "}
         </Link>
-        <section className="">
-          <div className="sm:flex justify-between">
-            <ul className="text-md">
-              <li>
-                <CustomLink href="https://github.com/achntj">GitHub</CustomLink>
-              </li>
-              <li>
-                <CustomLink href="https://linkedin.com/in/achntj">
-                  LinkedIn
-                </CustomLink>
-              </li>
-              <li>
-                <CustomLink href="https://twitter.com/achntj">
-                  Twitter
-                </CustomLink>
-              </li>
-            </ul>
-            <ul className="flex items-center">
-              <li>
-                <a
-                  className="bg-amber-200 dark:bg-neutral-800 sm:p-2 hover:underline"
-                  href="mailto:achntj@gmail.com"
-                >
-                  <span>Email</span>{" "}
-                  <span className="opacity-70 group-hover:underline">
-                    achntj@gmail.com
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
       </div>
     </Container>
   );
