@@ -23,7 +23,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
       </Head>
-      <body className="dark:bg-black bg-[#D2D6B2]">
+      <body className="dark:bg-black bg-[#C4C9A2]">
         <Main />
         <NextScript />
       </body>

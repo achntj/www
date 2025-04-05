@@ -24,7 +24,7 @@ export default function Socials() {
           <span>Twitter</span>
         </div>
       </Link>
-      <Link href="https://linkedin.com/in/achintyajha">
+      <Link href="https://linkedin.com/in/achntj">
         <div
           title="LinkedIn Profile"
           className="flex items-center space-x-2 cursor-pointer hover:underline underline-offset-4"
@@ -67,7 +67,6 @@ export default function Socials() {
           <span>GitHub</span>
         </div>
       </Link>
-      <div>@achntj, everywhere else</div>
     </>
   );
 }

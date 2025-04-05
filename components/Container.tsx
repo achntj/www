@@ -1,7 +1,6 @@
 import HeadContainer from "./HeadContainer";
-import { Inter } from "next/font/google"
+import Image from "next/image";
 
-const font = Inter({ subsets: ["latin"] })
 
 export default function Container({ children, ...pageProps }) {
   return (
@@ -11,11 +10,19 @@ export default function Container({ children, ...pageProps }) {
         description={pageProps.description}
         image={pageProps.image}
       />
-      <div className={`${font.className} flex flex-col sm:ml-64 px-8 sm:px-0 min-h-screen max-h-screen overflow-y-auto`}>
-        <div className="sm:overflow-scroll pb-40 sm:pb-20 text-gray-700 flex-grow dark:text-[#a0a0a0] sm:m-8 sm:p-4 sm:rounded-lg sm:dark:bg-neutral-900 sm:bg-[#FBF5E2] dark:bg-opacity-100 sm:border-2 border-[#E2B58A]">
-          <div className="max-w-[700px] mx-auto sm:pt-10">{children}</div>
-        </div>
+      <div className="relative h-full w-full">
+      {/* Decorative images that stay fixed */}
+      <div className="hidden xl:block absolute top-0 left-0 z-10 pointer-events-none">
+        <Image src="/vines.png" alt="Decorative flower" width={100} height={100} className="opacity-80" />
       </div>
+
+      <div className="hidden xl:block absolute bottom-0 right-0 z-10 pointer-events-none">
+        <Image src="/tree.png" alt="Decorative tree" width={100} height={100} className="opacity-80" />
+      </div>
+
+      {/* Scrollable content */}
+      <div className="h-full overflow-auto max-w-[700px] mx-auto py-4">{children}</div>
+    </div>
     </>
   );
 }

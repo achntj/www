@@ -10,6 +10,9 @@ module.exports = {
       "2xl": "1536px",
     },
   },
+  fontFamily: {
+      serif: ["Georgia", "Cambria", "Times New Roman", "Times", "serif"],
+  },
   darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
