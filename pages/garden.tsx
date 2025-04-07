@@ -121,12 +121,6 @@ export default function Garden() {
           </p>
         </div>
       </section>
-
-      <footer className="mt-16 text-sm text-gray-500 border-t border-gray-300 pt-6">
-        <p>
-          “Stillness is not the absence of motion, but the presence of grace.” — digital garden cultivated with care 🌱
-        </p>
-      </footer>
     </Container>
   );
 }
