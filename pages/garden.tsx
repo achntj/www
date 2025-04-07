@@ -21,7 +21,7 @@ export default function Garden() {
       <h2 className="text-2xl font-semibold mt-8 mb-3">🌿 Recommended Notes</h2>
       <ul className="list-disc pl-6 space-y-2">
         <li>
-          <Link href="/writing/retrotech-markets" className="text-blue-700 hover:underline">
+          <Link href="/writing/retrotech-market" className="text-blue-700 hover:underline">
             The Niche Market for Old Technology
           </Link>
         </li>
