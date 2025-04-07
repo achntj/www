@@ -13,10 +13,12 @@ import { useState } from "react";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Loading from "@/components/Loading";
 import rehypePrettyCode from "rehype-pretty-code";
+import Caption from "@/components/Caption"
 
 const components = {
   a: CustomLink,
   Image,
+  Caption
 };
 
 export default function PostPage({ source, frontMatter }) {
