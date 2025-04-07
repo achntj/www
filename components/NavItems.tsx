@@ -1,4 +1,5 @@
 import NavLink from "./NavLink";
+import Link from "next/link";
 import {
   ChatBubbleLeftEllipsisIcon,
   CpuChipIcon,
@@ -20,11 +21,10 @@ export default function NavItems() {
         <NavLink href="/" name="Home" />
         <NavLink href="/projects" name="Projects" />
         <NavLink href="/contact" name="Contact" />
-        <h3 className="font-bold text-gray-700 text-lg px-2 block !my-4">
-        Digital Garden
-        </h3>
+        <div className="!my-4">
+        <NavLink href="/garden" name="Digital Garden" />
+        </div>
         <NavLink href="/writing" name="Writing" />
-        <NavLink href="/more" name="More" />
       </div>
 
 
