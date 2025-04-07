@@ -16,7 +16,7 @@ export default function Home() {
         <p className=" text-[#7B6F63]">Welcome to my little digital garden. <span className="text-[#5a7d64] font-light">庭園</span>
  </p>
 
-        <blockquote className="border-l-4 border-[#C3D2B3] pl-4 text-lg md:text-xl italic text-[#4F4F4F]">
+        <blockquote className="border-l-4 border-[#C3D2B3] pl-4 text-lg md:text-xl italic">
           Small thoughts, slowly gathered.
           <br />
          Left here like stones in a stream.
