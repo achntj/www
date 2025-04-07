@@ -33,7 +33,9 @@ export default function Home() {
           <p>
             Recently, I interned at Epigeneres Biotech, where I worked with
             genetic data to support cancer research — applying machine learning
-            and data science to problems at the edge of biotech.
+            and data science to problems at the edge of biotech. Here's my{" "}
+            <CustomLink href="/Achintya_Jha_Resume.pdf">Resume</CustomLink> and
+            {" "}<CustomLink href="/coursework">Coursework</CustomLink>.
           </p>
           <p>
             This site holds the in-between: notes I’m shaping, ideas I’m
