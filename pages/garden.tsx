@@ -49,10 +49,10 @@ export default function Garden() {
           </p>
         </div>
         <div>
-          <p>I made this spotify tracker, that tracks last played and top tracks, 
-          back in high school and I've been planning to remove it from here for 
-          3 years now.</p>
-      <br />
+          <p>I built this Spotify tracker in high school to track my last played 
+          and top tracks—been meaning to take it down for about three years now.
+          </p>
+          <br />
           <NowPlaying />
           <p className="mt-8 mb-5">
             My monthly top 10, pulled live from Spotify.
