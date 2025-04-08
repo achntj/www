@@ -1,21 +1,48 @@
 // components/Base.tsx
-import { useState } from "react";
-import Nav from "./Nav";
+import { useState, useEffect, useRef } from "react"
+import Nav from "./Nav"
 import { Noto_Serif } from "next/font/google"
+import Image from "next/image"
+import { useRouter } from "next/router"
 
-const font = Noto_Serif({ subsets: ["latin"], weight: ['400'] })
+const font = Noto_Serif({ subsets: ["latin"], weight: ["400"] })
 
 export default function Base({ children, ...pageProps }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
+  const router = useRouter()
+  const mainRef = useRef(null)
+
+  // Reset scroll position when route changes
+  useEffect(() => {
+    if (mainRef.current) {
+      mainRef.current.scrollTop = 0
+    }
+  }, [router.asPath])
+
   return (
     <>
-      <div className={`${font.className} min-h-screen text-gray-700 flex-grow dark:text-[#a0a0a0] md:flex items-center justify-center md:p-4`}>
+      <div
+        className={`${font.className} min-h-screen text-gray-700 flex-grow dark:text-[#a0a0a0] md:flex items-center justify-center md:p-4`}
+      >
+        <div className="w-full max-w-7xl md:h-[80vh] bg-[#FCF6EA] dark:bg-neutral-900 md:border-2 border-[#808F66] md:rounded-2xl overflow-hidden shadow-lg flex relative">
+          <div className="hidden xl:block absolute top-0 left-56 z-10 pointer-events-none">
+            <Image src="/vines.png" alt="Decorative flower" width={100} height={100} className="opacity-80" />
+          </div>
 
-        <div className="w-full max-w-7xl md:h-[80vh] bg-[#FCF6EA] dark:bg-neutral-900 md:border-2 border-[#808F66] md:rounded-2xl overflow-hidden shadow-lg flex">
+          <div className="hidden xl:block absolute bottom-0 right-0 z-10 pointer-events-none">
+            <Image src="/tree.png" alt="Decorative tree" width={100} height={100} className="opacity-80" />
+          </div>
+
           <Nav open={open} setOpen={setOpen} />
-          <main className="flex-1 p-10 text-lg md:text-lg overflow-auto md:border-l-2 border-[#808F66] mt-10 md:mt-0 min-h-screen md:min-h-full">{children}</main>
+          <main
+            ref={mainRef}
+            className="flex-1 p-10 text-lg md:text-lg overflow-auto md:border-l-2 border-[#808F66] mt-10 md:mt-0 min-h-screen md:min-h-full"
+          >
+            {children}
+          </main>
         </div>
       </div>
-      </>
-  );
+    </>
+  )
 }
+
