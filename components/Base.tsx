@@ -26,7 +26,7 @@ export default function Base({ children, ...pageProps }) {
       >
         <div className="w-full max-w-7xl md:h-[80vh] bg-[#FCF6EA] dark:bg-neutral-900 md:border-2 border-[#808F66] md:rounded-2xl overflow-hidden shadow-lg flex relative">
           <div className="hidden xl:block absolute top-0 left-56 z-10 pointer-events-none">
-            <Image src="/vines.png" alt="Decorative flower" width={100} height={100} className="opacity-80" />
+            <Image src="/flower.png" alt="Decorative flower" width={100} height={100} className="opacity-80" />
           </div>
 
           <div className="hidden xl:block absolute bottom-0 right-0 z-10 pointer-events-none">
