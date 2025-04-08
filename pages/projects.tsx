@@ -4,6 +4,15 @@ import { motion } from "framer-motion";
 export default function Projects() {
   const projects = [
     {
+      name: "Statistical Arbitrage Engine",
+      url: "https://github.com/achntj/statistical-arbitrage",
+      desc: "A multi-phase trading strategy using K-Means clustering, cointegration analysis, and machine learning models to identify and exploit mean-reverting asset pairs with risk management.",
+      color: "#2e8b57",
+      stack: ["Python", "scikit-learn", "Pandas", "Statsmodels"],
+      slug: "statistical-arbitrage",
+    },
+
+    {
       name: "Portfolio Optimizer & Risk Assessment",
       url: "https://optimize-portfolio.streamlit.app",
       desc: "A web application that optimizes investment portfolios using Markowitz Portfolio Theory, the Black-Litterman Model, and Monte Carlo simulations, featuring real-time visualizations and risk assessments.",
@@ -13,7 +22,7 @@ export default function Projects() {
     },
     {
       name: "Depression Detection Model",
-      url: "https://sentimate.org",
+      url: "https://sentimate.vercel.app",
       desc: "A Natural Language Processing and Machine Learning model that is capable of using text for detecting depression.",
       color: "#1bc47d",
       stack: ["Flask", "SciKit Learn", "Pandas", "SCSS", "Jekyll"],
@@ -21,29 +30,28 @@ export default function Projects() {
     },
     {
       name: "Auction",
-      url: "https://github.com/achntj/auctions",
+      url: "https://github.com/achntj/auction",
       desc: "An innovative auction web application that leverages real-time bidding analytics ",
       color: "#18a0fb",
       stack: ["Next.js", "PostgreSQL", "JavaScript", "HTML", "CSS"],
     },
-
-    {
-      name: "Pandora’s Box",
-      url: "https://pandora.achntj.com",
-      desc: "A web data store for all your thoughts, pending tasks, and ideas.",
-      color: "#f24822",
-      stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
-    },
     {
       name: "Patrick Bateman Card Generator",
-      url: "https://bateman.achntj.com",
+      url: "https://bateman.achintyajha.com",
       desc: "A business card generator in the style of Patrick Bateman (American Psycho)",
       color: "#00b5ce",
       stack: ["Next.JS", "TypeScript", "TailwindCSS"],
     },
     {
+      name: "Pandora’s Box",
+      url: "https://github.com/achntj/pandora",
+      desc: "A web data store for all your thoughts, pending tasks, and ideas.",
+      color: "#f24822",
+      stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
+    },
+    {
       name: "PetiteURL",
-      url: "https://go.achntj.com/",
+      url: "https://go.achintyajha.com/",
       desc: "Free to use URL Shortener with custom slugs.",
       color: "#985261",
       stack: ["Next.JS", "TypeScript", "PostGres", "Prisma", "TailwindCSS"],
@@ -57,7 +65,7 @@ export default function Projects() {
     },
     {
       name: "StuClan",
-      url: "https://community.sentimate.org",
+      url: "https://stu-clan.web.app",
       desc: "A micro-blogging web-app primarily designed for helping out students solve problems related to mental health and educational-stress.",
       color: "#18a0fb",
       stack: ["React", "Firebase"],
@@ -177,9 +185,10 @@ export default function Projects() {
                   </motion.div>
                 </a>
               </div>
-            )
+            ),
         )}
       </div>
     </Container>
   );
 }
+
