@@ -1,38 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
 <url>
   <loc>https://achintyajha.com/</loc>
-  <lastmod>2023-07-08</lastmod>
+  <lastmod>2025-04-09T04:05:31+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://achintyajha.com/projects</loc>
-  <lastmod>2023-07-08</lastmod>
-</url>
-<url>
-  <loc>https://achintyajha.com/writing</loc>
-  <lastmod>2023-07-08</lastmod>
-</url>
-<url>
-  <loc>https://achintyajha.com/Achintya_Resume.pdf</loc>
-  <lastmod>2023-07-08</lastmod>
-</url>
-<url>
-  <loc>https://achintyajha.com/more</loc>
-  <lastmod>2023-07-08</lastmod>
+  <lastmod>2025-04-09T04:05:32+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://achintyajha.com/contact</loc>
-  <lastmod>2023-07-08</lastmod>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://achintyajha.com/garden</loc>
+  <lastmod>2025-04-09T04:05:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://achintyajha.com/writing</loc>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://achintyajha.com/coursework</loc>
-  <lastmod>2023-07-08</lastmod>
+  <lastmod>2025-04-09T04:05:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://achintyajha.com/writing/retrotech-market</loc>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://achintyajha.com/writing/old-tech</loc>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://achintyajha.com/writing/sunk-costs</loc>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://achintyajha.com/writing/unix-commands</loc>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://achintyajha.com/writing/shell-scripting</loc>
-  <lastmod>2023-07-08</lastmod>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://achintyajha.com/writing/ai-economy</loc>
-  <lastmod>2023-07-08</lastmod>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
+<url>
+  <loc>https://achintyajha.com/writing/contentlayer</loc>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://achintyajha.com/writing/idle-custom-themes</loc>
+  <lastmod>2025-04-09T04:05:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
