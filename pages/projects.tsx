@@ -123,7 +123,7 @@ export default function Projects() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="flex flex-col justify-between p-5 my-2 rounded-[40px] mb-8 group dark:!bg-neutral-900"
+                    className="flex flex-col justify-between p-5 my-2 rounded-[40px] mb-8 group dark:!bg-neutral-800"
                     style={{ backgroundColor: `${project.color}` }}
                   >
                     <h3 className={"text-white"}>
