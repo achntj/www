@@ -70,10 +70,10 @@ export default function Garden() {
               </CustomLink>
             </li>
             <li>
-              <CustomLink href="https://www.my90stv.com/">My 90s TV</CustomLink>
+              <CustomLink href="https://90s.myretrotvs.com">My 90s TV</CustomLink>
             </li>
             <li>
-              <CustomLink href="https://www.my90stv.com/">
+              <CustomLink href="https://kk.org/thetechnium/103-bits-of-advice-i-wish-i-had-known/">
                 103 Bits of Advice I Wish I Had Known
               </CustomLink>
             </li>
