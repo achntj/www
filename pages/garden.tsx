@@ -13,9 +13,7 @@ export default function Garden() {
       <h1 className="text-4xl md:text-5xl font-bold mb-4">🌸 Digital Garden</h1>
 
       <p className="mb-4">
-        Welcome to my living notebook — a space for thoughts-in-progress, research trails,
-        and half-baked ideas. This is not a blog; it’s more like a sandbox or a bonsai collection
-        of digital notes.
+        Welcome to my working notebook—part essay stash, part odds-and-ends drawer, plus this month’s Spotify top 10.       
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-3">🌿 Recommended Notes</h2>
