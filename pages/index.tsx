@@ -34,14 +34,16 @@ export default function Home() {
             Recently, I interned at Epigeneres Biotech, where I worked with
             genetic data to support cancer research — applying machine learning
             and data science to problems in biotech. Here's my{" "}
-            <CustomLink href="/Achintya_Jha_Resume.pdf">Resume</CustomLink> and
-            {" "}<CustomLink href="/coursework">Coursework</CustomLink>.
+            <CustomLink href="/Achintya_Jha_Resume.pdf">Resume</CustomLink> and{" "}
+            <CustomLink href="/coursework">Coursework</CustomLink>.
           </p>
           <p>
-            My most recent research was on <CustomLink href="/MAT_494__Report.pdf">
-            Low Light Image Enhancement</CustomLink> under Professor Malena 
-            Espanol. We achieved great results with a combination of classical
-            and deep learning methods for enhancement.
+            My most recent research was on{" "}
+            <CustomLink href="/MAT_494__Report.pdf">
+              Low Light Image Enhancement
+            </CustomLink>{" "}
+            under Professor Malena Espanol. We achieved great results with a
+            combination of classical and deep learning methods for enhancement.
           </p>
           <p>
             This site holds the in-between: notes I’m shaping, ideas I’m
@@ -52,4 +54,3 @@ export default function Home() {
     </Container>
   );
 }
-
