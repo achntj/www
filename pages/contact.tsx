@@ -67,7 +67,7 @@ export default function Contact() {
           </a>
           <h3 className="mt-5">Résumé</h3>
           <a
-            href="/Achintya_Jha_Resume.pdf"
+            href="/Achintya_Resume_Web.pdf"
             className="flex items-baseline group space-x-4 !text-black dark:!text-white italic text-xl sm:text-3xl font-title !underline underline-offset-4"
           >
             <span>Open PDF</span>
