@@ -229,7 +229,7 @@ export default function Projects() {
               key={c}
               onClick={() => setActive(c)}
               className={[
-                "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm transition",
+                "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm",
                 isActive
                   ? "bg-emerald-500 text-emerald-50 border-emerald-700"
                   : "bg-stone-50 dark:bg-stone-900 border-stone-300 dark:border-stone-700 hover:bg-emerald-50/70 dark:hover:bg-stone-800",
@@ -260,7 +260,7 @@ export default function Projects() {
               className={[
                 "group relative overflow-hidden rounded-2xl border p-5 md:p-6 h-full",
                 "bg-[var(--card-bg)] border-[var(--card-border)]",
-                "hover:-translate-y-0.5 transition",
+                "hover:-translate-y-0.5",
                 "dark:bg-stone-900 dark:border-stone-700",
               ].join(" ")}
             >
@@ -279,7 +279,7 @@ export default function Projects() {
                     </span>
                   </div>
                 </div>
-                <div className="opacity-70 group-hover:opacity-100 transition text-stone-700 dark:text-stone-200">
+                <div className="opacity-70 group-hover:opacity-100 text-stone-700 dark:text-stone-200">
                   <ArrowUpRightIcon className="h-5 w-5" />
                 </div>
               </div>
