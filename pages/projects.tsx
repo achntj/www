@@ -1,5 +1,5 @@
 import Container from "@/components/Container";
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowUpRightIcon,
@@ -7,29 +7,25 @@ import {
   ChartBarIcon,
   CpuChipIcon,
   WrenchScrewdriverIcon,
-  SparklesIcon,
+  PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
-import type { CSSProperties } from "react";
-
-// --- Data --------------------------------------------------------------------
 
 type Project = {
   name: string;
   url: string;
   desc: string;
-  color: string; // unique accent per project (no duplicates)
+  color: string;
   stack: string[];
   slug?: string;
-  category: "Full-Stack" | "Quant" | "ML" | "Tools" | "Fun";
+  category: "Full-Stack" | "Quant" | "ML" | "Tools" | "Whimsy";
 };
 
 const projects: Project[] = [
-  // Full-Stack Apps (unique colors)
   {
     name: "AudioCNN — ResNet Classifier & Visualizer",
     url: "https://cnn-audio-vis.vercel.app/",
     desc: "Train & visualize CNNs on audio.",
-    color: "#F59E0B", // amber-500
+    color: "#4F46E5",
     stack: ["PyTorch", "FastAPI", "Next.js"],
     slug: "audiocnn",
     category: "Full-Stack",
@@ -38,7 +34,7 @@ const projects: Project[] = [
     name: "Multi-Agent Reasoning",
     url: "https://github.com/achntj/multi-agent-reasoning",
     desc: "Agent workflows for strategic debate & tool use.",
-    color: "#D946EF", // fuchsia-500
+    color: "#D946EF",
     stack: ["FastAPI", "Streamlit", "Ollama"],
     slug: "multi-agent-reasoning",
     category: "Full-Stack",
@@ -47,7 +43,7 @@ const projects: Project[] = [
     name: "Value Finder",
     url: "https://github.com/achntj/value-finder",
     desc: "Surfaces high-signal links from noisy sources. Learns preferences.",
-    color: "#EF4444", // red-500
+    color: "#EF4444",
     stack: ["Next.js", "TypeScript", "sklearn"],
     slug: "value-finder",
     category: "Full-Stack",
@@ -56,7 +52,7 @@ const projects: Project[] = [
     name: "Slimlist",
     url: "https://github.com/achntj/slimlist",
     desc: "Local-first productivity suite.",
-    color: "#2563EB", // blue-600
+    color: "#2563EB",
     stack: ["Next.js", "Tailwind", "SQLite"],
     slug: "slimlist",
     category: "Full-Stack",
@@ -65,18 +61,16 @@ const projects: Project[] = [
     name: "AppTrack",
     url: "https://github.com/achntj/apptrack",
     desc: "Lightweight job application tracker.",
-    color: "#16A34A", // green-600
+    color: "#16A34A",
     stack: ["Next.js", "Prisma", "SQLite"],
     slug: "apptrack",
     category: "Full-Stack",
   },
-
-  // Quantitative Finance
   {
     name: "Statistical Arbitrage Engine",
     url: "https://github.com/achntj/statistical-arbitrage",
     desc: "Clustering + cointegration pair trading with backtests.",
-    color: "#10B981", // emerald-500
+    color: "#10B981",
     stack: ["Python", "scikit-learn", "statsmodels", "pandas"],
     slug: "statistical-arbitrage",
     category: "Quant",
@@ -85,18 +79,16 @@ const projects: Project[] = [
     name: "Quantitative Strategies — Portfolio Optimization",
     url: "https://github.com/achntj/Quantitative-Strategies",
     desc: "MPT, risk budgeting, and Monte Carlo tooling.",
-    color: "#A855F7", // violet-500
+    color: "#A855F7",
     stack: ["Python", "NumPy", "Matplotlib", "pandas"],
     slug: "quantitative-strategies",
     category: "Quant",
   },
-
-  // Machine Learning
   {
     name: "Deep Learning from Scratch",
     url: "https://github.com/achntj/deep-learning-from-scratch",
     desc: "Minimal NumPy implementations of core DL components.",
-    color: "#06B6D4", // cyan-500
+    color: "#06B6D4",
     stack: ["Python", "NumPy"],
     slug: "dlfs",
     category: "ML",
@@ -105,7 +97,7 @@ const projects: Project[] = [
     name: "NightVision",
     url: "https://github.com/achntj/NightVision",
     desc: "Low-light image enhancement experiments.",
-    color: "#F97316", // orange-500
+    color: "#F97316",
     stack: ["Python", "OpenCV", "PyTorch"],
     slug: "nightvision",
     category: "ML",
@@ -114,18 +106,16 @@ const projects: Project[] = [
     name: "Depression Detection",
     url: "https://github.com/achntj/depression-detection",
     desc: "Classic NLP on tweets (logistic regression baseline).",
-    color: "#22D3EE", // cyan-300/400
+    color: "#22D3EE",
     stack: ["Python", "scikit-learn"],
     slug: "depression-detection",
     category: "ML",
   },
-
-  // Tools
   {
     name: "Stegify",
     url: "https://github.com/achntj/stegify",
     desc: "Embed encrypted messages inside images.",
-    color: "#84CC16", // lime-500
+    color: "#84CC16",
     stack: ["Python"],
     slug: "stegify",
     category: "Tools",
@@ -134,7 +124,7 @@ const projects: Project[] = [
     name: "Bookmarks → Notion",
     url: "https://github.com/achntj/bookmarks-notion",
     desc: "Export browser bookmarks to Notion-ready data.",
-    color: "#EAB308", // yellow-500
+    color: "#EAB308",
     stack: ["TypeScript", "Node"],
     slug: "bookmarks-notion",
     category: "Tools",
@@ -143,33 +133,29 @@ const projects: Project[] = [
     name: "Zsh Guide",
     url: "https://github.com/achntj/zshguide",
     desc: "A cleaner mirror of Peter Stephenson’s Zsh Guide.",
-    color: "#14B8A6", // teal-500
+    color: "#14B8A6",
     stack: ["Next.js", "TypeScript", "MDX"],
     slug: "zshguide",
     category: "Tools",
   },
-
-  // Fun
   {
     name: "Patrick Bateman Card Generator",
     url: "https://bateman.achintyajha.com",
     desc: "An over-engineered business card (American Psycho).",
-    color: "#9333EA", // violet-600
+    color: "#9333EA",
     stack: ["Next.js", "TypeScript", "TailwindCSS"],
     slug: "bateman-card",
-    category: "Fun",
+    category: "Whimsy",
   },
 ];
 
-// --- UI Helpers ---------------------------------------------------------------
-
 const categoryMeta: Record<Project["category"], { label: string; Icon: any }> =
   {
-    "Full-Stack": { label: "Full‑Stack", Icon: Squares2X2Icon },
+    "Full-Stack": { label: "Full-Stack", Icon: Squares2X2Icon },
     Quant: { label: "Quant", Icon: ChartBarIcon },
     ML: { label: "ML", Icon: CpuChipIcon },
     Tools: { label: "Tools", Icon: WrenchScrewdriverIcon },
-    Fun: { label: "Fun", Icon: SparklesIcon },
+    Whimsy: { label: "Whimsy", Icon: PuzzlePieceIcon },
   };
 
 const categories = [
@@ -178,22 +164,32 @@ const categories = [
   "Quant",
   "ML",
   "Tools",
-  "Fun",
+  "Whimsy",
 ] as const;
 
-// subtle radial gradient using the card's accent color
-function cardBg(color: string) {
+function hexToRgb(hex: string) {
+  const m = hex.trim().replace("#", "");
+  const num = parseInt(m, 16);
+  return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+}
+function mixWithWhite(hex: string, whiteRatio = 0.88) {
+  const { r, g, b } = hexToRgb(hex);
+  const mix = (c: number) =>
+    Math.round(255 * whiteRatio + c * (1 - whiteRatio));
+  return `rgb(${mix(r)}, ${mix(g)}, ${mix(b)})`;
+}
+function mixForBorder(hex: string, whiteRatio = 0.72) {
+  const { r, g, b } = hexToRgb(hex);
+  const mix = (c: number) =>
+    Math.round(255 * whiteRatio + c * (1 - whiteRatio));
+  return `rgb(${mix(r)}, ${mix(g)}, ${mix(b)})`;
+}
+function cardStyle(color: string): CSSProperties {
   return {
-    background: `radial-gradient(1200px 400px at -10% -10%, ${color}33, transparent 60%), linear-gradient(135deg, ${color}1a, transparent 70%)`,
+    ["--card-bg" as any]: mixWithWhite(color, 0.9),
+    ["--card-border" as any]: mixForBorder(color, 0.78),
   } as CSSProperties;
 }
-
-// readable border color derived from accent
-function ringFrom(color: string) {
-  return { boxShadow: `0 0 0 1px ${color}55` } as CSSProperties;
-}
-
-// --- Component ----------------------------------------------------------------
 
 export default function Projects() {
   const [active, setActive] = useState<(typeof categories)[number]>("All");
@@ -212,17 +208,16 @@ export default function Projects() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="text-3xl md:text-4xl font-semibold tracking-tight"
+          className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 dark:text-stone-100"
         >
           Projects
         </motion.h1>
-        <p className="mt-2 text-neutral-600 dark:text-neutral-300 max-w-2xl">
-          Selected work across full‑stack apps, quantitative finance, and
+        <p className="mt-2 text-stone-700 dark:text-stone-300 max-w-2xl">
+          Selected work across full-stack apps, quantitative finance, and
           machine learning. Filter to explore.
         </p>
       </section>
 
-      {/* Filters */}
       <div className="flex flex-wrap gap-2 mb-8">
         {categories.map((c) => {
           const isActive = c === active;
@@ -233,14 +228,17 @@ export default function Projects() {
             <button
               key={c}
               onClick={() => setActive(c)}
-              className={`group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition ${
+              className={[
+                "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm transition",
                 isActive
-                  ? "bg-neutral-900 text-white dark:bg-white dark:text-black border-neutral-900 dark:border-white"
-                  : "bg-transparent border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-              }`}
+                  ? "bg-emerald-500 text-emerald-50 border-emerald-700"
+                  : "bg-stone-50 dark:bg-stone-900 border-stone-300 dark:border-stone-700 hover:bg-emerald-50/70 dark:hover:bg-stone-800",
+              ].join(" ")}
             >
-              {Icon && <Icon className="h-4 w-4" />}
-              <span>
+              {Icon && (
+                <Icon className="h-4 w-4 opacity-80 text-stone-800 dark:text-stone-200" />
+              )}
+              <span className="text-stone-900 dark:text-stone-100">
                 {c === "All"
                   ? "All"
                   : categoryMeta[c as Project["category"]].label}
@@ -250,7 +248,6 @@ export default function Projects() {
         })}
       </div>
 
-      {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filtered.map((p, idx) => (
           <a key={p.name} href={p.url} target="_blank" rel="noreferrer">
@@ -259,53 +256,53 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.02 * idx }}
-              className="group relative overflow-hidden rounded-2xl p-5 md:p-6 h-full border bg-white/60 dark:bg-neutral-900/60 backdrop-blur supports-[backdrop-filter]:bg-white/40 dark:supports-[backdrop-filter]:bg-neutral-900/40"
-              style={{ ...cardBg(p.color), ...ringFrom(p.color) }}
+              style={cardStyle(p.color)}
+              className={[
+                "group relative overflow-hidden rounded-2xl border p-5 md:p-6 h-full",
+                "bg-[var(--card-bg)] border-[var(--card-border)]",
+                "hover:-translate-y-0.5 transition",
+                "dark:bg-stone-900 dark:border-stone-700",
+              ].join(" ")}
             >
+              <div
+                className="absolute right-4 top-4 h-2.5 w-2.5 rounded-full opacity-70"
+                style={{ backgroundColor: p.color }}
+              />
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold leading-tight">
+                  <h3 className="text-lg font-semibold leading-tight text-stone-900 dark:text-stone-100">
                     {p.name}
                   </h3>
-                  <div className="mt-1 inline-flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400">
-                    <span className="inline-flex items-center rounded-full border px-2 py-0.5">
+                  <div className="mt-1 inline-flex items-center gap-2 text-xs">
+                    <span className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 bg-white/70 dark:bg-stone-800 border-stone-300/70 dark:border-stone-700 text-stone-800 dark:text-stone-200">
                       {categoryMeta[p.category].label}
                     </span>
                   </div>
                 </div>
-                <div className="opacity-70 group-hover:opacity-100 transition text-neutral-800 dark:text-neutral-100">
+                <div className="opacity-70 group-hover:opacity-100 transition text-stone-700 dark:text-stone-200">
                   <ArrowUpRightIcon className="h-5 w-5" />
                 </div>
               </div>
-
-              <p className="mt-3 text-sm text-neutral-700 dark:text-neutral-300">
+              <p className="mt-3 text-sm text-stone-700 dark:text-stone-300">
                 {p.desc}
               </p>
-
               <div className="mt-4 flex flex-wrap gap-2">
                 {p.stack.map((s) => (
                   <span
                     key={s}
-                    className="text-xs rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-2 py-1"
+                    className="text-xs rounded-full px-2 py-1 bg-white/70 dark:bg-stone-800 border border-stone-200/80 dark:border-stone-700 text-stone-700 dark:text-stone-300"
                   >
                     {s}
                   </span>
                 ))}
               </div>
-
-              {/* Accent ring on hover */}
-              <div
-                className="pointer-events-none absolute inset-0 rounded-2xl ring-0 group-hover:ring-2 transition"
-                style={{ boxShadow: `inset 0 0 0 1px ${p.color}55` }}
-              />
             </motion.div>
           </a>
         ))}
       </div>
 
-      {/* Empty state (unlikely) */}
       {filtered.length === 0 && (
-        <div className="text-sm text-neutral-600 dark:text-neutral-400 mt-8">
+        <div className="text-sm text-stone-600 dark:text-stone-400 mt-8">
           Nothing here yet. Try another filter.
         </div>
       )}
