@@ -25,7 +25,7 @@ const projects: Project[] = [
   {
     name: "AudioCNN — ResNet Classifier & Visualizer",
     url: "https://cnn-audio-vis.vercel.app/",
-    desc: "Train & visualize CNNs on audio.",
+    desc: "CNN based audio classifications with Layer Visualizations.",
     color: "#4F46E5",
     stack: ["PyTorch", "FastAPI", "Next.js"],
     slug: "audiocnn",
