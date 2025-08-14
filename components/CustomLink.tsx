@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 export default function CustomLink({
   children,
   href,
@@ -10,7 +10,10 @@ export default function CustomLink({
   return (
     <>
       {href.startsWith("/") || href.startsWith("#") ? (
-        <Link className="dark:text-[#5a7d64] text-emerald-600 hover:text-emerald-700 dark:hover:text-emerald-700" href={href}>
+        <Link
+          className="dark:text-[#5a7d64] text-emerald-600 hover:text-emerald-700 dark:hover:text-emerald-700"
+          href={href}
+        >
           {children}
         </Link>
       ) : (

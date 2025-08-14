@@ -1,10 +1,6 @@
 export default function NextJSLogo() {
   return (
-    <svg
-      aria-label="Next.js logomark"
-      className="h-10 w-10 xs:h-16 xs:w-16"
-      viewBox="0 0 180 180"
-    >
+    <svg aria-label="Next.js logomark" className="h-10 w-10 xs:h-16 xs:w-16" viewBox="0 0 180 180">
       <mask
         height={180}
         id="a"
@@ -51,5 +47,5 @@ export default function NextJSLogo() {
         </linearGradient>
       </defs>
     </svg>
-  );
+  )
 }

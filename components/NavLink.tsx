@@ -1,9 +1,11 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+"use client"
 
-export default function NavLink({href, name }) {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+export default function NavLink({ href, name }: { href: string; name: string }) {
+  const pathname = usePathname()
+  const isActive = pathname === href
   return (
     <Link passHref href={href}>
       <div
@@ -15,5 +17,5 @@ export default function NavLink({href, name }) {
         <p className="block">{name}</p>
       </div>
     </Link>
-  );
+  )
 }

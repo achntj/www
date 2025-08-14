@@ -1,13 +1,11 @@
-import HeadContainer from "./HeadContainer"
+import type React from "react";
 
-export default function Container({ children, ...pageProps }) {
+export default function Container({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <HeadContainer title={pageProps.title} description={pageProps.description} image={pageProps.image} />
       <div className="relative h-full md:h-fit w-full">
         <div className="max-w-[700px] mx-auto py-4">{children}</div>
       </div>
     </>
-  )
+  );
 }
-

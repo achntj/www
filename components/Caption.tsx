@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export default function Caption({
   children,
@@ -18,7 +18,10 @@ export default function Caption({
           {" "}
           (
           {isInternal ? (
-            <Link className="text-emerald-600 hover:text-emerald-800" href={src}>
+            <Link
+              className="text-emerald-600 hover:text-emerald-800"
+              href={src}
+            >
               Source
             </Link>
           ) : (
@@ -37,4 +40,3 @@ export default function Caption({
     </span>
   );
 }
-
