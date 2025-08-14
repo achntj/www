@@ -107,5 +107,5 @@ export default function VimLogo() {
         </g>
       </g>
     </svg>
-  );
+  )
 }

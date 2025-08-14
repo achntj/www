@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold text-neutral-700 dark:text-neutral-300;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  *,
+  :after,
+  :before {
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+  }
+
+  img {
+    user-drag: none;
+    -webkit-user-drag: none;
+  }
+
+  .article-img {
+    box-shadow: 0 5px 12px -2px rgba(0, 0, 0, 0.4);
+    display: block;
+    margin: 0px auto;
+    width: 50%;
+  }
+
+  .article ul {
+    @apply pl-5 list-disc space-y-2 mt-4;
+  }
+
+  blockquote {
+    @apply my-4 pl-4 border-l-4 opacity-75;
+  }
+
+  /* Easier to use :not(pre) > code */
+  /* but it's less compatible */
+
+  code {
+    @apply bg-neutral-200 dark:bg-neutral-800 border rounded px-1;
+  }
+
+  code::before {
+    content: "`";
+  }
+
+  code::after {
+    content: "`";
+  }
+
+  pre {
+    @apply p-2 rounded overflow-scroll;
+  }
+
+  pre code {
+    @apply border-0 rounded-none px-0 bg-transparent dark:bg-transparent;
+  }
+
+  pre > code {
+    display: grid;
+  }
+
+  pre code::before {
+    content: "";
+  }
+
+  pre code::after {
+    content: "";
+  }
+
+  /*Scrollbars*/
+  body {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    overflow: -moz-scrollbars-none; /* old mozilla */
+  }
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+
+  label {
+    @apply text-base;
+  }
+
+  /* Chrome Autocomplete input bg fix */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+* {
+  @apply dark:border-neutral-700;
+}

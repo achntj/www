@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Socials() {
   return (
@@ -68,5 +68,5 @@ export default function Socials() {
         </div>
       </Link>
     </>
-  );
+  )
 }

@@ -1,23 +1,26 @@
-// components/Base.tsx
+"use client"
+
+import type React from "react"
+
 import { useState, useEffect, useRef } from "react"
 import Nav from "./Nav"
 import { Noto_Serif } from "next/font/google"
 import Image from "next/image"
-import { useRouter } from "next/router"
+import { usePathname } from "next/navigation"
 
 const font = Noto_Serif({ subsets: ["latin"], weight: ["400"] })
 
-export default function Base({ children, ...pageProps }) {
+export default function Base({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false)
-  const router = useRouter()
-  const mainRef = useRef(null)
+  const pathname = usePathname()
+  const mainRef = useRef<HTMLElement>(null)
 
   // Reset scroll position when route changes
   useEffect(() => {
     if (mainRef.current) {
       mainRef.current.scrollTop = 0
     }
-  }, [router.asPath])
+  }, [pathname])
 
   return (
     <>
@@ -45,4 +48,3 @@ export default function Base({ children, ...pageProps }) {
     </>
   )
 }
-

@@ -1,9 +1,6 @@
 export default function TailwindLogo() {
   return (
-    <svg
-      viewBox="0 0 54 31"
-      className="h-8 text-slate-900 dark:text-white xs:h-12 w-auto"
-    >
+    <svg viewBox="0 0 54 31" className="h-8 text-slate-900 dark:text-white xs:h-12 w-auto">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -11,5 +8,5 @@ export default function TailwindLogo() {
         fill="#38bdf8"
       />
     </svg>
-  );
+  )
 }
