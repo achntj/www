@@ -50,6 +50,24 @@ const projects: Project[] = [
     category: "Full-Stack",
   },
   {
+    name: "Quantitative Strategies — Portfolio Optimization",
+    url: "https://github.com/achntj/Quantitative-Strategies",
+    desc: "MPT, risk budgeting, and Monte Carlo tooling.",
+    color: "#A855F7",
+    stack: ["Python", "NumPy", "Matplotlib", "pandas"],
+    slug: "quantitative-strategies",
+    category: "Quant",
+  },
+  {
+    name: "Deep Learning from Scratch",
+    url: "https://github.com/achntj/deep-learning-from-scratch",
+    desc: "Minimal NumPy implementations of core DL components.",
+    color: "#06B6D4",
+    stack: ["Python", "NumPy"],
+    slug: "dlfs",
+    category: "ML",
+  },
+  {
     name: "Slimlist",
     url: "https://github.com/achntj/slimlist",
     desc: "Local-first productivity suite.",
@@ -76,24 +94,7 @@ const projects: Project[] = [
     slug: "statistical-arbitrage",
     category: "Quant",
   },
-  {
-    name: "Quantitative Strategies — Portfolio Optimization",
-    url: "https://github.com/achntj/Quantitative-Strategies",
-    desc: "MPT, risk budgeting, and Monte Carlo tooling.",
-    color: "#A855F7",
-    stack: ["Python", "NumPy", "Matplotlib", "pandas"],
-    slug: "quantitative-strategies",
-    category: "Quant",
-  },
-  {
-    name: "Deep Learning from Scratch",
-    url: "https://github.com/achntj/deep-learning-from-scratch",
-    desc: "Minimal NumPy implementations of core DL components.",
-    color: "#06B6D4",
-    stack: ["Python", "NumPy"],
-    slug: "dlfs",
-    category: "ML",
-  },
+
   {
     name: "NightVision",
     url: "https://github.com/achntj/NightVision",
@@ -259,7 +260,7 @@ export default function ProjectsClient() {
               />
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold leading-tight text-stone-900 dark:text-stone-100">
+                  <h3 className="text-lg font-semibold leading-tight text-stone-900 dark:text-[#dfe6d3]">
                     {p.name}
                   </h3>
                   <div className="mt-1 inline-flex items-center gap-2 text-xs">
