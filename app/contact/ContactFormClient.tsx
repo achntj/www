@@ -61,15 +61,9 @@ export default function ContactForm() {
             onChange={(e) => setName(e.target.value)}
             required
             className="
-              w-full rounded-xl
-              bg-white/60 border border-[#dfe6d3] px-3 py-2.5 outline-none
-              shadow-[inset_0_1px_0_rgba(255,255,255,.6)]
-              focus:ring-4 ring-[#9aa780]/25 placeholder:text-[#a3ad9a]
-              dark:bg-[#1c211d]/60 dark:border-[#3b463c]
-              dark:placeholder:text-[#98a391]
-              dark:focus:ring-2 dark:ring-[#b9c6ac]/30
-              dark:shadow-none
-            "
+              w-full rounded-xl bg-white/60 border border-[#dfe6d3] px-3 py-2.5 
+              outline-none placeholder:text-[#a3ad9a] dark:bg-[#1c211d]/60 
+              dark:border-[#3b463c] dark:placeholder:text-[#98a391]"
           />
         </label>
 
@@ -83,15 +77,9 @@ export default function ContactForm() {
             onChange={(e) => setEmail(e.target.value)}
             required
             className="
-              w-full rounded-xl
-              bg-white/60 border border-[#dfe6d3] px-3 py-2.5 outline-none
-              shadow-[inset_0_1px_0_rgba(255,255,255,.6)]
-              focus:ring-4 ring-[#9aa780]/25 placeholder:text-[#a3ad9a]
-              dark:bg-[#1c211d]/60 dark:border-[#3b463c]
-              dark:placeholder:text-[#98a391]
-              dark:focus:ring-2 dark:ring-[#b9c6ac]/30
-              dark:shadow-none
-            "
+              w-full rounded-xl bg-white/60 border border-[#dfe6d3] px-3 py-2.5 
+              outline-none placeholder:text-[#a3ad9a] dark:bg-[#1c211d]/60 
+              dark:border-[#3b463c] dark:placeholder:text-[#98a391]"
           />
         </label>
 
@@ -107,15 +95,9 @@ export default function ContactForm() {
             onChange={(e) => setSec(e.target.value)}
             required
             className="
-              w-full rounded-xl
-              bg-white/60 border border-[#dfe6d3] px-3 py-2.5 outline-none
-              shadow-[inset_0_1px_0_rgba(255,255,255,.6)]
-              focus:ring-4 ring-[#9aa780]/25 placeholder:text-[#a3ad9a]
-              dark:bg-[#1c211d]/60 dark:border-[#3b463c]
-              dark:placeholder:text-[#98a391]
-              dark:focus:ring-2 dark:ring-[#b9c6ac]/30
-              dark:shadow-none
-            "
+              w-full rounded-xl bg-white/60 border border-[#dfe6d3] px-3 py-2.5 
+              outline-none placeholder:text-[#a3ad9a] dark:bg-[#1c211d]/60 
+              dark:border-[#3b463c] dark:placeholder:text-[#98a391]"
           />
         </label>
 
@@ -129,15 +111,9 @@ export default function ContactForm() {
             onChange={(e) => setMessage(e.target.value)}
             required
             className="
-              w-full rounded-xl
-              bg-white/60 border border-[#dfe6d3] px-3 py-2.5 outline-none resize-none
-              shadow-[inset_0_1px_0_rgba(255,255,255,.6)]
-              focus:ring-4 ring-[#9aa780]/25 placeholder:text-[#a3ad9a]
-              dark:bg-[#1c211d]/60 dark:border-[#3b463c]
-              dark:placeholder:text-[#98a391]
-              dark:focus:ring-2 dark:ring-[#b9c6ac]/30
-              dark:shadow-none
-            "
+              w-full rounded-xl bg-white/60 border border-[#dfe6d3] px-3 py-2.5 
+              outline-none placeholder:text-[#a3ad9a] dark:bg-[#1c211d]/60 
+              dark:border-[#3b463c] dark:placeholder:text-[#98a391]"
           />
         </label>
 
@@ -149,12 +125,8 @@ export default function ContactForm() {
             className="
               inline-flex items-center justify-center rounded-2xl px-5 py-2.5 font-medium
               bg-[#2f6d47] text-white hover:bg-[#295e3e]
-              focus:outline-none focus-visible:ring-4 ring-[#2f6d47]/25
               disabled:opacity-60 disabled:cursor-not-allowed transition
-              dark:bg-[#b9c6ac] dark:text-[#1b1d18] dark:hover:bg-[#a9b99f]
-              dark:focus-visible:ring-2 dark:ring-[#b9c6ac]/30
-              dark:shadow-none
-            "
+              dark:bg-[#b9c6ac] dark:text-[#1b1d18] dark:hover:bg-[#a9b99f]"
           >
             Send message
           </button>
