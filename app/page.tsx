@@ -38,7 +38,7 @@ export default function Home() {
 
         <div className="my-6 h-px bg-[#9aa780]/40 dark:bg-[#3b463c]" />
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col sm:flex-row w-fit flex-wrap gap-3">
           <Link
             href="/projects"
             className="
@@ -51,16 +51,6 @@ export default function Home() {
           </Link>
 
           <Link
-            href="/writing"
-            className="
-              inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium
-              border border-[#9aa780]/50 text-[#2f6d47] hover:bg-[#e7efdf]
-              dark:text-[#b9c6ac] dark:border-[#3b463c] dark:hover:bg-[#2a312b]
-            "
-          >
-            Writing
-          </Link>
-          <Link
             href="/coursework"
             className="
               inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium
@@ -70,11 +60,16 @@ export default function Home() {
           >
             Coursework
           </Link>
+
           <Link
-            href="/Achintya_Resume_Web.pdf"
-            className="inline-flex items-center text-sm underline decoration-2 underline-offset-4 italic text-[#2f6d47] dark:text-[#b9c6ac]"
+            href="/writing"
+            className="
+              inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium
+              border border-[#9aa780]/50 text-[#2f6d47] hover:bg-[#e7efdf]
+              dark:text-[#b9c6ac] dark:border-[#3b463c] dark:hover:bg-[#2a312b]
+            "
           >
-            Résumé
+            Writing
           </Link>
         </div>
       </section>
