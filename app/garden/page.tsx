@@ -32,14 +32,6 @@ export default function Garden() {
       <ul className="list-disc pl-6 space-y-2">
         <li>
           <Link
-            href="/writing/retrotech-market"
-            className="text-blue-700 dark:text-cyan-600 hover:underline"
-          >
-            The Niche Market for Old Technology
-          </Link>
-        </li>
-        <li>
-          <Link
             href="/writing/old-tech"
             className="text-blue-700 dark:text-cyan-600 hover:underline"
           >

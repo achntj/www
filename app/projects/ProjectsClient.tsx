@@ -52,7 +52,7 @@ const projects: Project[] = [
   {
     name: "Quantitative Strategies — Portfolio Optimization",
     url: "https://github.com/achntj/Quantitative-Strategies",
-    desc: "MPT, risk budgeting, and Monte Carlo tooling.",
+    desc: "MPT, risk budgeting, Black-Littermn with Shrinkage, and Monte Carlo tooling.",
     color: "#A855F7",
     stack: ["Python", "NumPy", "ta-lib", "Matplotlib", "pandas"],
     slug: "quantitative-strategies",
@@ -88,7 +88,7 @@ const projects: Project[] = [
   {
     name: "Statistical Arbitrage Engine",
     url: "https://github.com/achntj/statistical-arbitrage",
-    desc: "Clustering + cointegration pair trading with backtests.",
+    desc: "Hidden Markov Model over Ornstein–Uhlenbeck pairs trading with microstructure filter; 2018–2024 backtests.",
     color: "#10B981",
     stack: ["Python", "scikit-learn", "statsmodels", "pandas"],
     slug: "statistical-arbitrage",
@@ -143,7 +143,7 @@ const projects: Project[] = [
   {
     name: "Patrick Bateman Card Generator",
     url: "https://bateman.achintyajha.com",
-    desc: "An over-engineered business card (American Psycho).",
+    desc: "An over-engineered business card (from the movie American Psycho).",
     color: "#9333EA",
     stack: ["Next.js", "TypeScript", "TailwindCSS"],
     slug: "bateman-card",

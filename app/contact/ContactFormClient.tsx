@@ -90,7 +90,7 @@ export default function ContactForm() {
           <input
             type="text"
             name="security"
-            placeholder="You got this"
+            placeholder=""
             value={sec}
             onChange={(e) => setSec(e.target.value)}
             required

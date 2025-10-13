@@ -32,7 +32,7 @@ export default function Home() {
             image enhancement research. We combined classical image processing
             and deep learning to improve visibility in low-exposure images; you
             can read a short write-up{" "}
-            <CustomLink href="/MAT_494__Report.pdf">here</CustomLink>.
+            <CustomLink href="/low_light_report.pdf">here</CustomLink>.
           </p>{" "}
         </div>
 
