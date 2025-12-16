@@ -37,9 +37,9 @@ export default function Base({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div
-        className={`${body.variable} ${display.variable} min-h-screen text-[color:var(--ink)] flex-grow dark:text-[#d6d9de] md:flex items-center justify-center md:p-4 bg-[radial-gradient(circle_at_22%_12%,#fdfaf5,#f3ede3_56%,#ece3d7_92%)] dark:bg-[linear-gradient(180deg,#0f100f,#0a0c0a)]`}
+        className={`${body.variable} ${display.variable} min-h-screen text-[color:var(--ink)] flex-grow dark:text-[#d6d9de] md:flex items-center justify-center md:p-4 bg-[#f3ede3] dark:bg-[#050505]`}
       >
-        <div className="w-full max-w-7xl md:h-[80vh] md:border border-[color:rgba(52,72,54,0.24)] dark:border-[color:rgba(122,136,125,0.24)] md:rounded-2xl overflow-hidden shadow-[0_24px_70px_-48px_rgba(24,27,24,0.6)] flex relative backdrop-blur-[0.75px] bg-white/90 dark:bg-black/40">
+        <div className="w-full max-w-7xl md:h-[80vh] md:border border-[color:rgba(52,72,54,0.24)] dark:border-[color:rgba(122,136,125,0.24)] md:rounded-2xl overflow-hidden shadow-[0_24px_70px_-48px_rgba(24,27,24,0.6)] flex relative backdrop-blur-[0.75px] bg-white/90 dark:bg-[#070808]">
           <div className="hidden p-2 xl:block absolute top-0 left-56 z-10 pointer-events-none">
             <Image src="/tree.png" alt="Decorative tree" width={100} height={100} className="opacity-80" />
           </div>
