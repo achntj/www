@@ -383,38 +383,68 @@
   }
 }
 
-/* Toast styling */
-.Toastify__toast-container {
-  padding: 0.5rem;
+/* Contact toast styling */
+.contact-toast-shell {
+  pointer-events: none;
 }
 
-.Toastify__toast {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--hairline);
+.contact-toast-panel {
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(36, 34, 26, 0.14);
   color: var(--ink);
-  border-radius: 14px;
-  box-shadow: 0 18px 50px -30px rgba(24, 27, 24, 0.55);
-  backdrop-filter: blur(6px);
-  font-family: var(--font-body, var(--font-serif));
-  font-size: var(--type-base);
-  letter-spacing: 0.005em;
+  border-radius: 16px;
+  box-shadow: 0 22px 64px -36px rgba(24, 27, 24, 0.62);
+  backdrop-filter: blur(8px);
+  padding: 1rem 1.25rem;
+  min-width: 240px;
+  max-width: min(420px, 92vw);
+  letter-spacing: 0.002em;
+  line-height: 1.55;
+  cursor: pointer;
 }
 
-.dark .Toastify__toast {
-  background: rgba(16, 17, 16, 0.9);
-  border-color: rgba(236, 240, 234, 0.22);
+.contact-toast-panel.success {
+  border-color: rgba(var(--accent-rgb), 0.38);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--accent-rgb), 0.09),
+    rgba(255, 255, 255, 0.95)
+  );
+}
+
+.contact-toast-panel.error {
+  border-color: rgba(var(--highlight-rgb), 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--highlight-rgb), 0.16),
+    rgba(255, 255, 255, 0.94)
+  );
+}
+
+.dark .contact-toast-panel {
+  background: rgba(12, 13, 12, 0.92);
+  border-color: rgba(236, 240, 234, 0.18);
   color: var(--ink);
-  box-shadow: 0 18px 48px -28px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 22px 54px -32px rgba(0, 0, 0, 0.74);
 }
 
-.Toastify__toast-body {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+.dark .contact-toast-panel.success {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--accent-rgb), 0.18),
+    rgba(12, 13, 12, 0.92)
+  );
+  border-color: rgba(var(--accent-rgb), 0.34);
 }
 
-.Toastify__progress-bar {
-  background: rgba(var(--accent-rgb), 0.6);
+.dark .contact-toast-panel.error {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--highlight-rgb), 0.2),
+    rgba(12, 13, 12, 0.92)
+  );
+  border-color: rgba(var(--highlight-rgb), 0.34);
 }
 
 @layer utilities {

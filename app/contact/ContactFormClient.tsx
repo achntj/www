@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useRef, useState } from "react";
+
+type ToastTone = "success" | "error" | null;
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -10,10 +10,44 @@ export default function ContactForm() {
   const [sec, setSec] = useState("");
   const [message, setMessage] = useState("");
   const [disable, setDisable] = useState(false);
+  const [toast, setToast] = useState<{
+    message: string;
+    tone: ToastTone;
+    visible: boolean;
+  }>({ message: "", tone: null, visible: false });
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const labelClass =
     "mb-1 block type-base font-medium tracking-[0.035em] text-[color:var(--soft-ink)]";
   const fieldClass =
     "w-full rounded-xl bg-[color:var(--pill)] border border-[color:var(--hairline)] px-3 py-2.5 outline-none placeholder:text-[color:var(--soft-ink)] text-[color:var(--ink)] focus:border-[rgba(var(--accent-rgb),0.5)] focus:ring-2 focus:ring-[rgba(var(--accent-rgb),0.22)]";
+
+  function showToast(message: string, tone: Exclude<ToastTone, null>) {
+    if (toastTimer.current) {
+      clearTimeout(toastTimer.current);
+    }
+
+    setToast({ message, tone, visible: true });
+
+    toastTimer.current = setTimeout(() => {
+      setToast((prev) => ({ ...prev, visible: false }));
+    }, 3600);
+  }
+
+  function hideToast() {
+    if (toastTimer.current) {
+      clearTimeout(toastTimer.current);
+      toastTimer.current = null;
+    }
+    setToast((prev) => ({ ...prev, visible: false }));
+  }
+
+  useEffect(() => {
+    return () => {
+      if (toastTimer.current) {
+        clearTimeout(toastTimer.current);
+      }
+    };
+  }, []);
 
   async function submitForm(e: React.FormEvent) {
     e.preventDefault();
@@ -21,32 +55,29 @@ export default function ContactForm() {
     setDisable(true);
 
     if (sec.trim().toLowerCase() !== "white") {
-      toast("That should have been easy 🤔", { type: "error" });
+      showToast("That should have been easy 🤔", "error");
       setDisable(false);
       return;
     }
 
-    const id = toast.loading("Sending…");
     try {
       const res = await fetch(`/api/submit-form`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
       });
-      toast.dismiss(id);
 
       if (res.status === 201) {
-        toast("Thanks — I’ll get back to you soon!", { type: "success" });
+        showToast("Thanks — I’ll get back to you soon!", "success");
         setName("");
         setEmail("");
         setSec("");
         setMessage("");
       } else {
-        toast("Please recheck your inputs!", { type: "error" });
+        showToast("Please recheck your inputs!", "error");
       }
     } catch {
-      toast.dismiss(id);
-      toast("Network error. Try again?", { type: "error" });
+      showToast("Network error. Try again?", "error");
     } finally {
       setDisable(false);
     }
@@ -129,17 +160,23 @@ export default function ContactForm() {
         </p>
       </form>
 
-      <ToastContainer
-        position="bottom-center"
-        autoClose={4000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable={false}
-        pauseOnHover
-      />
+      <div
+        aria-live="polite"
+        role="status"
+        className={`contact-toast-shell fixed left-1/2 bottom-8 z-50 -translate-x-1/2 transition-all duration-200 ease-out ${
+          toast.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 scale-[0.98]"
+        }`}
+      >
+        {toast.tone ? (
+          <div
+            className={`contact-toast-panel ${toast.tone}`}
+            aria-hidden={!toast.visible}
+            onClick={hideToast}
+          >
+            {toast.message}
+          </div>
+        ) : null}
+      </div>
     </>
   );
 }
