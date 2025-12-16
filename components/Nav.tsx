@@ -30,7 +30,7 @@ export default function Nav({
       {/* Sidebar */}
       <div
         className={`fixed z-40 md:relative md:flex h-full w-56 transition-transform 
-        duration-300 ease-in-out overflow-hidden bg-white/70 dark:bg-[#0b0c0e]/95 
+        duration-300 ease-in-out overflow-hidden bg-white dark:bg-[#0b0c0e] 
         md:bg-transparent pt-10 md:pt-0 md:border-r border-[color:rgba(52,72,54,0.2)] dark:border-[color:rgba(110,120,110,0.32)] ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
       >
         <nav className="w-full py-8 px-6 flex flex-col gap-6 overflow-y-auto" onClick={() => setOpen(false)}>

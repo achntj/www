@@ -110,7 +110,7 @@
   li {
     letter-spacing: 0.0008em;
     line-height: 1.7;
-    text-wrap: pretty;
+    text-wrap: normal;
     hyphens: auto;
     font-variation-settings: "opsz" 19.5, "wght" 550;
   }
