@@ -235,10 +235,10 @@
 
   .article > p:first-of-type::first-letter {
     float: left;
-    font-size: clamp(3.4rem, 8vw, 4.4rem);
+    font-size: clamp(3.2rem, 6.5vw, 4.1rem);
     line-height: 0.9;
     margin-right: 0.2em;
-    padding: 0.18em 0.22em 0.08em;
+    padding: 0.16em 0.2em 0.06em;
     letter-spacing: 0.014em;
     font-weight: 700;
     font-family: var(--font-display, var(--font-serif));
@@ -381,6 +381,40 @@
   * {
     @apply dark:border-neutral-700;
   }
+}
+
+/* Toast styling */
+.Toastify__toast-container {
+  padding: 0.5rem;
+}
+
+.Toastify__toast {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--hairline);
+  color: var(--ink);
+  border-radius: 14px;
+  box-shadow: 0 18px 50px -30px rgba(24, 27, 24, 0.55);
+  backdrop-filter: blur(6px);
+  font-family: var(--font-body, var(--font-serif));
+  font-size: var(--type-base);
+  letter-spacing: 0.005em;
+}
+
+.dark .Toastify__toast {
+  background: rgba(16, 17, 16, 0.9);
+  border-color: rgba(236, 240, 234, 0.22);
+  color: var(--ink);
+  box-shadow: 0 18px 48px -28px rgba(0, 0, 0, 0.7);
+}
+
+.Toastify__toast-body {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.Toastify__progress-bar {
+  background: rgba(var(--accent-rgb), 0.6);
 }
 
 @layer utilities {
