@@ -8,33 +8,149 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
 
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-serif: var(--font-display, "Cormorant Garamond"), "Times New Roman",
+    Times, serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  :root {
+    --ink: #211d15;
+    --muted-ink: #4f4a3f;
+    --soft-ink: #6d665a;
+    --paper: #f6f0e4;
+    --paper-veil: #eee5d7;
+    --shell: #fbf7ed;
+    --hairline: rgba(36, 34, 26, 0.2);
+    --subtle-shadow: 0 22px 64px -42px rgba(24, 27, 24, 0.52);
+    --accent: #3f4a36;
+    --accent-soft: #717b6b;
+    --accent-rgb: 63, 74, 54;
+    --highlight-rgb: 204, 182, 160;
+    --panel: rgba(255, 255, 255, 0.86);
+    --pill: rgba(255, 255, 255, 0.82);
+    --selection: rgba(108, 117, 106, 0.17);
+    --blush: 226, 200, 182;
+    --sage: 194, 204, 188;
+    --dew: 214, 220, 204;
+    --type-reading: 19.5px;
+    --type-subhead: 16px;
+    --type-base: 15.5px;
+    --type-secondary: 14.5px;
+    --type-caption: 13px;
+  }
+
+  :root.dark {
+    --ink: #fafbf6;
+    --muted-ink: #e6e9e1;
+    --soft-ink: #cfd4c8;
+    --accent: #f7f9f2;
+    --accent-soft: #e3e8dd;
+    --accent-rgb: 218, 226, 216;
+    --highlight-rgb: 132, 144, 134;
+    --panel: rgba(12, 13, 12, 0.82);
+    --pill: rgba(20, 22, 20, 0.78);
+    --selection: rgba(212, 220, 210, 0.18);
+    --blush: 122, 124, 128;
+    --sage: 122, 126, 132;
+    --dew: 120, 124, 128;
+    --hairline: rgba(236, 240, 234, 0.22);
+  }
+}
+
+@layer base {
+  body {
+    color: var(--ink);
+    background:
+      radial-gradient(120% 120% at 22% 12%, rgba(var(--blush), 0.12), transparent 48%),
+      radial-gradient(140% 140% at 84% 76%, rgba(var(--sage), 0.12), transparent 50%),
+      linear-gradient(180deg, var(--shell), var(--paper) 48%, var(--paper-veil) 92%);
+    font-family: var(--font-body, var(--font-serif));
+    font-size: 19.5px;
+    font-weight: 560;
+    line-height: 1.68;
+    letter-spacing: 0.0012em;
+    word-spacing: 0.01em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-optical-sizing: auto;
+    font-feature-settings: "liga" 1, "kern" 1, "lnum" 1, "pnum" 1, "calt" 0;
+    font-variation-settings: "opsz" 19.5, "wght" 560;
+  }
+
+  .dark body {
+    color: var(--ink);
+    background: #0b0c0c fixed;
+  }
+
+  ::selection {
+    background: var(--selection);
+    color: var(--ink);
+  }
+
+  .dark ::selection {
+    background: rgba(203, 207, 214, 0.18);
+    color: #f4f5f7;
+  }
+
+  .panel-surface {
+    background-image:
+      radial-gradient(circle at 22% 16%, rgba(var(--blush), 0.12), rgba(255, 255, 255, 0)),
+      radial-gradient(circle at 82% 78%, rgba(var(--sage), 0.12), rgba(255, 255, 255, 0));
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, 0 0;
+  }
+
+  .dark .panel-surface {
+    background-image: none;
+  }
+
+  p,
+  li {
+    letter-spacing: 0.0008em;
+    line-height: 1.7;
+    text-wrap: pretty;
+    hyphens: auto;
+    font-variation-settings: "opsz" 19.5, "wght" 550;
+  }
+
   h1,
   h2,
   h3,
   h4 {
-    @apply font-bold text-neutral-700 dark:text-neutral-300;
+    font-family: var(--font-display, var(--font-serif));
+    @apply font-semibold;
+    letter-spacing: 0.008em;
+    font-variation-settings: "opsz" 24, "wght" 640;
+    font-variant-ligatures: common-ligatures;
+    font-variant-numeric: oldstyle-nums;
+    color: var(--ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-rendering: optimizeLegibility;
   }
 
   h1 {
-    @apply text-4xl;
+    @apply text-[2.35rem] md:text-[2.65rem] leading-[1.08];
   }
 
   h2 {
-    @apply text-3xl;
+    @apply text-[1.96rem] leading-[1.13];
   }
 
   h3 {
-    @apply text-2xl;
+    @apply text-[1.35rem] leading-[1.15];
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-[1.08rem] leading-[1.2];
+    font-variant-caps: small-caps;
+    letter-spacing: 0.12em;
   }
 
   *,
@@ -57,18 +173,134 @@
   }
 
   .article ul {
-    @apply pl-5 list-disc space-y-2 mt-4;
+    @apply pl-6 list-disc space-y-2 mt-4;
   }
 
   blockquote {
-    @apply my-4 pl-4 border-l-4 opacity-75;
+    @apply my-4 pl-4;
+    border-left: 1px solid var(--hairline);
+    background: transparent;
+    color: var(--muted-ink);
+    border-radius: 0;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    font-style: italic;
+  }
+
+  .dark blockquote {
+    background: transparent;
+    border-color: var(--hairline);
+    color: var(--soft-ink);
+  }
+
+  /* Reading experience refinements */
+  .article {
+    font-size: 19px;
+    line-height: 1.74;
+    letter-spacing: 0.001em;
+  }
+
+  .article h1,
+  .article h2,
+  .article h3,
+  .article h4 {
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .article h2 {
+    font-size: 1.62rem;
+    line-height: 1.18;
+    letter-spacing: 0.035em;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--hairline);
+    font-variant-caps: small-caps;
+  }
+
+  .article h3 {
+    font-size: 1.28rem;
+    line-height: 1.16;
+    letter-spacing: 0.06em;
+    color: var(--soft-ink);
+    font-variant-caps: small-caps;
+  }
+
+  .article p + p {
+    margin-top: 1rem;
+  }
+
+  .article > p:first-of-type {
+    text-indent: 0.06em;
+  }
+
+  .article > p:first-of-type::first-letter {
+    float: left;
+    font-size: clamp(3.4rem, 8vw, 4.4rem);
+    line-height: 0.9;
+    margin-right: 0.2em;
+    padding: 0.18em 0.22em 0.08em;
+    letter-spacing: 0.014em;
+    font-weight: 700;
+    font-family: var(--font-display, var(--font-serif));
+    color: var(--ink);
+    background: linear-gradient(180deg, rgba(var(--blush), 0.36), rgba(var(--dew), 0.22));
+    border: 1px solid var(--hairline);
+    border-radius: 12px 10px 11px 10px;
+    box-shadow: 0 18px 48px -32px rgba(24, 27, 24, 0.65);
+    font-variant-ligatures: common-ligatures;
+  }
+
+  .dark .article > p:first-of-type::first-letter {
+    color: var(--ink);
+    background: linear-gradient(180deg, rgba(var(--highlight-rgb), 0.24), rgba(var(--accent-rgb), 0.14));
+    box-shadow: 0 18px 44px -30px rgba(9, 10, 9, 0.75);
+  }
+
+  .article a {
+    text-decoration-thickness: 0.065em;
+    text-underline-offset: 0.26em;
+    text-decoration-color: rgba(var(--accent-rgb), 0.38);
+    text-decoration-skip-ink: auto;
+    transition: color 150ms ease, text-decoration-color 180ms ease;
+  }
+
+  .article a:hover {
+    text-decoration-color: rgba(var(--accent-rgb), 0.72);
+  }
+
+  .article a:focus-visible {
+    outline: 1px solid rgba(var(--accent-rgb), 0.55);
+    outline-offset: 3px;
+    text-decoration-color: rgba(var(--accent-rgb), 0.75);
+  }
+
+  .article ul li::marker,
+  .article ol li::marker {
+    color: var(--accent);
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(var(--accent-rgb), 0.14),
+      rgba(var(--accent-rgb), 0.26),
+      rgba(var(--accent-rgb), 0.14),
+      transparent
+    );
   }
 
   /* Easier to use :not(pre) > code */
   /* but it's less compatible */
 
   code {
-    @apply bg-neutral-200 dark:bg-neutral-800 border rounded px-1;
+    @apply rounded px-2;
+    background: rgba(var(--accent-rgb), 0.14);
+    border: 1px solid var(--hairline);
+    font-variant-ligatures: no-common-ligatures;
+    letter-spacing: 0.01em;
   }
 
   code::before {
@@ -113,6 +345,29 @@
 
   label {
     @apply text-base;
+    font-variant-caps: small-caps;
+    letter-spacing: 0.12em;
+    color: var(--soft-ink);
+  }
+
+  button {
+    font-variant-caps: small-caps;
+    letter-spacing: 0.12em;
+  }
+
+  button:focus-visible,
+  .navLink:focus-visible {
+    outline: 1px solid rgba(var(--accent-rgb), 0.48);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.08);
+  }
+
+  .navLink {
+    position: relative;
+    border-radius: 0.85rem;
+    backdrop-filter: blur(0.5px);
+    transition: color 180ms ease, background-color 180ms ease, box-shadow 200ms ease;
+    font-size: var(--type-base);
   }
 
   /* Chrome Autocomplete input bg fix */
@@ -122,7 +377,30 @@
   input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
   }
+
+  * {
+    @apply dark:border-neutral-700;
+  }
 }
-* {
-  @apply dark:border-neutral-700;
+
+@layer utilities {
+  .type-reading {
+    font-size: var(--type-reading);
+  }
+
+  .type-subhead {
+    font-size: var(--type-subhead);
+  }
+
+  .type-base {
+    font-size: var(--type-base);
+  }
+
+  .type-secondary {
+    font-size: var(--type-secondary);
+  }
+
+  .type-caption {
+    font-size: var(--type-caption);
+  }
 }

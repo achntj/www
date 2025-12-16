@@ -19,7 +19,7 @@ export const metadata: Metadata = pageMeta({
 export default function Garden() {
   return (
     <Container>
-      <h1 className="text-3xl md:text-4xl leading-tight font-serif font-light">
+      <h1 className="text-3xl md:text-4xl leading-tight font-serif font-medium tracking-[0.04em]">
         🌸 Digital Garden
       </h1>
 
@@ -28,15 +28,12 @@ export default function Garden() {
         drawer, plus this month's Spotify top 10.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3">🌿 Recommended Notes</h2>
+      <h2 className="text-2xl font-semibold tracking-[0.03em] mt-8 mb-3">
+        🌿 Recommended Notes
+      </h2>
       <ul className="list-disc pl-6 space-y-2">
         <li>
-          <Link
-            href="/writing/old-tech"
-            className="text-blue-700 dark:text-cyan-600 hover:underline"
-          >
-            Why older technology still feels so right
-          </Link>
+          <CustomLink href="/writing/old-tech">Why older technology still feels so right</CustomLink>
         </li>
       </ul>
 
@@ -73,7 +70,7 @@ export default function Garden() {
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold">Some Links</h3>
+          <h3 className="text-xl font-semibold tracking-[0.025em]">Some Links</h3>
           <p>My favorite parts of the internet:</p>
           <ul className="pl-5 list-disc space-y-2 mt-4">
             <li>

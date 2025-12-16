@@ -11,7 +11,7 @@ export default function Caption({
   const isInternal = src?.startsWith("/") || src?.startsWith("#");
 
   return (
-    <span className="block text-center text-sm mt-2">
+    <span className="block text-center type-caption mt-2">
       {children}
       {src && (
         <>
