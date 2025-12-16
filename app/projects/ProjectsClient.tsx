@@ -169,28 +169,36 @@ const categories = [
   "Whimsy",
 ] as const;
 
-/* --- color helpers for soft card tints --- */
+/* --- palette helpers for soft card tints --- */
 function hexToRgb(hex: string) {
-  const m = hex.trim().replace("#", "");
-  const num = parseInt(m, 16);
+  const clean = hex.replace("#", "");
+  const num = parseInt(clean, 16);
   return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
 }
-function mixWithWhite(hex: string, whiteRatio = 0.88) {
+
+function mixWithWhite(hex: string, whiteRatio = 0.92) {
   const { r, g, b } = hexToRgb(hex);
-  const mix = (c: number) =>
-    Math.round(255 * whiteRatio + c * (1 - whiteRatio));
+  const mix = (c: number) => Math.round(255 * whiteRatio + c * (1 - whiteRatio));
   return `rgb(${mix(r)}, ${mix(g)}, ${mix(b)})`;
 }
-function mixForBorder(hex: string, whiteRatio = 0.72) {
+
+function mixForBorder(hex: string, whiteRatio = 0.82) {
   const { r, g, b } = hexToRgb(hex);
-  const mix = (c: number) =>
-    Math.round(255 * whiteRatio + c * (1 - whiteRatio));
+  const mix = (c: number) => Math.round(255 * whiteRatio + c * (1 - whiteRatio));
   return `rgb(${mix(r)}, ${mix(g)}, ${mix(b)})`;
 }
+
+function mixForDot(hex: string, whiteRatio = 0.65) {
+  const { r, g, b } = hexToRgb(hex);
+  const mix = (c: number) => Math.round(255 * whiteRatio + c * (1 - whiteRatio));
+  return `rgb(${mix(r)}, ${mix(g)}, ${mix(b)})`;
+}
+
 function cardStyle(color: string): CSSProperties {
   return {
-    ["--card-bg" as any]: mixWithWhite(color, 0.9),
-    ["--card-border" as any]: mixForBorder(color, 0.78),
+    ["--card-bg" as any]: mixWithWhite(color, 0.92),
+    ["--card-border" as any]: mixForBorder(color, 0.82),
+    ["--card-dot" as any]: mixForDot(color, 0.65),
   } as CSSProperties;
 }
 
@@ -218,16 +226,16 @@ export default function ProjectsClient() {
               key={c}
               onClick={() => setActive(c)}
               className={[
-                "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm",
+                "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 type-base tracking-[0.08em] font-[560] focus-visible:outline focus-visible:outline-1 focus-visible:outline-[rgba(var(--accent-rgb),0.35)] focus-visible:outline-offset-2",
                 isActive
-                  ? "bg-emerald-500 text-emerald-50 border-emerald-700"
-                  : "bg-stone-50 dark:bg-stone-900 border-stone-300 dark:border-stone-700 hover:bg-emerald-50/70 dark:hover:bg-stone-800",
+                  ? "bg-[rgba(var(--accent-rgb),0.16)] text-[color:var(--ink)] border-[color:rgba(var(--accent-rgb),0.4)] shadow-[0_16px_40px_-30px_rgba(34,40,34,0.55)]"
+                  : "bg-[color:var(--pill)] border-[color:var(--hairline)] hover:border-[rgba(var(--accent-rgb),0.36)] hover:bg-[rgba(var(--accent-rgb),0.1)]",
               ].join(" ")}
             >
               {Icon && (
-                <Icon className="h-4 w-4 opacity-80 text-stone-800 dark:text-stone-200" />
+                <Icon className="h-4 w-4 opacity-80 text-[color:var(--muted-ink)]" />
               )}
-              <span className="text-stone-900 dark:text-stone-100">
+              <span className="text-[color:var(--ink)]">
                 {c === "All"
                   ? "All"
                   : categoryMeta[c as Project["category"]].label}
@@ -249,32 +257,32 @@ export default function ProjectsClient() {
               style={cardStyle(p.color)}
               className={[
                 "group relative overflow-hidden rounded-2xl border p-5 md:p-6 h-full",
-                "bg-[var(--card-bg)] border-[var(--card-border)]",
-                "hover:-translate-y-0.5",
-                "dark:bg-stone-900 dark:border-stone-700",
+                "bg-[var(--card-bg)] border-[color:var(--card-border)]",
+                "hover:-translate-y-0.5 shadow-[0_22px_52px_-38px_rgba(34,40,34,0.65)] backdrop-blur-[0.5px]",
+                "dark:bg-[#0f110f] dark:border-[color:rgba(120,136,125,0.28)]",
               ].join(" ")}
             >
               <div
                 className="absolute right-4 top-4 h-2.5 w-2.5 rounded-full opacity-70"
-                style={{ backgroundColor: p.color }}
+                style={{ backgroundColor: "var(--card-dot)" }}
               />
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold leading-tight text-stone-900 dark:text-[#dfe6d3]">
+                  <h3 className="text-lg font-semibold leading-tight text-[color:var(--ink)] tracking-[0.02em]">
                     {p.name}
                   </h3>
                   <div className="mt-1 inline-flex items-center gap-2 text-xs">
-                    <span className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 bg-white/70 dark:bg-stone-800 border-stone-300/70 dark:border-stone-700 text-stone-800 dark:text-stone-200">
+                    <span className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 bg-[color:var(--pill)] border-[color:var(--hairline)] text-[color:var(--soft-ink)]">
                       {categoryMeta[p.category].label}
                     </span>
                   </div>
                 </div>
-                <div className="opacity-70 group-hover:opacity-100 text-stone-700 dark:text-stone-200">
+                <div className="opacity-70 group-hover:opacity-100 text-[color:var(--muted-ink)]">
                   <ArrowUpRightIcon className="h-5 w-5" />
                 </div>
               </div>
 
-              <p className="mt-3 text-sm text-stone-700 dark:text-stone-300">
+              <p className="mt-3 type-secondary text-[color:var(--muted-ink)] leading-relaxed">
                 {p.desc}
               </p>
 
@@ -282,7 +290,7 @@ export default function ProjectsClient() {
                 {p.stack.map((s) => (
                   <span
                     key={s}
-                    className="text-xs rounded-full px-2 py-1 bg-white/70 dark:bg-stone-800 border border-stone-200/80 dark:border-stone-700 text-stone-700 dark:text-stone-300"
+                    className="type-caption rounded-full px-2 py-1 bg-[color:var(--pill)] border border-[color:var(--hairline)] text-[color:var(--soft-ink)]"
                   >
                     {s}
                   </span>
@@ -294,7 +302,7 @@ export default function ProjectsClient() {
       </div>
 
       {filtered.length === 0 && (
-        <div className="text-sm text-stone-600 dark:text-stone-400 mt-8">
+        <div className="type-secondary text-[color:var(--soft-ink)] mt-8">
           Nothing here yet. Try another filter.
         </div>
       )}

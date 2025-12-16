@@ -47,20 +47,22 @@ export default async function WritingIndex() {
 
   return (
     <Container>
-      <section className="mx-auto max-w-3xl text-[#384237] dark:text-[#dfe6d3]">
-        <h1 className="text-3xl md:text-4xl leading-tight font-serif font-light">
+      <section className="mx-auto max-w-3xl text-[color:var(--ink)] dark:text-[color:var(--ink)]">
+        <h1 className="text-3xl md:text-4xl leading-tight font-serif font-medium tracking-[0.04em]">
           Writing
         </h1>
-        <p className="mt-1 text-[15px] text-[#7a8578] dark:text-[#aeb9a6]">
+        <p className="mt-1 type-subhead text-[color:var(--soft-ink)] dark:text-[color:var(--soft-ink)]">
           Essays on topics I care about.
         </p>
 
         {sortedYears.map((year) => (
           <div key={year} className="my-6">
             <div className="flex items-center gap-4">
-              <span className="h-px flex-1 bg-[#9aa780]/40" />
-              <h3 className="font-serif text-lg">{year}</h3>
-              <span className="h-px flex-1 bg-[#9aa780]/40" />
+              <span className="h-px flex-1 bg-[color:var(--hairline)]" />
+              <h3 className="font-serif text-lg tracking-[0.08em] text-[color:var(--soft-ink)]">
+                {year}
+              </h3>
+              <span className="h-px flex-1 bg-[color:var(--hairline)]" />
             </div>
 
             <ul className="mt-4 space-y-2">
@@ -73,17 +75,19 @@ export default async function WritingIndex() {
                   <li key={slug}>
                     <Link
                       href={`/writing/${slug}`}
-                      className="block rounded-lg px-3 py-2 transition-colors hover:bg-[#e7efdf] dark:hover:bg-[#2a312b]"
+                      className="block rounded-lg px-3 py-2 transition-colors hover:bg-[rgba(var(--accent-rgb),0.08)] hover:shadow-[0_14px_36px_-30px_rgba(34,40,34,0.55)]"
                     >
-                      <h4 className="font-normal">{metadata.title}</h4>
+                      <h4 className="font-semibold text-[color:var(--ink)]">
+                        {metadata.title}
+                      </h4>
 
                       {metadata.description ? (
-                        <p className="mt-0.5 text-sm text-neutral-800 dark:text-neutral-400">
+                        <p className="mt-0.5 type-base text-[color:var(--ink)] leading-relaxed">
                           {metadata.description}
                         </p>
                       ) : null}
 
-                      <p className="mt-1 text-xs text-neutral-600 dark:text-neutral-500">
+                      <p className="mt-1 type-caption text-[color:var(--muted-ink)]">
                         {metadata.date}
                       </p>
                     </Link>

@@ -4,11 +4,23 @@ import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
 import Nav from "./Nav"
-import { Noto_Serif } from "next/font/google"
+import { Cormorant_Garamond, Newsreader } from "next/font/google"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 
-const font = Noto_Serif({ subsets: ["latin"], weight: ["400"] })
+const body = Newsreader({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-body",
+})
+
+const display = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-display",
+})
 
 export default function Base({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false)
@@ -25,9 +37,9 @@ export default function Base({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div
-        className={`${font.className} min-h-screen text-gray-700 flex-grow dark:text-[#a0a0a0] md:flex items-center justify-center md:p-4`}
+        className={`${body.variable} ${display.variable} min-h-screen text-[color:var(--ink)] flex-grow dark:text-[#d6d9de] md:flex items-center justify-center md:p-4`}
       >
-        <div className="w-full max-w-7xl md:h-[80vh] bg-[#FCF6EA] dark:bg-neutral-900 md:border-2 border-[#808F66] md:rounded-2xl overflow-hidden shadow-lg flex relative">
+        <div className="w-full max-w-7xl md:h-[80vh] bg-[radial-gradient(circle_at_28%_18%,#fdfaf5,#f3ede3_58%,#ece3d7_90%)] dark:bg-[linear-gradient(180deg,#0f100f,#0a0c0a)] md:border border-[color:rgba(52,72,54,0.24)] dark:border-[color:rgba(122,136,125,0.24)] md:rounded-2xl overflow-hidden shadow-[0_24px_70px_-48px_rgba(24,27,24,0.6)] flex relative backdrop-blur-[0.75px]">
           <div className="hidden p-2 xl:block absolute top-0 left-56 z-10 pointer-events-none">
             <Image src="/tree.png" alt="Decorative tree" width={100} height={100} className="opacity-80" />
           </div>
@@ -39,7 +51,7 @@ export default function Base({ children }: { children: React.ReactNode }) {
           <Nav open={open} setOpen={setOpen} />
           <main
             ref={mainRef}
-            className="flex-1 p-10 text-lg md:text-lg overflow-auto md:border-l-2 border-[#808F66] mt-10 md:mt-0 min-h-screen md:min-h-full"
+            className="panel-surface flex-1 p-10 type-reading md:type-reading leading-[1.62] tracking-[0.002em] font-[540] overflow-auto md:border-l border-[color:rgba(48,68,51,0.2)] dark:border-[color:rgba(105,118,107,0.26)] mt-10 md:mt-0 min-h-screen md:min-h-full bg-white/80 dark:bg-black/20"
           >
             {children}
           </main>

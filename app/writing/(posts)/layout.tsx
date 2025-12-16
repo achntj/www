@@ -13,9 +13,9 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         </header>
         <main className="article space-y-4 leading-loose">{children}</main>
         <div className="flex items-center space-x-4 my-5">
-          <span className="border-t flex-1"></span>
+          <span className="border-t border-[color:var(--hairline)] flex-1"></span>
           <span className="text-2xl">§</span>
-          <span className="border-t flex-1"></span>
+          <span className="border-t border-[color:var(--hairline)] flex-1"></span>
         </div>
         <p className="my-5 text-xs">
           Written with{" "}

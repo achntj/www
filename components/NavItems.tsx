@@ -3,7 +3,7 @@ import Socials from "./Socials";
 
 export default function NavItems() {
   return (
-    <div className="block space-y-2 flex flex-col justify-between h-full">
+    <div className="block space-y-2 flex flex-col justify-between h-full text-[color:var(--muted-ink)] dark:text-[color:var(--muted-ink)]">
       <div>
         <NavLink href="/" name="Home" />
         <NavLink href="/projects" name="Projects" />
@@ -23,13 +23,16 @@ export default function NavItems() {
       </NavLink>
       <NavLink href="/uses" name="Uses">
         <CpuChipIcon className="h-6 w-6"/>
-      </NavLink> 
+        </NavLink> 
 
       <NavLink href="/coursework" name="Course Work" />
       */}
 
       <div className="flex flex-col space-y-4">
-        <h3 className="font-bold text-gray-700 dark:text-neutral-300 text-base mt-3 block">
+        <h3
+          className="font-semibold type-caption tracking-[0.14em] text-[color:var(--soft-ink)] dark:text-[color:var(--soft-ink)] mt-3 block"
+          style={{ fontVariant: "small-caps" }}
+        >
           On the Web
         </h3>
         <Socials />

@@ -10,6 +10,10 @@ export default function ContactForm() {
   const [sec, setSec] = useState("");
   const [message, setMessage] = useState("");
   const [disable, setDisable] = useState(false);
+  const labelClass =
+    "mb-1 block type-base font-medium tracking-[0.035em] text-[color:var(--soft-ink)]";
+  const fieldClass =
+    "w-full rounded-xl bg-[color:var(--pill)] border border-[color:var(--hairline)] px-3 py-2.5 outline-none placeholder:text-[color:var(--soft-ink)] text-[color:var(--ink)] focus:border-[rgba(var(--accent-rgb),0.5)] focus:ring-2 focus:ring-[rgba(var(--accent-rgb),0.22)]";
 
   async function submitForm(e: React.FormEvent) {
     e.preventDefault();
@@ -52,7 +56,7 @@ export default function ContactForm() {
     <>
       <form onSubmit={submitForm} autoComplete="off" className="grid gap-4">
         <label className="block">
-          <span className="mb-1 block text-sm font-medium">Full name</span>
+          <span className={labelClass}>Full name</span>
           <input
             type="text"
             name="name"
@@ -60,15 +64,12 @@ export default function ContactForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="
-              w-full rounded-xl bg-white/60 border border-[#dfe6d3] px-3 py-2.5 
-              outline-none placeholder:text-[#a3ad9a] dark:bg-[#1c211d]/60 
-              dark:border-[#3b463c] dark:placeholder:text-[#98a391]"
+            className={fieldClass}
           />
         </label>
 
         <label className="block">
-          <span className="mb-1 block text-sm font-medium">Email</span>
+          <span className={labelClass}>Email</span>
           <input
             type="email"
             name="email"
@@ -76,17 +77,12 @@ export default function ContactForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="
-              w-full rounded-xl bg-white/60 border border-[#dfe6d3] px-3 py-2.5 
-              outline-none placeholder:text-[#a3ad9a] dark:bg-[#1c211d]/60 
-              dark:border-[#3b463c] dark:placeholder:text-[#98a391]"
+            className={fieldClass}
           />
         </label>
 
         <label className="block">
-          <span className="mb-1 block text-sm font-medium">
-            Zebras are black and…
-          </span>
+          <span className={labelClass}>Zebras are black and…</span>
           <input
             type="text"
             name="security"
@@ -94,15 +90,12 @@ export default function ContactForm() {
             value={sec}
             onChange={(e) => setSec(e.target.value)}
             required
-            className="
-              w-full rounded-xl bg-white/60 border border-[#dfe6d3] px-3 py-2.5 
-              outline-none placeholder:text-[#a3ad9a] dark:bg-[#1c211d]/60 
-              dark:border-[#3b463c] dark:placeholder:text-[#98a391]"
+            className={fieldClass}
           />
         </label>
 
         <label className="block">
-          <span className="mb-1 block text-sm font-medium">Message</span>
+          <span className={labelClass}>Message</span>
           <textarea
             name="message"
             rows={6}
@@ -110,10 +103,7 @@ export default function ContactForm() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
-            className="
-              w-full rounded-xl bg-white/60 border border-[#dfe6d3] px-3 py-2.5 
-              outline-none placeholder:text-[#a3ad9a] dark:bg-[#1c211d]/60 
-              dark:border-[#3b463c] dark:placeholder:text-[#98a391]"
+            className={fieldClass}
           />
         </label>
 
@@ -123,16 +113,18 @@ export default function ContactForm() {
             disabled={disable}
             aria-disabled={disable}
             className="
-              inline-flex items-center justify-center rounded-2xl px-5 py-2.5 font-medium
-              bg-[#2f6d47] text-white hover:bg-[#295e3e]
-              disabled:opacity-60 disabled:cursor-not-allowed transition
-              dark:bg-[#b9c6ac] dark:text-[#1b1d18] dark:hover:bg-[#a9b99f]"
+              inline-flex items-center justify-center rounded-2xl px-5 py-2.5 font-medium tracking-[0.05em]
+              bg-[color:var(--ink)] text-[#f6f2e8] border border-[color:rgba(48,68,51,0.45)]
+              shadow-[0_16px_44px_-32px_rgba(34,40,34,0.7)]
+              hover:shadow-[0_18px_50px_-28px_rgba(34,40,34,0.72)] hover:bg-[color:var(--muted-ink)]
+              disabled:opacity-60 disabled:cursor-not-allowed
+              dark:bg-[#e5e7eb] dark:text-[#0b0c0c] dark:border-[color:rgba(226,231,221,0.6)] dark:hover:bg-[#f5f7fa]"
           >
             Send message
           </button>
         </div>
 
-        <p className="text-xs text-[#7a8578] dark:text-[#aeb9a6]">
+        <p className="type-caption text-[color:var(--soft-ink)] dark:text-[color:var(--soft-ink)]">
           Happy to hear from you — I’ll get back shortly.
         </p>
       </form>
