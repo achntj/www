@@ -16,6 +16,8 @@
 
 @layer base {
   :root {
+    --app-shell: #f3ede3;
+    --surface: rgba(255, 255, 255, 0.8);
     --ink: #211d15;
     --muted-ink: #4f4a3f;
     --soft-ink: #6d665a;
@@ -42,6 +44,8 @@
   }
 
   :root.dark {
+    --app-shell: #050505;
+    --surface: rgba(0, 0, 0, 0.2);
     --ink: #fafbf6;
     --muted-ink: #e6e9e1;
     --soft-ink: #cfd4c8;
@@ -60,12 +64,27 @@
 }
 
 @layer base {
+  /* On mobile, match the main surface to the base shell color */
+  @media (max-width: 767px) {
+    :root {
+      --surface: var(--app-shell);
+    }
+
+    :root.dark {
+      --surface: var(--app-shell);
+    }
+  }
+
+  html {
+    background: var(--app-shell);
+    background-color: var(--app-shell);
+    color: var(--ink);
+  }
+
   body {
     color: var(--ink);
-    background:
-      radial-gradient(120% 120% at 22% 12%, rgba(var(--blush), 0.12), transparent 48%),
-      radial-gradient(140% 140% at 84% 76%, rgba(var(--sage), 0.12), transparent 50%),
-      linear-gradient(180deg, var(--shell), var(--paper) 48%, var(--paper-veil) 92%);
+    background: var(--app-shell);
+    background-color: var(--app-shell);
     font-family: var(--font-body, var(--font-serif));
     font-size: 19.5px;
     font-weight: 560;
@@ -81,7 +100,13 @@
 
   .dark body {
     color: var(--ink);
-    background: #0b0c0c fixed;
+    background: var(--app-shell);
+    background-color: var(--app-shell);
+  }
+
+  .dark html {
+    background: var(--app-shell);
+    color: var(--ink);
   }
 
   ::selection {
@@ -370,12 +395,24 @@
     font-size: var(--type-base);
   }
 
-  /* Chrome Autocomplete input bg fix */
+  /* Autofill: keep text readable and background aligned with theme */
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
+  input:-webkit-autofill:active,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  textarea:-webkit-autofill:active,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus,
+  select:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--ink);
+    caret-color: var(--ink);
+    box-shadow: 0 0 0 1000px var(--pill) inset;
+    transition: background-color 9999s ease-in-out 0s;
+    border-color: var(--hairline);
   }
 
   * {

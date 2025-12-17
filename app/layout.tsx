@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link
           rel="preload"
@@ -37,9 +37,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="md:dark:bg-black md:bg-[#F8F5E6] bg-[#FCF6EA] dark:bg-black">
+      <body className="bg-[color:var(--app-shell)] dark:bg-[color:var(--app-shell)]">
         <ThemeProvider
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           attribute="class"
         >
