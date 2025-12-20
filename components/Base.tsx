@@ -7,6 +7,7 @@ import Nav from "./Nav"
 import { Cormorant_Garamond, Newsreader } from "next/font/google"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
+import DateStamp from "./DateStamp"
 
 const body = Newsreader({
   subsets: ["latin"],
@@ -51,8 +52,9 @@ export default function Base({ children }: { children: React.ReactNode }) {
           <Nav open={open} setOpen={setOpen} />
           <main
             ref={mainRef}
-            className="panel-surface flex-1 p-6 md:p-10 pt-16 md:pt-10 type-reading md:type-reading leading-[1.62] tracking-[0.002em] font-[540] overflow-auto md:border-l border-[color:rgba(48,68,51,0.2)] dark:border-[color:rgba(105,118,107,0.26)] mt-0 min-h-screen md:min-h-full bg-[color:var(--surface)]"
+            className="panel-surface relative flex-1 p-6 md:p-10 pt-16 md:pt-10 type-reading md:type-reading leading-[1.62] tracking-[0.002em] font-[540] overflow-auto md:border-l border-[color:rgba(48,68,51,0.2)] dark:border-[color:rgba(105,118,107,0.26)] mt-0 min-h-screen md:min-h-full bg-[color:var(--surface)]"
           >
+            <DateStamp />
             {children}
           </main>
         </div>
