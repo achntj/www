@@ -9,7 +9,15 @@ export default function Home() {
     <Container>
       <section className="">
         <h1 className="text-3xl md:text-4xl leading-tight font-serif font-medium tracking-[0.04em] text-[color:var(--ink)] dark:text-[color:var(--ink)]">
-          <span className="mr-2">🪷</span>Hi, I’m Achintya
+          <span className="inline-flex items-center gap-2">
+            <img
+              src="/lotus.svg"
+              alt=""
+              aria-hidden="true"
+              className="w-6 h-6 md:w-7 md:h-7"
+            />
+            <span>Hi, I’m Achintya</span>
+          </span>
         </h1>
         <p className="mt-1 type-subhead text-[color:var(--soft-ink)] dark:text-[color:var(--soft-ink)]">
           Welcome to my little digital garden.

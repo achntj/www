@@ -20,7 +20,7 @@ export default function Garden() {
   return (
     <Container>
       <h1 className="text-3xl md:text-4xl leading-tight font-serif font-medium tracking-[0.04em]">
-        🌸 Digital Garden
+        Digital Garden
       </h1>
 
       <p className="mb-4">
@@ -29,16 +29,18 @@ export default function Garden() {
       </p>
 
       <h2 className="text-2xl font-semibold tracking-[0.03em] mt-8 mb-3">
-        🌿 Recommended Notes
+        Recommended Notes
       </h2>
       <ul className="list-disc pl-6 space-y-2">
         <li>
-          <CustomLink href="/writing/old-tech">Why older technology still feels so right</CustomLink>
+          <CustomLink href="/writing/old-tech">
+            Why older technology still feels so right
+          </CustomLink>
         </li>
       </ul>
 
       <h2 className="text-2xl font-semibold mt-8 mb-3">
-        🪴 Random Stuff about me
+        Random Stuff about me
       </h2>
       <section className="space-y-6 leading-loose">
         <div>
@@ -70,7 +72,9 @@ export default function Garden() {
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold tracking-[0.025em]">Some Links</h3>
+          <h3 className="text-xl font-semibold tracking-[0.025em]">
+            Some Links
+          </h3>
           <p>My favorite parts of the internet:</p>
           <ul className="pl-5 list-disc space-y-2 mt-4">
             <li>
