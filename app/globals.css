@@ -95,7 +95,7 @@
     -webkit-font-smoothing: antialiased;
     font-optical-sizing: auto;
     font-feature-settings: "liga" 1, "kern" 1, "lnum" 1, "pnum" 1, "calt" 0;
-    font-variation-settings: "opsz" 19.5, "wght" 560;
+    font-variation-settings: "opsz" 19.5;
   }
 
   .dark body {
@@ -137,7 +137,8 @@
     line-height: 1.7;
     text-wrap: normal;
     hyphens: auto;
-    font-variation-settings: "opsz" 19.5, "wght" 550;
+    font-weight: 550;
+    font-variation-settings: "opsz" 19.5;
   }
 
   h1,
@@ -147,10 +148,27 @@
     font-family: var(--font-display, var(--font-serif));
     @apply font-semibold;
     letter-spacing: 0.008em;
-    font-variation-settings: "opsz" 24, "wght" 640;
+    font-weight: 640;
+    font-variation-settings: "opsz" 24;
     font-variant-ligatures: common-ligatures;
     font-variant-numeric: oldstyle-nums;
     color: var(--ink);
+  }
+
+  strong,
+  b {
+    font-weight: 800;
+    font-variation-settings: "opsz" 19.5, "wght" 800;
+  }
+
+  .dark strong,
+  .dark b {
+    text-shadow: 0 0 0.6px currentColor;
+  }
+
+  em,
+  i {
+    font-style: italic;
   }
 
   h1,

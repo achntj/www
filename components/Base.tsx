@@ -11,7 +11,8 @@ import DateStamp from "./DateStamp"
 
 const body = Newsreader({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
   display: "swap",
   variable: "--font-body",
 })
