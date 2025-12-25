@@ -11,6 +11,8 @@ import {
   PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
 
+type ProjectCategory = "Full-Stack" | "Quant" | "ML" | "Tools" | "Whimsy";
+
 type Project = {
   name: string;
   url: string;
@@ -18,7 +20,8 @@ type Project = {
   color: string;
   stack: string[];
   slug?: string;
-  category: "Full-Stack" | "Quant" | "ML" | "Tools" | "Whimsy";
+  categories: ProjectCategory[];
+  complexity: number;
 };
 
 const projects: Project[] = [
@@ -29,16 +32,18 @@ const projects: Project[] = [
     color: "#4F46E5",
     stack: ["PyTorch", "FastAPI", "Next.js", "AWS"],
     slug: "audiocnn",
-    category: "Full-Stack",
+    categories: ["Full-Stack", "ML"],
+    complexity: 5,
   },
   {
-    name: "Multi-Agent Reasoning",
-    url: "https://github.com/achntj/multi-agent-reasoning",
-    desc: "Agent workflows for strategic debate & tool use.",
-    color: "#D946EF",
-    stack: ["FastAPI", "Streamlit", "Ollama"],
-    slug: "multi-agent-reasoning",
-    category: "Full-Stack",
+    name: "Personal Lab",
+    url: "https://github.com/achntj/lab",
+    desc: "Personal workspace hub with tasks, notes, timers, bookmarks, subscriptions, and a secure biometric lock.",
+    color: "#0EA5A4",
+    stack: ["Next.js", "Typescript", "Prisma", "SQLite", "Tailwind", "Tauri"],
+    slug: "personal-lab",
+    categories: ["Full-Stack"],
+    complexity: 5,
   },
   {
     name: "Value Finder",
@@ -47,7 +52,8 @@ const projects: Project[] = [
     color: "#EF4444",
     stack: ["FastAPI", "Playwright", "Ollama", "sklearn"],
     slug: "value-finder",
-    category: "Full-Stack",
+    categories: ["Full-Stack"],
+    complexity: 4,
   },
   {
     name: "Quantitative Strategies — Portfolio Optimization",
@@ -56,7 +62,8 @@ const projects: Project[] = [
     color: "#A855F7",
     stack: ["Python", "NumPy", "ta-lib", "Matplotlib", "pandas"],
     slug: "quantitative-strategies",
-    category: "Quant",
+    categories: ["Quant"],
+    complexity: 4,
   },
   {
     name: "Deep Learning from Scratch",
@@ -65,7 +72,8 @@ const projects: Project[] = [
     color: "#06B6D4",
     stack: ["Python", "NumPy", "PyTorch"],
     slug: "dlfs",
-    category: "ML",
+    categories: ["ML"],
+    complexity: 4,
   },
   {
     name: "Slimlist",
@@ -74,7 +82,8 @@ const projects: Project[] = [
     color: "#2563EB",
     stack: ["Next.js", "Typescript", "Tailwind", "SQLite"],
     slug: "slimlist",
-    category: "Full-Stack",
+    categories: ["Full-Stack"],
+    complexity: 3,
   },
   {
     name: "AppTrack",
@@ -83,7 +92,8 @@ const projects: Project[] = [
     color: "#16A34A",
     stack: ["Next.js", "Typescript", "Prisma", "SQLite"],
     slug: "apptrack",
-    category: "Full-Stack",
+    categories: ["Full-Stack"],
+    complexity: 3,
   },
   {
     name: "Statistical Arbitrage Engine",
@@ -92,7 +102,8 @@ const projects: Project[] = [
     color: "#10B981",
     stack: ["Python", "scikit-learn", "statsmodels", "pandas"],
     slug: "statistical-arbitrage",
-    category: "Quant",
+    categories: ["Quant"],
+    complexity: 5,
   },
 
   {
@@ -102,7 +113,8 @@ const projects: Project[] = [
     color: "#F97316",
     stack: ["Python", "OpenCV", "PyTorch"],
     slug: "nightvision",
-    category: "ML",
+    categories: ["ML"],
+    complexity: 3,
   },
   {
     name: "Depression Detection",
@@ -111,7 +123,8 @@ const projects: Project[] = [
     color: "#22D3EE",
     stack: ["Python", "scikit-learn"],
     slug: "depression-detection",
-    category: "ML",
+    categories: ["ML"],
+    complexity: 2,
   },
   {
     name: "Stegify",
@@ -120,7 +133,8 @@ const projects: Project[] = [
     color: "#84CC16",
     stack: ["Python"],
     slug: "stegify",
-    category: "Tools",
+    categories: ["Tools"],
+    complexity: 2,
   },
   {
     name: "Bookmarks → Notion",
@@ -129,7 +143,8 @@ const projects: Project[] = [
     color: "#EAB308",
     stack: ["Python"],
     slug: "bookmarks-notion",
-    category: "Tools",
+    categories: ["Tools"],
+    complexity: 2,
   },
   {
     name: "Zsh Guide",
@@ -138,7 +153,8 @@ const projects: Project[] = [
     color: "#14B8A6",
     stack: ["Next.js", "TypeScript"],
     slug: "zshguide",
-    category: "Tools",
+    categories: ["Tools"],
+    complexity: 2,
   },
   {
     name: "Patrick Bateman Card Generator",
@@ -147,18 +163,18 @@ const projects: Project[] = [
     color: "#9333EA",
     stack: ["Next.js", "TypeScript", "TailwindCSS"],
     slug: "bateman-card",
-    category: "Whimsy",
+    categories: ["Whimsy"],
+    complexity: 1,
   },
 ];
 
-const categoryMeta: Record<Project["category"], { label: string; Icon: any }> =
-  {
-    "Full-Stack": { label: "Full-Stack", Icon: Squares2X2Icon },
-    Quant: { label: "Quant", Icon: ChartBarIcon },
-    ML: { label: "ML", Icon: CpuChipIcon },
-    Tools: { label: "Tools", Icon: WrenchScrewdriverIcon },
-    Whimsy: { label: "Whimsy", Icon: PuzzlePieceIcon },
-  };
+const categoryMeta: Record<ProjectCategory, { label: string; Icon: any }> = {
+  "Full-Stack": { label: "Full-Stack", Icon: Squares2X2Icon },
+  Quant: { label: "Quant", Icon: ChartBarIcon },
+  ML: { label: "ML", Icon: CpuChipIcon },
+  Tools: { label: "Tools", Icon: WrenchScrewdriverIcon },
+  Whimsy: { label: "Whimsy", Icon: PuzzlePieceIcon },
+};
 
 const categories = [
   "All",
@@ -178,19 +194,22 @@ function hexToRgb(hex: string) {
 
 function mixWithWhite(hex: string, whiteRatio = 0.92) {
   const { r, g, b } = hexToRgb(hex);
-  const mix = (c: number) => Math.round(255 * whiteRatio + c * (1 - whiteRatio));
+  const mix = (c: number) =>
+    Math.round(255 * whiteRatio + c * (1 - whiteRatio));
   return `rgb(${mix(r)}, ${mix(g)}, ${mix(b)})`;
 }
 
 function mixForBorder(hex: string, whiteRatio = 0.82) {
   const { r, g, b } = hexToRgb(hex);
-  const mix = (c: number) => Math.round(255 * whiteRatio + c * (1 - whiteRatio));
+  const mix = (c: number) =>
+    Math.round(255 * whiteRatio + c * (1 - whiteRatio));
   return `rgb(${mix(r)}, ${mix(g)}, ${mix(b)})`;
 }
 
 function mixForDot(hex: string, whiteRatio = 0.65) {
   const { r, g, b } = hexToRgb(hex);
-  const mix = (c: number) => Math.round(255 * whiteRatio + c * (1 - whiteRatio));
+  const mix = (c: number) =>
+    Math.round(255 * whiteRatio + c * (1 - whiteRatio));
   return `rgb(${mix(r)}, ${mix(g)}, ${mix(b)})`;
 }
 
@@ -205,12 +224,16 @@ function cardStyle(color: string): CSSProperties {
 export default function ProjectsClient() {
   const [active, setActive] = useState<(typeof categories)[number]>("All");
 
+  const sortedProjects = useMemo(() => {
+    return [...projects].sort((a, b) => b.complexity - a.complexity);
+  }, []);
+
   const filtered = useMemo(() => {
-    if (active === "All") return projects;
-    return projects.filter(
-      (p) => p.category === (active as Project["category"]),
+    if (active === "All") return sortedProjects;
+    return sortedProjects.filter((p) =>
+      p.categories.includes(active as ProjectCategory),
     );
-  }, [active]);
+  }, [active, sortedProjects]);
 
   return (
     <>
@@ -218,8 +241,7 @@ export default function ProjectsClient() {
       <div className="flex flex-wrap gap-2 mb-8">
         {categories.map((c) => {
           const isActive = c === active;
-          const Meta =
-            c === "All" ? null : categoryMeta[c as Project["category"]];
+          const Meta = c === "All" ? null : categoryMeta[c as ProjectCategory];
           const Icon = Meta?.Icon;
           return (
             <button
@@ -271,10 +293,15 @@ export default function ProjectsClient() {
                   <h3 className="text-lg font-semibold leading-tight text-[color:var(--ink)] tracking-[0.02em]">
                     {p.name}
                   </h3>
-                  <div className="mt-1 inline-flex items-center gap-2 text-xs">
-                    <span className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 bg-[color:var(--pill)] border-[color:var(--hairline)] text-[color:var(--soft-ink)]">
-                      {categoryMeta[p.category].label}
-                    </span>
+                  <div className="mt-1 inline-flex flex-wrap items-center gap-2 text-xs">
+                    {p.categories.map((category) => (
+                      <span
+                        key={category}
+                        className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 bg-[color:var(--pill)] border-[color:var(--hairline)] text-[color:var(--soft-ink)]"
+                      >
+                        {categoryMeta[category].label}
+                      </span>
+                    ))}
                   </div>
                 </div>
                 <div className="opacity-70 group-hover:opacity-100 text-[color:var(--muted-ink)]">
