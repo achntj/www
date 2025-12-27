@@ -258,9 +258,7 @@ export default function ProjectsClient() {
                 <Icon className="h-4 w-4 opacity-80 text-[color:var(--muted-ink)]" />
               )}
               <span className="text-[color:var(--ink)]">
-                {c === "All"
-                  ? "All"
-                  : categoryMeta[c as Project["category"]].label}
+                {c === "All" ? "All" : Meta?.label}
               </span>
             </button>
           );
