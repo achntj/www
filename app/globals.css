@@ -8,8 +8,8 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
 
-  --font-serif: var(--font-display, "Cormorant Garamond"), "Times New Roman",
-    Times, serif;
+  --font-serif:
+    var(--font-display, "Cormorant Garamond"), "Times New Roman", Times, serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -94,7 +94,12 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     font-optical-sizing: auto;
-    font-feature-settings: "liga" 1, "kern" 1, "lnum" 1, "pnum" 1, "calt" 0;
+    font-feature-settings:
+      "liga" 1,
+      "kern" 1,
+      "lnum" 1,
+      "pnum" 1,
+      "calt" 0;
     font-variation-settings: "opsz" 19.5;
   }
 
@@ -121,10 +126,20 @@
 
   .panel-surface {
     background-image:
-      radial-gradient(circle at 22% 16%, rgba(var(--blush), 0.12), rgba(255, 255, 255, 0)),
-      radial-gradient(circle at 82% 78%, rgba(var(--sage), 0.12), rgba(255, 255, 255, 0));
+      radial-gradient(
+        circle at 22% 16%,
+        rgba(var(--blush), 0.12),
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        circle at 82% 78%,
+        rgba(var(--sage), 0.12),
+        rgba(255, 255, 255, 0)
+      );
     background-repeat: no-repeat, no-repeat;
-    background-position: 0 0, 0 0;
+    background-position:
+      0 0,
+      0 0;
   }
 
   .dark .panel-surface {
@@ -137,7 +152,7 @@
     line-height: 1.7;
     text-wrap: normal;
     hyphens: auto;
-    font-weight: 550;
+    font-weight: 400;
     font-variation-settings: "opsz" 19.5;
   }
 
@@ -158,7 +173,9 @@
   strong,
   b {
     font-weight: 800;
-    font-variation-settings: "opsz" 19.5, "wght" 800;
+    font-variation-settings:
+      "opsz" 19.5,
+      "wght" 800;
   }
 
   .dark strong,
@@ -286,7 +303,11 @@
     font-weight: 700;
     font-family: var(--font-display, var(--font-serif));
     color: var(--ink);
-    background: linear-gradient(180deg, rgba(var(--blush), 0.36), rgba(var(--dew), 0.22));
+    background: linear-gradient(
+      180deg,
+      rgba(var(--blush), 0.36),
+      rgba(var(--dew), 0.22)
+    );
     border: 1px solid var(--hairline);
     border-radius: 12px 10px 11px 10px;
     box-shadow: 0 18px 48px -32px rgba(24, 27, 24, 0.65);
@@ -295,7 +316,11 @@
 
   .dark .article > p:first-of-type::first-letter {
     color: var(--ink);
-    background: linear-gradient(180deg, rgba(var(--highlight-rgb), 0.24), rgba(var(--accent-rgb), 0.14));
+    background: linear-gradient(
+      180deg,
+      rgba(var(--highlight-rgb), 0.24),
+      rgba(var(--accent-rgb), 0.14)
+    );
     box-shadow: 0 18px 44px -30px rgba(9, 10, 9, 0.75);
   }
 
@@ -304,7 +329,9 @@
     text-underline-offset: 0.26em;
     text-decoration-color: rgba(var(--accent-rgb), 0.38);
     text-decoration-skip-ink: auto;
-    transition: color 150ms ease, text-decoration-color 180ms ease;
+    transition:
+      color 150ms ease,
+      text-decoration-color 180ms ease;
   }
 
   .article a:hover {
@@ -409,7 +436,10 @@
     position: relative;
     border-radius: 0.85rem;
     backdrop-filter: blur(0.5px);
-    transition: color 180ms ease, background-color 180ms ease, box-shadow 200ms ease;
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      box-shadow 200ms ease;
     font-size: var(--type-base);
   }
 
