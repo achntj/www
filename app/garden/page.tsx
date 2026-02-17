@@ -28,16 +28,13 @@ export default function Garden() {
         drawer, plus this month's Spotify top 10.
       </p>
 
-      <h2 className="text-2xl font-semibold tracking-[0.03em] mt-8 mb-3">
-        Recommended Notes
-      </h2>
-      <ul className="list-disc pl-6 space-y-2">
-        <li>
-          <CustomLink href="/writing/old-tech">
-            Why older technology still feels so right
-          </CustomLink>
-        </li>
-      </ul>
+      <p className="mb-6">
+        My blog has more essays and thoughts on random things—{" "}
+        <CustomLink href="https://achntj.com">
+          read it here
+        </CustomLink>
+        .
+      </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-3">
         Random Stuff about me

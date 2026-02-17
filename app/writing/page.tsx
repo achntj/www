@@ -2,6 +2,7 @@ import { readdir } from "fs/promises";
 import path from "path";
 import Link from "next/link";
 import Container from "@/components/Container";
+import CustomLink from "@/components/CustomLink";
 
 import { pageMeta } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -52,7 +53,8 @@ export default async function WritingIndex() {
           Writing
         </h1>
         <p className="mt-1 type-subhead text-[color:var(--soft-ink)] dark:text-[color:var(--soft-ink)]">
-          Essays on topics I care about.
+          To read more of what I write, go to{" "}
+          <CustomLink href="https://achntj.com">achntj.com</CustomLink>.
         </p>
 
         {sortedYears.map((year) => (
