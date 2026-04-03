@@ -18,6 +18,29 @@ export default function Coursework() {
           A list of courses I’m currently taking (and have taken in the past).
         </p>
 
+        <h3 className="my-5 text-2xl font-bold">Spring 26</h3>
+        <ul className="pl-5 list-disc space-y-2">
+          <li>CSE 412: Database Management</li>
+          <li>CSE 476: Introduction to Natural Language Processing</li>
+          <li>CSE 486: Computer Science Capstone Project II</li>
+          <li>ECN 425: Introduction to Econometrics</li>
+          <li>ECN 475: Capstone in Economics</li>
+          <li>FIN 471: SIM (Student Investment Management) Fund</li>
+        </ul>
+        <h3 className="my-5 text-2xl font-bold">Fall 25</h3>
+        <ul className="pl-5 list-disc space-y-2">
+          <li>CSE 471: Introduction to Artificial Intelligence</li>
+          <li>CSE 475: Foundations of Machine Learning</li>
+          <li>CSE 485: Computer Science Capstone Project I</li>
+          <li>ECN 416: Game Theory &amp; Economic Behavior</li>
+          <li>FIN 471: SIM (Student Investment Management) Fund</li>
+          <li>STP 421: Probability</li>
+          <li>FIN 494: Topic: Portfolio Engineering</li>
+        </ul>
+        <h3 className="my-5 text-2xl font-bold">Summer 25</h3>
+        <ul className="pl-5 list-disc space-y-2">
+          <li>FIN 302: Managerial Finance</li>
+        </ul>
         <h3 className="my-5 text-2xl font-bold">Spring 25</h3>
         <ul className="pl-5 list-disc space-y-2">
           <li>CSE 330: Operating Systems</li>
