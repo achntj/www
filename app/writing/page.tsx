@@ -2,14 +2,14 @@ import { readdir } from "fs/promises";
 import path from "path";
 import Link from "next/link";
 import Container from "@/components/Container";
-import CustomLink from "@/components/CustomLink";
 
 import { pageMeta } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = pageMeta({
-  title: "Writing | Achintya Jha",
-  description: "Essays on topics I care about.",
+  title: "Notes | Achintya Jha",
+  description:
+    "Notes on quantitative research, statistics, machine learning, and practical study resources.",
   path: "/writing",
 });
 
@@ -50,11 +50,16 @@ export default async function WritingIndex() {
     <Container>
       <section className="mx-auto max-w-3xl text-[color:var(--ink)] dark:text-[color:var(--ink)]">
         <h1 className="text-3xl md:text-4xl leading-tight font-serif font-medium tracking-[0.04em]">
-          Writing
+          Notes
         </h1>
-        <p className="mt-1 type-subhead text-[color:var(--soft-ink)] dark:text-[color:var(--soft-ink)]">
-          To read more of what I write, go to{" "}
-          <CustomLink href="https://achntj.com">achntj.com</CustomLink>.
+        <p className="mt-1 type-subhead text-[color:var(--soft-ink)] dark:text-[color:var(--soft-ink)] max-w-2xl leading-relaxed">
+          Selected notes on quantitative research, statistics, machine
+          learning, and practical resources for students preparing for quant
+          research roles.
+        </p>
+        <p className="mt-3 type-base text-[color:var(--muted-ink)] dark:text-[color:var(--muted-ink)] max-w-2xl leading-relaxed">
+          These notes reflect personal views only. They do not constitute
+          investment advice.    
         </p>
 
         {sortedYears.map((year) => (

@@ -17,26 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        <link
-          rel="preload"
-          href="/api/top-tracks"
-          as="fetch"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/api/now-playing"
-          as="fetch"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/api/last-played"
-          as="fetch"
-          crossOrigin="anonymous"
-        />
-      </head>
+      <head />
       <body className="bg-[color:var(--app-shell)] dark:bg-[color:var(--app-shell)]">
         <ThemeProvider
           defaultTheme="dark"

@@ -7,7 +7,16 @@ const notion = new Client({
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, message }: { name: string; email: string; message: string } = await request.json()
+    const {
+      name,
+      email,
+      message,
+      website,
+    }: { name: string; email: string; message: string; website?: string } = await request.json()
+
+    if (website && website.trim().length > 0) {
+      return NextResponse.json({ msg: "Success" }, { status: 201 })
+    }
 
     await notion.pages.create({
       parent: {

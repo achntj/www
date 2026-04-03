@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = pageMeta({
   title: "Projects | Achintya Jha",
   description:
-    "Selected work across full-stack apps, quantitative finance, and machine learning.",
+    "Selected work in quantitative research, machine learning, and research engineering.",
   path: "/projects",
 });
 
@@ -18,8 +18,11 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="mt-2 type-subhead text-[color:var(--muted-ink)] dark:text-[color:var(--muted-ink)] max-w-2xl leading-relaxed">
-          Selected work across full-stack apps, quantitative finance, and
-          machine learning. Filter to explore.
+          Selected work in quantitative research, machine learning, and
+          research engineering.
+        </p>
+        <p className="mt-3 type-base text-[color:var(--muted-ink)] dark:text-[color:var(--muted-ink)] max-w-2xl leading-relaxed">
+          Projects shown here are personal, academic, or open-source work.
         </p>
       </section>
 

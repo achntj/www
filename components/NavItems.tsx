@@ -6,12 +6,10 @@ export default function NavItems() {
     <div className="block space-y-2 flex flex-col justify-between h-full text-[color:var(--muted-ink)] dark:text-[color:var(--muted-ink)]">
       <div>
         <NavLink href="/" name="Home" />
+        <NavLink href="/about" name="About" />
         <NavLink href="/projects" name="Projects" />
+        <NavLink href="/writing" name="Notes" />
         <NavLink href="/contact" name="Contact" />
-        <div className="!my-4">
-          <NavLink href="/garden" name="Digital Garden" />
-        </div>
-        <NavLink href="/writing" name="Writing" />
       </div>
 
       {/* 

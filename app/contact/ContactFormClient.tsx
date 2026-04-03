@@ -7,7 +7,7 @@ type ToastTone = "success" | "error" | null;
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [sec, setSec] = useState("");
+  const [website, setWebsite] = useState("");
   const [message, setMessage] = useState("");
   const [disable, setDisable] = useState(false);
   const [toast, setToast] = useState<{
@@ -54,30 +54,24 @@ export default function ContactForm() {
     if (disable) return;
     setDisable(true);
 
-    if (sec.trim().toLowerCase() !== "white") {
-      showToast("That should have been easy 🤔", "error");
-      setDisable(false);
-      return;
-    }
-
     try {
       const res = await fetch(`/api/submit-form`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, website }),
       });
 
       if (res.status === 201) {
-        showToast("Thanks — I’ll get back to you soon!", "success");
+        showToast("Thanks for reaching out. I’ll get back to you soon.", "success");
         setName("");
         setEmail("");
-        setSec("");
+        setWebsite("");
         setMessage("");
       } else {
-        showToast("Please recheck your inputs!", "error");
+        showToast("Something went wrong. Please check the form and try again.", "error");
       }
     } catch {
-      showToast("Network error. Try again?", "error");
+      showToast("I couldn’t send your message right now. Please try again in a bit.", "error");
     } finally {
       setDisable(false);
     }
@@ -112,15 +106,15 @@ export default function ContactForm() {
           />
         </label>
 
-        <label className="block">
-          <span className={labelClass}>Zebras are black and…</span>
+        <label className="hidden" aria-hidden="true">
+          <span className={labelClass}>Website</span>
           <input
             type="text"
-            name="security"
-            placeholder=""
-            value={sec}
-            onChange={(e) => setSec(e.target.value)}
-            required
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
             className={fieldClass}
           />
         </label>
@@ -156,7 +150,7 @@ export default function ContactForm() {
         </div>
 
         <p className="type-caption text-[color:var(--soft-ink)] dark:text-[color:var(--soft-ink)]">
-          Happy to hear from you — I’ll get back shortly.
+          Happy to hear from you!
         </p>
       </form>
 

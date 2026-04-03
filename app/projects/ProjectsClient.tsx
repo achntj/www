@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type CSSProperties } from "react";
+import { useState, type CSSProperties } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowUpRightIcon,
@@ -8,10 +8,9 @@ import {
   ChartBarIcon,
   CpuChipIcon,
   WrenchScrewdriverIcon,
-  PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
 
-type ProjectCategory = "Full-Stack" | "Quant" | "ML" | "Tools" | "Whimsy";
+type ProjectCategory = "Full-Stack" | "Quant" | "ML" | "Tools";
 
 type Project = {
   name: string;
@@ -21,150 +20,116 @@ type Project = {
   stack: string[];
   slug?: string;
   categories: ProjectCategory[];
-  complexity: number;
 };
 
 const projects: Project[] = [
   {
-    name: "AudioCNN — ResNet Classifier & Visualizer",
-    url: "https://cnn-audio-vis.vercel.app/",
-    desc: "CNN based audio classifications with Layer Visualizations.",
-    color: "#4F46E5",
-    stack: ["PyTorch", "FastAPI", "Next.js", "AWS"],
-    slug: "audiocnn",
-    categories: ["Full-Stack", "ML"],
-    complexity: 5,
-  },
-  {
-    name: "Personal Lab",
-    url: "https://github.com/achntj/lab",
-    desc: "Personal workspace hub with tasks, notes, timers, bookmarks, subscriptions, and a secure biometric lock.",
-    color: "#0EA5A4",
-    stack: ["Next.js", "Typescript", "Prisma", "SQLite", "Tailwind", "Tauri"],
-    slug: "personal-lab",
-    categories: ["Full-Stack"],
-    complexity: 5,
-  },
-  {
-    name: "Value Finder",
-    url: "https://github.com/achntj/value-finder",
-    desc: "Surfaces high-signal links from noisy sources. Learns preferences.",
-    color: "#EF4444",
-    stack: ["FastAPI", "Playwright", "Ollama", "sklearn"],
-    slug: "value-finder",
-    categories: ["Full-Stack"],
-    complexity: 4,
-  },
-  {
-    name: "Quantitative Strategies — Portfolio Optimization",
-    url: "https://github.com/achntj/Quantitative-Strategies",
-    desc: "MPT, risk budgeting, Black-Littermn with Shrinkage, and Monte Carlo tooling.",
-    color: "#A855F7",
-    stack: ["Python", "NumPy", "ta-lib", "Matplotlib", "pandas"],
-    slug: "quantitative-strategies",
-    categories: ["Quant"],
-    complexity: 4,
-  },
-  {
-    name: "Deep Learning from Scratch",
-    url: "https://github.com/achntj/deep-learning-from-scratch",
-    desc: "Minimal from-scratch implementations of core DL components and PyTorch Classes.",
-    color: "#06B6D4",
-    stack: ["Python", "NumPy", "PyTorch"],
-    slug: "dlfs",
-    categories: ["ML"],
-    complexity: 4,
-  },
-  {
-    name: "Slimlist",
-    url: "https://github.com/achntj/slimlist",
-    desc: "Local-first productivity suite.",
-    color: "#2563EB",
-    stack: ["Next.js", "Typescript", "Tailwind", "SQLite"],
-    slug: "slimlist",
-    categories: ["Full-Stack"],
-    complexity: 3,
-  },
-  {
-    name: "AppTrack",
-    url: "https://github.com/achntj/apptrack",
-    desc: "Lightweight job application tracker.",
-    color: "#16A34A",
-    stack: ["Next.js", "Typescript", "Prisma", "SQLite"],
-    slug: "apptrack",
-    categories: ["Full-Stack"],
-    complexity: 3,
-  },
-  {
     name: "Statistical Arbitrage Engine",
     url: "https://github.com/achntj/statistical-arbitrage",
-    desc: "Hidden Markov Model over Ornstein–Uhlenbeck pairs trading with microstructure filter; 2018–2024 backtests.",
+    desc: "Regime-aware pairs trading research using HMM state detection, OU spreads, and microstructure filters across 2018-2024 backtests.",
     color: "#10B981",
     stack: ["Python", "scikit-learn", "statsmodels", "pandas"],
     slug: "statistical-arbitrage",
     categories: ["Quant"],
-    complexity: 5,
   },
-
+  {
+    name: "Quantitative Strategies",
+    url: "https://github.com/achntj/Quantitative-Strategies",
+    desc: "Portfolio research covering MPT, risk budgeting, Black-Litterman with shrinkage, and Monte Carlo analysis.",
+    color: "#A855F7",
+    stack: ["Python", "NumPy", "ta-lib", "Matplotlib", "pandas"],
+    slug: "quantitative-strategies",
+    categories: ["Quant"],
+  },
+  {
+    name: "AudioCNN — ResNet Classifier & Visualizer",
+    url: "https://cnn-audio-vis.vercel.app/",
+    desc: "End-to-end audio classification pipeline with ResNet modeling, layer visualizations, and an interactive inference interface.",
+    color: "#4F46E5",
+    stack: ["PyTorch", "FastAPI", "Next.js", "AWS"],
+    slug: "audiocnn",
+    categories: ["Full-Stack", "ML"],
+  },
+  {
+    name: "Value Finder",
+    url: "https://github.com/achntj/value-finder",
+    desc: "Ranking pipeline for extracting high-signal links from noisy sources using retrieval, filtering, and user-feedback loops.",
+    color: "#EF4444",
+    stack: ["FastAPI", "Playwright", "Ollama", "sklearn"],
+    slug: "value-finder",
+    categories: ["Full-Stack"],
+  },
+  {
+    name: "Deep Learning from Scratch",
+    url: "https://github.com/achntj/deep-learning-from-scratch",
+    desc: "From-scratch implementations of core deep learning components used to study optimization, backpropagation, and model behavior.",
+    color: "#06B6D4",
+    stack: ["Python", "NumPy", "PyTorch"],
+    slug: "dlfs",
+    categories: ["ML"],
+  },
   {
     name: "NightVision",
     url: "https://github.com/achntj/NightVision",
-    desc: "Low-light image enhancement experiments.",
+    desc: "Low-light image enhancement experiments combining classical preprocessing and deep learning models.",
     color: "#F97316",
     stack: ["Python", "OpenCV", "PyTorch"],
     slug: "nightvision",
     categories: ["ML"],
-    complexity: 3,
   },
   {
     name: "Depression Detection",
     url: "https://github.com/achntj/depression-detection",
-    desc: "Classic NLP on tweets (logistic regression baseline).",
+    desc: "Baseline NLP study on social text using classical feature engineering and logistic regression.",
     color: "#22D3EE",
     stack: ["Python", "scikit-learn"],
     slug: "depression-detection",
     categories: ["ML"],
-    complexity: 2,
+  },
+  {
+    name: "Personal Lab",
+    url: "https://github.com/achntj/lab",
+    desc: "Local workspace application integrating notes, tasks, timers, and secure access patterns in a desktop workflow.",
+    color: "#0EA5A4",
+    stack: ["Next.js", "Typescript", "Prisma", "SQLite", "Tailwind", "Tauri"],
+    slug: "personal-lab",
+    categories: ["Full-Stack"],
+  },
+  {
+    name: "Slimlist",
+    url: "https://github.com/achntj/slimlist",
+    desc: "Local-first productivity tool focused on lightweight task capture and offline usability.",
+    color: "#2563EB",
+    stack: ["Next.js", "Typescript", "Tailwind", "SQLite"],
+    slug: "slimlist",
+    categories: ["Full-Stack"],
   },
   {
     name: "Stegify",
     url: "https://github.com/achntj/stegify",
-    desc: "Embed encrypted messages inside images.",
+    desc: "Utility for embedding encrypted messages inside image files.",
     color: "#84CC16",
     stack: ["Python"],
     slug: "stegify",
     categories: ["Tools"],
-    complexity: 2,
   },
   {
     name: "Bookmarks → Notion",
     url: "https://github.com/achntj/bookmarks-notion",
-    desc: "Export browser bookmarks to Notion-ready data.",
+    desc: "Small data utility for transforming browser bookmarks into a Notion-ready import format.",
     color: "#EAB308",
     stack: ["Python"],
     slug: "bookmarks-notion",
     categories: ["Tools"],
-    complexity: 2,
   },
   {
     name: "Zsh Guide",
     url: "https://github.com/achntj/zshguide",
-    desc: "A cleaner mirror of Peter Stephenson’s Zsh Guide.",
+    desc: "Readable web edition of Peter Stephenson's Zsh Guide with a cleaner browsing experience.",
     color: "#14B8A6",
     stack: ["Next.js", "TypeScript"],
     slug: "zshguide",
     categories: ["Tools"],
-    complexity: 2,
-  },
-  {
-    name: "Patrick Bateman Card Generator",
-    url: "https://bateman.achintyajha.com",
-    desc: "An over-engineered business card (from the movie American Psycho).",
-    color: "#9333EA",
-    stack: ["Next.js", "TypeScript", "TailwindCSS"],
-    slug: "bateman-card",
-    categories: ["Whimsy"],
-    complexity: 1,
   },
 ];
 
@@ -173,17 +138,9 @@ const categoryMeta: Record<ProjectCategory, { label: string; Icon: any }> = {
   Quant: { label: "Quant", Icon: ChartBarIcon },
   ML: { label: "ML", Icon: CpuChipIcon },
   Tools: { label: "Tools", Icon: WrenchScrewdriverIcon },
-  Whimsy: { label: "Whimsy", Icon: PuzzlePieceIcon },
 };
 
-const categories = [
-  "All",
-  "Full-Stack",
-  "Quant",
-  "ML",
-  "Tools",
-  "Whimsy",
-] as const;
+const categories = ["All", "Full-Stack", "Quant", "ML", "Tools"] as const;
 
 /* --- palette helpers for soft card tints --- */
 function hexToRgb(hex: string) {
@@ -224,16 +181,10 @@ function cardStyle(color: string): CSSProperties {
 export default function ProjectsClient() {
   const [active, setActive] = useState<(typeof categories)[number]>("All");
 
-  const sortedProjects = useMemo(() => {
-    return [...projects].sort((a, b) => b.complexity - a.complexity);
-  }, []);
-
-  const filtered = useMemo(() => {
-    if (active === "All") return sortedProjects;
-    return sortedProjects.filter((p) =>
-      p.categories.includes(active as ProjectCategory),
-    );
-  }, [active, sortedProjects]);
+  const filtered =
+    active === "All"
+      ? projects
+      : projects.filter((p) => p.categories.includes(active as ProjectCategory));
 
   return (
     <>
