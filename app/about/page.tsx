@@ -20,18 +20,13 @@ export default function AboutPage() {
 
         <div className="mt-5 space-y-4 leading-loose">
           <p>
-            I am a Computer Science and Economics senior at Arizona State
-            University and an incoming Quantitative Researcher this summer. My
-            work focuses on empirical research in markets and on building tools
-            that make research workflows more reliable and efficient.
-          </p>
-          <p>
-            I am most interested in statistics, econometrics, machine
-            learning, optimization, market microstructure, and data
-            engineering. Across projects, I tend to care about the same
-            questions: how to structure noisy data, how to test ideas
-            rigorously, and how to turn research into systems that are actually
-            usable.
+            I am a Computer Science and Economics graduate from Arizona State
+            University and will start soon as a Quantitative Researcher. I am
+            most interested in statistical learning, optimization, market
+            microstructure, and data engineering. Across projects, I tend to
+            care about the same questions: how to structure noisy data, how to
+            test ideas rigorously, and how to turn research into reliable
+            systems.
           </p>
           <p>
             My technical toolkit is centered on Python, pandas, NumPy,

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const baseMetadata: Metadata = {
   title: "Achintya Jha",
   description:
-    "Achintya Jha is a senior at Arizona State University, studying Computer Science and Economics.",
+    "Achintya Jha is a Computer Science and Economics graduate from Arizona State University.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -15,7 +15,7 @@ export const baseMetadata: Metadata = {
     type: "website",
     title: "Achintya Jha",
     description:
-      "Achintya Jha is a senior at Arizona State University, studying Computer Science and Economics.",
+      "Achintya Jha is a Computer Science and Economics graduate from Arizona State University.",
     images: "https://achintyajha.com/banner.png",
     siteName: "Achintya Jha",
   },
@@ -25,7 +25,7 @@ export const baseMetadata: Metadata = {
     creator: "@achntj",
     title: "Achintya Jha",
     description:
-      "Achintya Jha is a senior at Arizona State University, studying Computer Science and Economics.",
+      "Achintya Jha is a Computer Science and Economics graduate from Arizona State University.",
     images: "https://achintyajha.com/banner.png",
   },
 };
